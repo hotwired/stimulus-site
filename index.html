@@ -1,14 +1,59 @@
 ---
-title: A modest JavaScript framework for the HTML you already have
+title: A modest JavaScript framework for the HTML you already have.
 layout: default
 ---
 
-<div class="intro">
-  <img src="/images/logo.svg" width="100" height="100" alt="Stimulus logo">
+<hr>
 
-  <main>
-    <h1>Stimulus</h1>
-    <h2>A modest JavaScript framework for the HTML you already have</h2>
-    <a href="https://github.com/stimulusjs/stimulus">https://github.com/stimulusjs/stimulus</a>
-  </main>
-</div>
+<p>Stimulus is a JavaScript framework with modest ambitions. It doesn't seek to take over your entire front-end—in fact, it's not concerned with rendering HTML at all. Instead, it's designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>
+
+<p>How does it work? Sprinkle your HTML with magic controller, target, and action attributes:</p>
+
+<pre class="example language-markup"><code><!--<div data-controller="hello">
+  <input data-target="hello.name" type="text">
+  <button data-action="click->hello#greet">Greet</button>
+</div>--></code></pre>
+
+<p>Then write a compatible controller. Stimulus brings it to life automatically:</p>
+
+
+<pre class="example language-javascript">
+<code>// hello_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  greet() {
+    console.log(`Hello, ${this.name}!`)
+  }
+
+  get name() {
+    return this.targets.find("name").value
+  }
+}</code>
+</pre>
+
+<p>Stimulus continuously watches the page, kicking in as soon as magic attributes appear or disappear. It works with any update to the DOM, regardless of whether it comes from a full page load, a Turbolinks page change, or an Ajax request. Stimulus manages the whole lifecycle.</p>
+
+<p>You can write your first controller in five minutes by following along in The <a href="#handbook">Stimulus Handbook</a>.</p>
+
+<p>You can read more about why we created this new framework in <a href="#origin">The Origin of Stimulus</a>.</p>
+
+<hr>
+
+<h2>Installing Stimulus</h2>
+
+<p>Stimulus integrates with the <a href="https://webpack.js.org/">webpack</a> asset packager to automatically load controller files from a folder in your app.</p>
+
+<p>You can use Stimulus with other asset packaging systems, too. And if you prefer no build step at all, just drop a <code class="language-markup">&lt;script&gt;</code> tag on the page and get right down to business.</p>
+
+<p>See the <a href="#">Installation Guide</a> for detailed instructions.</p>
+
+<hr>
+
+<h2>Contributing Back</h2>
+
+<p>Stimulus is <a href="#mit">MIT-licensed</a> open source software from <a href="https://basecamp.com/">Basecamp</a>, the creators of <a href="http://rubyonrails.org">Ruby on Rails</a>.</p>
+
+<p>Have a question about Stimulus? Find a bug? Think the documentation could use some improvement? Head over to our <a href="https://github.com/stimulusjs/stimulus/issues">issue tracker</a> and we'll do our best to help. We love pull requests, too!</p>
+
+<p>We expect all Stimulus contributors to abide by the terms of our <a href="#code">Code of Conduct</a>.</p>

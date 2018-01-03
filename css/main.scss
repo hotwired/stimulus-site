@@ -1,0 +1,124 @@
+---
+---
+@charset "utf-8";
+
+@import
+        "reset",
+        "mixins",
+        "layout",
+        "prism";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $color-background url(/images/lines.svg) no-repeat center top;
+  background-size: 100%;
+  max-width: $column-width;
+  height: 100%;
+  margin: 1em auto;
+  padding: 2em;
+  position: relative;
+  background-color: $color-background;
+  color: $color-text;
+  font-family: $serif-stack;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1rem;
+
+  @include media(large) {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+a {
+  color: $color-text;
+  font-weight: bold;
+  margin: -.2rem;
+  padding: .2rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+
+  &:visited { 
+    color: $color-text; 
+  }
+
+  &:hover { 
+    color: $color-background; 
+    text-decoration: underline;
+    background-color: $color-text;
+  }
+
+  &:active { 
+    color: $color-text; 
+  }
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+
+  @include media(large) {
+    font-size: 3em;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+
+  @include media(large) {
+    font-size: 2em;
+  }
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h1, h2, h3 {
+  grid-column: 2/5;
+  font-family: $sans-stack;
+  letter-spacing: -.03em;
+  line-height: 1.1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+p {
+  grid-column: 3/4;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+hr {
+  height: 2em;
+  grid-column: 3/4;
+  margin: 3em 0 2em 0;
+  border: none;
+  background: $color-background url(/images/logo-beige.svg) no-repeat center center;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+// Fix: iOS Font Sizing —————————————————————— •
+// ——————————————————————————————————————————— •
+
+@media screen and (max-device-width: 480px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+  }
+}
