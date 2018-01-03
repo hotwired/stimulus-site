@@ -22,7 +22,6 @@ body {
   margin: 1em auto;
   padding: 2em;
   position: relative;
-  background-color: $color-background;
   color: $color-text;
   font-family: $serif-stack;
   font-size: 1em;
@@ -42,7 +41,6 @@ a {
   margin: -.2rem;
   padding: .2rem;
   text-decoration: underline;
-  text-transform: uppercase;
 
   &:visited { 
     color: $color-text; 
@@ -105,7 +103,7 @@ hr {
   grid-column: 3/4;
   margin: 3em 0 2em 0;
   border: none;
-  background: $color-background url(/images/logo-beige.svg) no-repeat center center;
+  background: url(/images/logo-beige.svg) no-repeat center center;
 }
 
 img {
