@@ -106,13 +106,38 @@ p {
 
 blockquote {
   grid-column: 3/4;
+  position: relative;
+  margin-bottom: 1.5em;
+  padding: 0 0 0 2em;
+  overflow: auto;
+  border-left: 2px solid $color-text;
+  text-align: left;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: #fff url(/images/logo.svg) no-repeat left top;
+    background-size: 1em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 2rem;
+    text-align: left;
+  }
 }
 
 hr {
   grid-column: 3/4;
-  margin: 3em 0 2em 0;
+  margin: 2em 0 3em 0;
   border: none;
-  border-top: 1px solid #d9c6a4;
+  border-top: 1px solid $color-accent;
 }
 
 img {

@@ -31,4 +31,4 @@ Readable markup also means that others on your team can easily look at templates
 
 Now's a great time to dip your toes in and discover how Stimulus works. Keep reading to learn how to build your first controller.
 
-Next: [Hello Stimulus](02_hello_stimulus#start)
+Next: [Hello Stimulus](02_hello_stimulus)
