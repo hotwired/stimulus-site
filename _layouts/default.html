@@ -2,28 +2,15 @@
 
 <body class="{% if page.class %} {{ page.class }}{% endif %}">
 
-  
-
   <main id="content" class="content">
 
-  <header class="nav">
-    <h1 class="nav__logo"><a href="/"><img src="/images/stimulus-brush.svg" alt="Stimulus"></a></h1>
-    <p class="nav__subhead">A modest JavaScript framework for the HTML you already have.</p>
-    <nav class="nav__links">
-      <a class="nav__links-item" href="https://github.com/stimulusjs/stimulus">Get it on GitHub</a>
-      <a class="nav__links-item" href="https://github.com/stimulusjs/stimulus">Why Stimulus?</a>
-      <a class="nav__links-item" href="https://github.com/stimulusjs/stimulus">The Handbook</a>
-    </nav>
-  </header>
+    {% include navigation.html %}
 
-  {{ content }}
+    {{ content }}
 
-    <footer class="foot">
-      <p><img class="foot__icon" src="/images/basecamp-icon.svg" alt="Basecamp"> <br> Brought to you by the team at <a href="https://basecamp.com/">Basecamp</a>.</p>
-    </footer>
+    {% include footer.html %}
 
   </main>
 
-  <script src="/javascript/prism.js"></script>
 </body>
 </html>

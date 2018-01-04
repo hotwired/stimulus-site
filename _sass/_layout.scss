@@ -7,7 +7,7 @@
 
 .nav__logo {
   display: block;
-  max-width: 12rem;
+  max-width: 14rem;
   margin: 12vw auto 0 auto;
   padding: 0;
 
@@ -22,9 +22,10 @@
 
 .nav__subhead {
   margin: 1.5em 0 0.5em 0;
-  font-size: 1em;
+  font-size: 0.9rem;
   font-family: $sans-stack;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .nav__links {
@@ -38,6 +39,7 @@
 }
 
 .nav__links-item {
+  display: inline-block;
   color: $color-background;
   font-family: $sans-stack;
   font-weight: normal;
@@ -72,7 +74,7 @@
 // footer /////////////////////////////////////////////////////////////////////
 
 .foot {
-  margin-top: 4em;
+  margin-top: 10em;
   grid-column: 3/4;
   text-align: center;
   font-size: 0.875em;
@@ -82,4 +84,25 @@
   display: block;
   max-width: 50px;
   margin: 0 auto;
+}
+
+// handbook nav /////////////////////////////////////////////////////////////////////
+
+.handbook-nav {
+  grid-column: 2/5;
+  text-align: center;
+}
+
+.handbook-nav__title {
+  font-family: $sans-stack;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5em;
+}
+
+.handbook-nav__link {
+  display: inline-block;
+  line-height: 1.5;
+  font-family: $sans-stack;
+  font-style: italic;
 }

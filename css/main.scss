@@ -6,7 +6,7 @@
         "reset",
         "mixins",
         "layout",
-        "prism";
+        "highlighter";
 
 * {
   box-sizing: border-box;
@@ -47,9 +47,7 @@ a {
   }
 
   &:hover { 
-    color: $color-background; 
-    text-decoration: underline;
-    background-color: $color-text;
+    text-decoration: none;
   }
 
   &:active { 
@@ -60,7 +58,6 @@ a {
 h1 {
   font-size: 2em;
   font-weight: bold;
-  font-style: italic;
 
   @include media(large) {
     font-size: 3em;
@@ -87,15 +84,27 @@ h1, h2, h3 {
   font-family: $sans-stack;
   letter-spacing: -.03em;
   line-height: 1.1em;
+  text-align: center;
   margin-top: 1.5em;
   margin-bottom: 0.75em;
+}
+
+ul,
+ol {
+  grid-column: 3/4;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
 }
 
 p {
   grid-column: 3/4;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.6em;
   margin-bottom: 1.5em;
+}
+
+blockquote {
+  grid-column: 3/4;
 }
 
 hr {

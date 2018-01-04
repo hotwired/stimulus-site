@@ -1,0 +1,27 @@
+{% include head.html %}
+
+<body class="{% if page.class %} {{ page.class }}{% endif %}">
+
+  <main id="content" class="content">
+
+    {% include navigation.html %}
+
+    <hr>
+
+    <nav class="handbook-nav">
+      <p class="handbook-nav__title">The Handbook:</p>
+      <a class="handbook-nav__link" href="/handbook">1: Introduction</a> /
+      <a class="handbook-nav__link" href="/handbook/02_hello_stimulus">2: Hello, Stimulus</a> /
+      <a class="handbook-nav__link" href="/handbook/03_building_something_real">3: Building Something Real</a> /
+      <a class="handbook-nav__link" href="/handbook/04_managing_state">4: Managing State</a> /
+      <a class="handbook-nav__link" href="/handbook/05_working_with_external_resources">5: Working With External Resources</a>
+    </nav>
+
+    {{ content }}
+
+    {% include footer.html %}
+
+  </main>
+
+</body>
+</html>
