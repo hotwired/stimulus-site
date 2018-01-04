@@ -55,7 +55,18 @@ a {
   }
 }
 
+h1, h2, h3 {
+  grid-column: 2/5;
+  font-family: $sans-stack;
+  letter-spacing: -.03em;
+  line-height: 1.1em;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
 h1 {
+  margin-top: 0.5em;
   font-size: 2em;
   font-weight: bold;
 
@@ -79,16 +90,6 @@ h3 {
   font-size: 1.5em;
 }
 
-h1, h2, h3 {
-  grid-column: 2/5;
-  font-family: $sans-stack;
-  letter-spacing: -.03em;
-  line-height: 1.1em;
-  text-align: center;
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
-}
-
 ul,
 ol {
   grid-column: 3/4;
@@ -108,11 +109,10 @@ blockquote {
 }
 
 hr {
-  height: 2em;
   grid-column: 3/4;
   margin: 3em 0 2em 0;
   border: none;
-  background: url(/images/logo-beige.svg) no-repeat center center;
+  border-top: 1px solid #d9c6a4;
 }
 
 img {

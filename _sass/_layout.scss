@@ -2,7 +2,11 @@
 
 .nav {
   grid-column: 1/6;
+  margin-bottom: 2em;
+  padding-bottom: 3em;
   text-align: center;
+  background: url(/images/logo.svg) no-repeat center bottom;
+  background-size: 1em;
 }
 
 .nav__logo {
@@ -30,10 +34,10 @@
 
 .nav__links {
   max-width: 25em;
-  background-color: $color-text;
   padding: 0.25em;
   margin: 0 auto 1em auto;
   line-height: 1.5;
+  background-color: $color-text;
   -webkit-clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
   clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
 }
@@ -82,8 +86,8 @@
 // footer /////////////////////////////////////////////////////////////////////
 
 .foot {
-  margin-top: 10em;
   grid-column: 3/4;
+  margin-top: 10em;
   text-align: center;
   font-size: 0.875em;
 }
@@ -98,6 +102,7 @@
 
 .handbook-nav {
   grid-column: 2/5;
+  margin-bottom: 2em;
   text-align: center;
 }
 

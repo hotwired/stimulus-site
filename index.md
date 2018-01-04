@@ -2,7 +2,6 @@
 title: A modest JavaScript framework for the HTML you already have.
 layout: default
 ---
----
 
 Stimulus is a JavaScript framework with modest ambitions. It doesn't seek to take over your entire front-end—in fact, it's not concerned with rendering HTML at all. Instead, it's designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with [Turbolinks](https://github.com/turbolinks/turbolinks) to provide a complete solution for fast, compelling applications with a minimal amount of effort.
 
@@ -38,8 +37,6 @@ You can write your first controller in five minutes by following along in [The S
 
 You can read more about why we created this new framework in [The Origin of Stimulus](/origin).
 
----
-
 ## Installing Stimulus
 
 Stimulus integrates with the [webpack](https://webpack.js.org/) asset packager to automatically load controller files from a folder in your app.
@@ -47,8 +44,6 @@ Stimulus integrates with the [webpack](https://webpack.js.org/) asset packager t
 You can use Stimulus with other asset packaging systems, too. And if you prefer no build step at all, just drop a `<script>` tag on the page and get right down to business.
 
 See the [Installation Guide](https://github.com/stimulusjs/stimulus/blob/master/INSTALLING.md) for detailed instructions.
-
----
 
 ## Contributing Back
 
