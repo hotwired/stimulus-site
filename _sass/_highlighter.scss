@@ -1,33 +1,24 @@
-/* PrismJS 1.9.0
-http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
- code,
- pre {
+code,
+pre {
   font-family: "source-code-pro", monospace;
   line-height: 1.25;
   padding:  0 0.1em;
- }
+}
 
 .highlighter-rouge {
   background: #f7f5f2;
   grid-column: 2/5;
-  margin-bottom: 2em;
-  overflow: auto;
-  
+  margin-bottom: 2em;  
 }
 
 .highlighter-rouge pre {
   padding: 1.5em;
   background: #f7f5f2;
+  overflow: auto;
 }
 
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #fff; }
+.highlight  { background: #f7f5f2; }
 .highlight .c { color: #60a0b0; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #007020; font-weight: bold } /* Keyword */

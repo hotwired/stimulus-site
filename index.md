@@ -46,14 +46,14 @@ Stimulus integrates with the [webpack](https://webpack.js.org/) asset packager t
 
 You can use Stimulus with other asset packaging systems, too. And if you prefer no build step at all, just drop a `<script>` tag on the page and get right down to business.
 
-See the [Installation Guide](https://github.com/stimulusjs/stimulus/INSTALLING.md) for detailed instructions.
+See the [Installation Guide](https://github.com/stimulusjs/stimulus/blob/master/INSTALLING.md) for detailed instructions.
 
 ---
 
 ## Contributing Back
 
-Stimulus is [MIT-licensed](https://github.com/stimulusjs/stimulus/LICENSE.md) open source software from [Basecamp](https://basecamp.com/), the creators of [Ruby on Rails](http://rubyonrails.org).
+Stimulus is [MIT-licensed](https://github.com/stimulusjs/stimulus/blob/master/LICENSE.md) open source software from [Basecamp](https://basecamp.com/), the creators of [Ruby on Rails](http://rubyonrails.org).
 
 Have a question about Stimulus? Find a bug? Think the documentation could use some improvement? Head over to our [issue tracker](https://github.com/stimulusjs/stimulus/issues) and we'll do our best to help. We love pull requests, too!
 
-We expect all Stimulus contributors to abide by the terms of our [Code of Conduct](https://github.com/stimulusjs/stimulus/CONDUCT.md).
+We expect all Stimulus contributors to abide by the terms of our [Code of Conduct](https://github.com/stimulusjs/stimulus/blob/master/CONDUCT.md).
