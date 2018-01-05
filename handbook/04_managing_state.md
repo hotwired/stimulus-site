@@ -184,4 +184,4 @@ export default class extends Controller {
        data-slideshow-index="2">…</div>
   ```
 
-Next: [Working With External Resources](05_working_with_external_resources)
+Next: [Working With External Resources](05_working_with_external_resources#start)

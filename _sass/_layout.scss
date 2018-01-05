@@ -103,7 +103,16 @@
 .handbook-nav {
   grid-column: 2/5;
   margin-bottom: 2em;
+  padding-bottom: 1em;
   text-align: center;
+  background-color: $color-background;
+
+  @include media(medium) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -2em;
+    z-index: 1000;
+  }
 }
 
 .handbook-nav__title {

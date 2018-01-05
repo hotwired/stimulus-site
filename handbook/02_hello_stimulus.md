@@ -5,6 +5,7 @@ layout: handbook
 
 # 2: Hello, Stimulus
 
+
 The best way to learn how Stimulus works is to build a simple controller. This chapter will show you how.
 
 ## Prerequisites
@@ -218,4 +219,4 @@ Congratulations—you've just written your first Stimulus controller!
 
 We've covered the framework's core concepts: controllers, identifiers, actions, and targets. In the next chapter, we'll see how to put those together to build a real-life controller taken right from Basecamp.
 
-Next: [Building Something Real](03_building_something_real)
+Next: [Building Something Real](03_building_something_real#start)
