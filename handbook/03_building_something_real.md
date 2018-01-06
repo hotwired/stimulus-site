@@ -5,10 +5,10 @@ layout: handbook
 
 # 3: Building Something Real
 
-### 🚧 This chapter of The Stimulus Handbook is a work in progress.
-We'll have it wrapped up in time for the 1.0 release. Thanks for your patience!
-
----
+<div class="warning">
+  <h3 class="warning__title">/// This chapter is a work in progress. ///</h3>
+  <p class="warning__message">We'll have it wrapped up in time for the 1.0 release. Thanks for your patience!</p>
+</div>
 
 * Logging hello to the console isn't very exciting
 * Let's build something we might actually use

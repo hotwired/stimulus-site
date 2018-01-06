@@ -5,10 +5,10 @@ layout: handbook
 
 # 4: Managing State
 
-### 🚧 This chapter of The Stimulus Handbook is a work in progress.
-We'll have it wrapped up in time for the 1.0 release. Thanks for your patience!
-
----
+<div class="warning">
+  <h3 class="warning__title">/// This chapter is a work in progress. ///</h3>
+  <p class="warning__message">We'll have it wrapped up in time for the 1.0 release. Thanks for your patience!</p>
+</div>
 
 * Let's build a simple slideshow: A set of slides and buttons for flipping through them
 * We'll manage the slideshow's state with DOM data attributes using the Stimulus data API

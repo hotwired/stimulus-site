@@ -1,0 +1,52 @@
+// handbook nav /////////////////////////////////////////////////////////////////////
+
+.handbook-nav {
+  grid-column: 2/5;
+  margin-bottom: 2em;
+  padding: 0.5em 0;
+  text-align: center;
+  background-color: $color-background;
+
+  @include media(medium) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+}
+
+.handbook-nav__title {
+  font-family: $sans-stack;
+  font-size: 0.9rem;
+}
+
+.handbook-nav__link {
+  display: inline-block;
+  line-height: 1.5;
+  font-family: $sans-stack;
+  font-style: italic;
+}
+
+// incomplete chapter warning /////////////////////////////////////////////////
+
+.warning {
+  grid-column: 2/5;
+  background-color: #fff200;
+  margin: 1em 0 2em 0;
+  padding: 0.5em;
+  text-align: center;
+  -webkit-clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+  clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+  @include transform(rotate(-3deg));
+}
+
+.warning__title {
+  margin: 0;
+  padding: 0;
+}
+
+.warning__message {
+  margin: 0;
+  padding: 0;
+  font-family: $sans-stack;
+}

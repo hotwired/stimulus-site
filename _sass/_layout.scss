@@ -1,19 +1,41 @@
+// main content ///////////////////////////////////////////////////////////////
+
+.content {
+  max-width: $column-width;
+  margin: 0 auto;
+
+  @include media(medium) {
+
+    @supports (display: grid) {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 0.5fr 0.75fr 23em 0.75fr 0.5fr;
+    }
+  }
+  
+  @include media(large) {
+
+    @supports (display: grid) {
+      grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    }
+  }
+}
+
 // top nav ////////////////////////////////////////////////////////////////////
 
 .nav {
   grid-column: 1/6;
-  margin-bottom: 2em;
-  padding-bottom: 3em;
   text-align: center;
-  background: url(/images/logo.svg) no-repeat center bottom;
   background-size: 1em;
 }
 
 .nav__logo {
   display: block;
-  max-width: 14rem;
-  margin: 12vw auto 0 auto;
+  max-width: 25rem;
+  margin: 1em auto 0 auto;
   padding: 0;
+  text-transform: uppercase;
+  font-size: 2em;
 
   a:hover {
     background-color: transparent;
@@ -25,62 +47,26 @@
 }
 
 .nav__subhead {
-  margin: 1.5em 0 0.5em 0;
+  margin: 1em 0 2em 0;
   font-size: 0.9rem;
   font-family: $sans-stack;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .nav__links {
-  max-width: 25em;
   padding: 0.25em;
   margin: 0 auto 1em auto;
   line-height: 1.5;
-  background-color: $color-text;
-  -webkit-clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
-  clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+  border-radius: 1em;
+  font-weight: bold;
 }
 
 .nav__links-item {
   display: inline-block;
-  color: $color-background;
   font-family: $sans-stack;
-  font-weight: normal;
-  font-style: italic;
+  font-weight: bold;
   text-transform: none;
-
-  &:hover { 
-    color: $color-background; 
-    text-decoration: none; 
-  }
-
-  &:visited,
-  &:active { 
-    color: $color-background; 
-  }
-}
-
-// main content ///////////////////////////////////////////////////////////////
-
-.content {
-  margin: 0 auto;
-
-  @include media(medium) {
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: 0.5fr 0.75fr 23em 0.75fr 0.5fr;
-    }
-  }
+  font-size: 1rem;
   
-  @include media(large) {
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
-    }
-  }
 }
 
 // footer /////////////////////////////////////////////////////////////////////
@@ -96,35 +82,4 @@
   display: block;
   max-width: 50px;
   margin: 0 auto;
-}
-
-// handbook nav /////////////////////////////////////////////////////////////////////
-
-.handbook-nav {
-  grid-column: 2/5;
-  margin-bottom: 2em;
-  padding-bottom: 1em;
-  text-align: center;
-  background-color: $color-background;
-
-  @include media(medium) {
-    position: -webkit-sticky;
-    position: sticky;
-    top: -2em;
-    z-index: 1000;
-  }
-}
-
-.handbook-nav__title {
-  font-family: $sans-stack;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.5em;
-}
-
-.handbook-nav__link {
-  display: inline-block;
-  line-height: 1.5;
-  font-family: $sans-stack;
-  font-style: italic;
 }
