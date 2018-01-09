@@ -9,11 +9,9 @@
     <nav class="handbook-nav">
       <strong class="handbook-nav__title">The Handbook:</strong>
       <a name="start"></a>
-      <a class="handbook-nav__link" href="/handbook#start">1: Introduction</a> /
-      <a class="handbook-nav__link" href="/handbook/02_hello_stimulus#start">2: Hello, Stimulus</a> /
-      <a class="handbook-nav__link" href="/handbook/03_building_something_real#start">3: Building Something Real</a> /
-      <a class="handbook-nav__link" href="/handbook/04_managing_state#start">4: Managing State</a> /
-      <a class="handbook-nav__link" href="/handbook/05_working_with_external_resources#start">5: Working With External Resources</a>
+      {% for item in site.handbook %}
+        <a class="handbook-nav__link" href="{{ item.url }}#start">{{ item.heading }}</a>
+      {% endfor %}
     </nav>
 
     {{ content }}

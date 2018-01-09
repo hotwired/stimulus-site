@@ -1,6 +1,8 @@
 ---
 title: Stimulus Handbook - Introduction
+heading: 1: Introduction
 layout: handbook
+permalink: /handbook/
 ---
 
 # 1: Introduction

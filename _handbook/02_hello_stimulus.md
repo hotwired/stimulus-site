@@ -1,5 +1,6 @@
 ---
 title: Stimulus Handbook - Hello, Stimulus
+heading: 2: Hello, Stimulus
 layout: handbook
 ---
 

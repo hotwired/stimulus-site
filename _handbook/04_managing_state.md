@@ -1,5 +1,6 @@
 ---
 title: Stimulus Handbook - Hello, Stimulus
+heading: 4: Managing State
 layout: handbook
 ---
 
