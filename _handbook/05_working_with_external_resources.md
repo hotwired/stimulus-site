@@ -1,5 +1,6 @@
 ---
 title: Stimulus Handbook - Working With External Resources
+heading: 5: Working With External Resources
 layout: handbook
 ---
 
