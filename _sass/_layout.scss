@@ -4,20 +4,13 @@
   margin: 0 auto;
   padding: 0 2em;
   overflow-x: hidden;
-
-  @include media(medium) {
+  
+  @include media(large) {
 
     @supports (display: grid) {
       max-width: 100%;
       padding: 0;
       display: grid;
-      grid-template-columns: 0.5fr 0.75fr 23em 0.75fr 0.5fr;
-    }
-  }
-  
-  @include media(large) {
-
-    @supports (display: grid) {
       grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
     }
   }

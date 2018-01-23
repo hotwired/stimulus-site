@@ -77,6 +77,11 @@ ol {
   margin-bottom: 1.5em;
 }
 
+ul li,
+ol li {
+  margin-left: 1em;
+}
+
 p {
   grid-column: 3/4;
   font-size: 1em;

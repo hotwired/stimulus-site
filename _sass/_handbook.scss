@@ -1,30 +1,80 @@
-// handbook nav /////////////////////////////////////////////////////////////////////
+// handbook layout ////////////////////////////////////////////////////////////
 
-.handbook-nav {
-  grid-column: 2/5;
-  margin-bottom: 2em;
-  padding: 0.5em 0;
-  text-align: center;
-  background-color: $color-background;
+.handbook {
+  margin: 0 auto;
+  padding: 0 2em;
+  overflow-x: hidden;
+  
+  @include media(large) {
 
-  @include media(medium) {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    @supports (display: grid) {
+      max-width: 100%;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 0.5fr 2.5fr 55vw 1fr;
+    }
   }
 }
 
-.handbook-nav__title {
+.handbook__content {
+  grid-column: 3/4;
+  max-width: $column-width;
+  margin: 0 auto;
+
+  @include media(large) {
+    max-width: 100%;
+    margin-top: 6em;
+    padding-left: 2em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+
+// handbook nav /////////////////////////////////////////////////////////////////////
+
+.handbook__nav {
+  max-width: $column-width;
+  grid-column: 2/3;
+  margin: 0 auto 2em auto;
+  padding: 0.5em 0;
+  text-align: center;
+
+  @include media(large) {
+    margin: 0 0 2em 0;
+    padding-top: 7em;
+  }
+}
+
+.handbook__nav-title {
+  margin: 0;
   font-family: $sans-stack;
+  font-weight: bold;
   font-size: 0.9rem;
+  text-align: center;
+  border-bottom: 0.25em solid $color-accent;
+
+  @include media(large) {
+    text-align: left;
+  }
 }
 
 .handbook-nav__link {
-  display: inline-block;
+  display: block;
   line-height: 1.5;
   font-family: $sans-stack;
   font-style: italic;
+
+  @include media(large) {
+    text-align: left;
+    padding: 0.5em 0.25em;
+  }
 }
 
 // incomplete chapter warning /////////////////////////////////////////////////
@@ -37,12 +87,12 @@
   text-align: center;
   -webkit-clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
   clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
-  @include transform(rotate(-3deg));
 }
 
 .warning__title {
   margin: 0;
   padding: 0;
+  text-align: center !important;
 }
 
 .warning__message {
