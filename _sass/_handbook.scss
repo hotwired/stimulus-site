@@ -73,7 +73,19 @@
 
   @include media(large) {
     text-align: left;
-    padding: 0.5em 0.25em;
+    padding: 0.5em 0.5em;
+    margin-right: 0;
+  }
+
+  &.active {
+    background-color: $color-tint;
+    -webkit-clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+    clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+
+    @include media(large) {
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
+      clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
+    }
   }
 }
 
