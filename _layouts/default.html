@@ -2,9 +2,9 @@
 
 <body class="{% if page.class %} {{ page.class }}{% endif %}">
 
-  <main id="content" class="content">
+  {% include navigation.html %}
 
-    {% include navigation.html %}
+  <main id="content" class="content">
 
     {{ content }}
 

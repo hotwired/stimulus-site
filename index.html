@@ -1,0 +1,51 @@
+---
+title: A modest JavaScript framework for the HTML you already have.
+layout: default
+---
+
+<div class="intro">
+  <h1 class="intro__text">A modest JavaScript framework for the HTML you already have.</h1>
+</div>
+
+
+<div class="hero">
+
+  <div class="hero__step hero__step--pointer">
+    <p class="hero__step-title">Sprinkle your HTML with controller, target, and action attributes:</p>
+{% highlight html %}
+<!--BYO HTML-->
+<div data-controller="hello">
+  <input data-target="hello.name" type="text">
+  <button data-action="click->hello#greet">
+    Greet
+  </button>
+</div>{% endhighlight %}
+  </div>
+
+  <div class="hero__step">
+    <p class="hero__step-title">Write a compatible controller. Stimulus brings it to life automatically:</p>
+{% highlight js %}
+// hello_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  greet() {
+    console.log(`Hello, ${this.name}!`)
+  }
+
+  get name() {
+    return this.targets.find("name").value
+  }
+}{% endhighlight %}
+  </div>
+
+</div>
+
+
+<p class="lede">Stimulus is a JavaScript framework with modest ambitions. It doesn't seek to take over your entire front-end—in fact, it's not concerned with rendering HTML at all. Instead, it's designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>
+
+<div class="actions">
+  <a class="actions__item" href="https://github.com/stimulusjs/stimulus"><img  class="actions__icon" src="/images/icon-github.svg" alt="GitHub logo"> Browse on GitHub</a>
+  <a class="actions__item" href="https://github.com/stimulusjs/stimulus/blob/master/INSTALLING.md"><img  class="actions__icon" src="/images/icon-install.svg" alt="install icon"> Installation Guide</a>
+  <a class="actions__item" href="/handbook"><img  class="actions__icon" src="/images/icon-guide.svg" alt="book icon"> Stimulus Handbook</a>
+</div>

@@ -1,13 +1,15 @@
 // main content ///////////////////////////////////////////////////////////////
 
 .content {
-  max-width: $column-width;
   margin: 0 auto;
+  padding: 0 2em;
+  overflow-x: hidden;
 
   @include media(medium) {
 
     @supports (display: grid) {
       max-width: 100%;
+      padding: 0;
       display: grid;
       grid-template-columns: 0.5fr 0.75fr 23em 0.75fr 0.5fr;
     }
@@ -16,7 +18,7 @@
   @include media(large) {
 
     @supports (display: grid) {
-      grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
     }
   }
 }
@@ -25,20 +27,43 @@
 
 .nav {
   grid-column: 1/6;
+  padding-bottom: 1em;
   text-align: center;
   background-size: 1em;
+
+  @include media(large) {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25em 2em 1em 2em;
+  }
 }
 
 .nav__logo {
   display: block;
   max-width: 25rem;
-  margin: 1em auto 0 auto;
+  margin: 1em auto;
   padding: 0;
   text-transform: uppercase;
-  font-size: 2em;
+  font-family: $sans-stack;
+  font-size: 1.5em;
 
-  a:hover {
-    background-color: transparent;
+  @include media(large) {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.nav__icon {
+  max-width: 1.5em;
+  display: block;
+  margin: 0 auto 0.25em auto;
+
+  @include media(large) {
+    position: relative;
+    top: -0.075em;
+    margin: 0;
+    padding-right: 0.25em;
   }
 }
 
@@ -53,11 +78,15 @@
 }
 
 .nav__links {
-  padding: 0.25em;
-  margin: 0 auto 1em auto;
+  padding: 0 0.25em;
+  margin: 0 auto;
   line-height: 1.5;
-  border-radius: 1em;
   font-weight: bold;
+
+  @include media(large) {
+    margin: 0;
+    line-height: 1;
+  }
 }
 
 .nav__links-item {

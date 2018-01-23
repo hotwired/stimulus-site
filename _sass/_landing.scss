@@ -1,0 +1,152 @@
+// intro //////////////////////////////////////////////////////////////////////
+
+.intro {
+  grid-column: 1/6;
+  margin: 0 -2em 2em -2em;
+  padding: 2em;
+  background-color: $color-tint;
+  border-top: 0.25em solid $color-accent;
+  
+  @include media(large) {
+    margin: 0;
+    padding: 2em 7em 6em 7em;
+  }
+}
+
+.intro__text {
+  color: $color-text;
+  margin: 0.5em 0;
+}
+
+// hero code example //////////////////////////////////////////////////////////
+
+.hero {
+  grid-column: 2/5;
+  position: relative;
+  margin: 1em 0 4em 0;
+  padding: 0;
+
+  @include media(large) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -6em;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute; 
+      width: 130%;
+      height: 130%;
+      z-index: -1;
+      top: -50%;
+      left: -10%;
+      background: url("../images/pattern.svg") no-repeat center;
+      background-size: 100%;
+    }
+  }
+}
+
+.hero__step {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2em;
+  background-color: $color-tint;
+
+  @include media(large) {
+    width: 48%;
+    margin: 0;
+    border: 0.25em solid #fff;
+    box-shadow: 1px 1px 0 $color-accent;
+  }
+
+  pre {
+    padding: 1.5em;
+    overflow: auto;
+    font-size: 0.875em;
+  }
+}
+
+.hero__step--pointer {
+
+  &:before {
+    content: "";
+    position: absolute; 
+    display: block;
+    width: 3.5em;
+    height: 3.5em;
+    top: 85%;
+    right: 45%;
+    z-index: 1;
+    background: url("../images/arrow.svg") no-repeat center;
+    background-size: 100%;
+    transform: rotate(110deg);
+  }
+
+  @include media(large) {
+    
+    &:before {
+      width: 3.5em;
+      height: 3.5em;
+      top: 30%;
+      right: -3.25em;
+      transform: rotate(10deg);
+    }
+  }
+}
+
+.hero__step-title {
+  margin: 0 0 0.25em 0;
+  padding: 1em;
+  font-family: $sans-stack;
+  font-size: 1.125em;
+  font-weight: bold;
+  text-align: center;
+  color: $color-background;
+  background-color: $color-text;
+
+  @include media(large) {
+    padding: 1em 2em;
+  }
+}
+
+// intro text /////////////////////////////////////////////////////////////////
+
+.lede {
+  text-align: justify;
+
+  @include media(medium) {
+    font-size: 1.25em;
+    
+  }
+}
+
+// primary actions ////////////////////////////////////////////////////////////
+
+.actions {
+  grid-column: 3/4;
+  margin: 2em 0;
+
+  @include media(large) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.actions__item {
+  display: block;
+  margin-bottom: 1em;
+  padding: 1em;
+  text-align: center;
+  background-color: $color-tint;
+
+  @include media(large) {
+    width: 32%;
+    margin-bottom: 0;
+  }
+}
+
+.actions__icon {
+  display: block;
+  max-width: 4em;
+  margin: 0 auto 1em auto;
+}
