@@ -14,7 +14,7 @@
 }
 
 .intro__text {
-  margin: 0.5em 0;
+  margin: 0.5em 0 0.75em 0;
   text-align: center;
   color: $color-text;
 }
@@ -24,7 +24,7 @@
 .hero {
   grid-column: 2/5;
   position: relative;
-  margin: 1em 0 4em 0;
+  margin: 1em 0 2em 0;
   padding: 0;
 
   @include media(large) {
@@ -57,13 +57,17 @@
     width: 48%;
     margin: 0;
     border: 0.25em solid #fff;
-    box-shadow: 1px 1px 0 $color-accent;
+    box-shadow: 1px 10px 20px $color-accent;
   }
 
   pre {
     padding: 1.5em;
     overflow: auto;
-    font-size: 0.875em;
+
+    @include media(large) {
+      font-size: 0.875em;
+      font-size: 1.15vw;
+    }
   }
 }
 
@@ -110,14 +114,101 @@
   }
 }
 
+// hero code output ///////////////////////////////////////////////////////////
+
+.hello {
+  position: relative;
+  grid-column: 2/5;
+  padding: 1em;
+  background-color: $color-tint;
+
+  @include media(large) {
+    display: flex;
+    align-items: center;
+  }
+
+  &:before {
+    content: "";
+    position: absolute; 
+    display: block;
+    width: 3.5em;
+    height: 3.5em;
+    top: -30%;
+    right: 40%;
+    z-index: 1;
+    background: url("../images/arrow.svg") no-repeat center;
+    background-size: 100%;
+    transform: rotate(110deg);
+
+    @include media(large) {
+      top: -60%;
+      right: 35%;
+      transform: rotate(130deg);
+    }
+  }
+}
+
+.hello__input {
+  display: block;
+  margin: 0;
+  padding: 0.65em 0.6em;
+  width: 100%;
+  border: 2px solid $color-accent;
+  font-family: $sans-stack;
+  font-size: 1em;
+
+  @include media(large) {
+    width: 46%;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-accent !important;
+  }
+}
+
+.hello__button {
+  display: block;
+  width: 100%;
+  padding: 0.77em 1em;
+  background-color: $color-accent;
+  color: $color-text;
+  font-family: $sans-stack;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  line-height: normal;
+  -webkit-appearance: none;
+  border: none;
+
+  @include media(large) {
+    width: auto;
+  }
+}
+
+.hello__output {
+  display: inline-block;
+  margin: 1em 0 0 0;
+  font-size: 1.25em;
+  line-height: 1.5;
+  color: $color-text;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @include media(large) {
+    margin: 0 0 0 0.5em;
+  }
+}
+
 // intro text /////////////////////////////////////////////////////////////////
 
 .lede {
   text-align: justify;
 
-  @include media(medium) {
-    font-size: 1.25em;
-    
+  @include media(large) {
+    font-size: 1.125em;
   }
 }
 

@@ -7,7 +7,6 @@ layout: default
   <h1 class="intro__text">A modest JavaScript framework for the HTML you already have.</h1>
 </div>
 
-
 <div class="hero">
 
   <div class="hero__step hero__step--pointer">
@@ -41,6 +40,35 @@ export default class extends Controller {
 
 </div>
 
+<div class="hello" data-controller="hello">
+  <input class="hello__input" data-target="hello.name" type="text" placeholder="enter a name">
+  <button class="hello__button" data-action="click->hello#greet">Greet</button>
+  <span class="hello__output" data-target="hello.output"></span>
+</div>
+
+<script>
+  (function() {
+    const application = Stimulus.Application.start()
+    application.register("hello", class extends Stimulus.Controller {
+
+      greet() {
+        console.log(`Hello, ${this.name}!`)
+        this.output.innerHTML = `"Hello, ${this.name}!"`
+      }
+
+      get name() {
+        return this.targets.find("name").value
+      }
+
+      get output() {
+        return this.targets.find("output")
+      }
+
+    })
+  })()
+</script>
+
+<hr>
 
 <p class="lede">Stimulus is a JavaScript framework with modest ambitions. It doesn't seek to take over your entire front-end—in fact, it's not concerned with rendering HTML at all. Instead, it's designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>
 
@@ -49,3 +77,5 @@ export default class extends Controller {
   <a class="actions__item" href="https://github.com/stimulusjs/stimulus/blob/master/INSTALLING.md"><img  class="actions__icon" src="/images/icon-install.svg" alt="install icon"> Installation Guide</a>
   <a class="actions__item" href="/handbook"><img  class="actions__icon" src="/images/icon-guide.svg" alt="book icon"> Stimulus Handbook</a>
 </div>
+
+<hr>
