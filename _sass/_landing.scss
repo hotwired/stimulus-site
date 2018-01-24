@@ -111,6 +111,7 @@
 
   @include media(large) {
     padding: 1em 2em;
+    font-size: 1.5vw;
   }
 }
 
@@ -188,17 +189,21 @@
 }
 
 .hello__output {
-  display: inline-block;
+  display: block;
+  width: 100%;
   margin: 1em 0 0 0;
+  padding: 1.1em 0.25em;
   font-size: 1.25em;
-  line-height: 1.5;
+  line-height: 0;
   color: $color-text;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  border-bottom: 0.1em solid $color-text;
 
   @include media(large) {
     margin: 0 0 0 0.5em;
+    width: 50%;
   }
 }
 
