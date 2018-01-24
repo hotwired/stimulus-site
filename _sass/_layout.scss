@@ -44,17 +44,18 @@
     margin: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 }
 
 .nav__icon {
-  max-width: 1.5em;
+  width: 0.9em;
+  height: 0.88em;
   display: block;
   margin: 0 auto 0.25em auto;
 
   @include media(large) {
-    position: relative;
-    top: -0.075em;
+    width: 1.125em;
     margin: 0;
     padding-right: 0.25em;
   }
