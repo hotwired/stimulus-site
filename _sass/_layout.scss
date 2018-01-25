@@ -33,10 +33,10 @@
   text-align: center;
   background-size: 1em;
 
-  @include media(large) {
+  @include media(medium) {
     display: flex;
     justify-content: space-between;
-    padding: 1.25em 2em 1em 2em;
+    padding: 1.25em 1em 1em 1em;
   }
 }
 
@@ -49,7 +49,7 @@
   font-family: $sans-stack;
   font-size: 1.5em;
 
-  @include media(large) {
+  @include media(medium) {
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -63,7 +63,7 @@
   display: block;
   margin: 0 auto 0.25em auto;
 
-  @include media(large) {
+  @include media(medium) {
     width: 1.125em;
     margin: 0;
     padding-right: 0.25em;
@@ -86,7 +86,7 @@
   line-height: 1.5;
   font-weight: bold;
 
-  @include media(large) {
+  @include media(medium) {
     margin: 0;
     line-height: 1;
   }

@@ -5,7 +5,7 @@
   padding: 0 2em;
   overflow-x: hidden;
   
-  @include media(large) {
+  @include media(medium) {
     max-width: 90em;
 
     @supports (display: grid) {
@@ -22,7 +22,7 @@
   max-width: $column-width;
   margin: 0 auto;
 
-  @include media(large) {
+  @include media(medium) {
     max-width: 100%;
     margin-top: 6em;
     padding-left: 2em;
@@ -47,7 +47,7 @@
   padding: 0.5em 0;
   text-align: center;
 
-  @include media(large) {
+  @include media(medium) {
     margin: 0 0 2em 0;
     padding-top: 7em;
   }
@@ -61,7 +61,7 @@
   text-align: center;
   border-bottom: 0.25em solid $color-accent;
 
-  @include media(large) {
+  @include media(medium) {
     text-align: left;
   }
 }
@@ -72,7 +72,7 @@
   font-family: $sans-stack;
   font-style: italic;
 
-  @include media(large) {
+  @include media(medium) {
     text-align: left;
     padding: 0.5em 0.5em;
     margin-right: 0;
