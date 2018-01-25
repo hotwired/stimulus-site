@@ -7,6 +7,7 @@
   max-width: $column-width;
   
   @include media(large) {
+    max-width: 90em;
 
     @supports (display: grid) {
       max-width: 100%;

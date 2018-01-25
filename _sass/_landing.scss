@@ -174,7 +174,7 @@
 .hello__button {
   display: block;
   width: 100%;
-  padding: 0.77em 1em;
+  padding: 0.78em 1em;
   background-color: $color-accent;
   color: $color-text;
   font-family: $sans-stack;
@@ -185,6 +185,7 @@
   line-height: normal;
   -webkit-appearance: none;
   border: none;
+  outline: none;
 
   @include media(large) {
     width: auto;
