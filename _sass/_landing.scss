@@ -2,19 +2,19 @@
 
 .intro {
   grid-column: 1/6;
-  margin: 0 -2em 2em -2em;
-  padding: 2em;
-  background-color: $color-tint;
+  margin: 0 -2em;
+  padding: 2em 1em;
   border-top: 0.25em solid $color-accent;
   
   @include media(large) {
     margin: 0;
-    padding: 2em 7em 6em 7em;
+    padding: 2em 7em 8.5em 7em;
+    background-color: $color-tint;
   }
 }
 
 .intro__text {
-  margin: 0.5em 0 0.75em 0;
+  margin: 0.5em 0 0 0;
   text-align: center;
   color: $color-text;
 }
@@ -52,12 +52,12 @@
   width: 100%;
   margin-bottom: 2em;
   background-color: $color-tint;
+  border: 0.25em solid #fff;
+  box-shadow: 1px 10px 20px $color-accent;
 
   @include media(large) {
     width: 48%;
     margin: 0;
-    border: 0.25em solid #fff;
-    box-shadow: 1px 10px 20px $color-accent;
   }
 
   pre {
@@ -79,8 +79,8 @@
     display: block;
     width: 3.5em;
     height: 3.5em;
-    top: 85%;
-    right: 45%;
+    top: 93%;
+    right: 40%;
     z-index: 1;
     background: url("../images/arrow.svg") no-repeat center;
     background-size: 100%;
@@ -119,9 +119,12 @@
 
 .hello {
   position: relative;
-  grid-column: 2/5;
+  grid-column: 3/4;
+  margin-bottom: 2em;
   padding: 1em;
   background-color: $color-tint;
+  border: 0.25em solid #fff;
+  box-shadow: 1px 10px 20px $color-accent;
 
   @include media(large) {
     display: flex;
@@ -213,7 +216,7 @@
   text-align: justify;
 
   @include media(large) {
-    font-size: 1.125em;
+    font-size: 1.25em;
   }
 }
 
@@ -221,7 +224,7 @@
 
 .actions {
   grid-column: 3/4;
-  margin: 2em 0;
+  margin: 0;
 
   @include media(large) {
     display: flex;

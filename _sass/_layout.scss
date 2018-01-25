@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 0 2em;
   overflow-x: hidden;
+  max-width: $column-width;
   
   @include media(large) {
 
@@ -95,10 +96,34 @@
 // footer /////////////////////////////////////////////////////////////////////
 
 .foot {
-  grid-column: 3/4;
-  margin-top: 10em;
+  grid-column: 1/6;
+  position: relative;
+  margin: 10em 0 0 0;
   text-align: center;
   font-size: 0.875em;
+  padding-bottom: 2em;
+  overflow: hidden;
+
+  @include media(large) {
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute; 
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 20%;
+      left: 5%;
+      background: url("../images/pattern.svg") no-repeat center bottom;
+      background-size: 100%;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.foot__text {
+  background-color: $color-background;
 }
 
 .foot__icon {
