@@ -6,7 +6,7 @@
   padding: 2em 1em;
   border-top: 0.25em solid $color-accent;
   
-  @include media(large) {
+  @include media(medium) {
     margin: 0;
     padding: 2em 7em 8.5em 7em;
     background-color: $color-tint;
@@ -27,7 +27,7 @@
   margin: 1em 0 2em 0;
   padding: 0;
 
-  @include media(large) {
+  @include media(medium) {
     display: flex;
     justify-content: space-between;
     margin-top: -6em;
@@ -55,18 +55,22 @@
   border: 0.25em solid #fff;
   box-shadow: 1px 10px 20px $color-accent;
 
-  @include media(large) {
+  @include media(medium) {
     width: 48%;
     margin: 0;
   }
 
   pre {
-    padding: 1.5em;
+    padding: 1.5em 0.5em 1.5em 1.5em;
     overflow: auto;
+
+    @include media(medium) {
+      font-size: 0.875em;
+    }
 
     @include media(large) {
       font-size: 0.875em;
-      font-size: 1.15vw;
+      font-size: 1.18vw;
     }
   }
 }
@@ -87,7 +91,7 @@
     transform: rotate(110deg);
   }
 
-  @include media(large) {
+  @include media(medium) {
     
     &:before {
       width: 3.5em;
@@ -109,6 +113,10 @@
   color: $color-background;
   background-color: $color-text;
 
+  @include media(medium) {
+    font-size: 1em;
+  }
+
   @include media(large) {
     padding: 1em 2em;
     font-size: 1.5vw;
@@ -119,16 +127,21 @@
 
 .hello {
   position: relative;
-  grid-column: 3/4;
+  grid-column: 2/5;
   margin-bottom: 2em;
   padding: 1em;
   background-color: $color-tint;
   border: 0.25em solid #fff;
   box-shadow: 1px 10px 20px $color-accent;
 
-  @include media(large) {
+  @include media(medium) {
+    grid-column: 3/4;
     display: flex;
     align-items: center;
+  }
+
+  @include media(large) {
+    grid-column: 3/4;
   }
 
   &:before {
@@ -144,10 +157,15 @@
     background-size: 100%;
     transform: rotate(110deg);
 
+    @include media(medium) {
+      top: -30%;
+      right: 35%;
+      transform: rotate(130deg);
+    }
+
     @include media(large) {
       top: -60%;
       right: 35%;
-      transform: rotate(130deg);
     }
   }
 }
@@ -161,7 +179,7 @@
   font-family: $sans-stack;
   font-size: 1em;
 
-  @include media(large) {
+  @include media(medium) {
     width: 46%;
   }
 
@@ -187,7 +205,7 @@
   border: none;
   outline: none;
 
-  @include media(large) {
+  @include media(medium) {
     width: auto;
   }
 }
@@ -205,7 +223,7 @@
   white-space: nowrap;
   border-bottom: 0.1em solid $color-text;
 
-  @include media(large) {
+  @include media(medium) {
     margin: 0 0 0 0.5em;
     width: 50%;
   }
@@ -215,10 +233,7 @@
 
 .lede {
   text-align: justify;
-
-  @include media(large) {
-    font-size: 1.25em;
-  }
+  font-size: 1.25em;
 }
 
 // primary actions ////////////////////////////////////////////////////////////
@@ -227,7 +242,7 @@
   grid-column: 3/4;
   margin: 0;
 
-  @include media(large) {
+  @include media(medium) {
     display: flex;
     justify-content: space-between;
   }
@@ -238,9 +253,10 @@
   margin-bottom: 1em;
   padding: 1em;
   text-align: center;
+  line-height: 1.25;
   background-color: $color-tint;
 
-  @include media(large) {
+  @include media(medium) {
     width: 32%;
     margin-bottom: 0;
   }

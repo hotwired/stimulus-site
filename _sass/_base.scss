@@ -51,7 +51,7 @@ h1 {
   font-size: 1.75em;
   font-weight: bold;
 
-  @include media(large) {
+  @include media(medium) {
     font-size: 3em;
     font-size: 4.5vw;
   }
