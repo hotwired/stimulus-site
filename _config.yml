@@ -8,7 +8,7 @@ theme: false
 collections:
   handbook:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:title
 
 defaults:
   - scope:

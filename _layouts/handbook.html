@@ -10,7 +10,9 @@
       <p class="handbook__nav-title">The Handbook:</p>
       <a name="start"></a>
       {% for item in site.handbook %}
-        <a class="handbook-nav__link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+        <a class="handbook-nav__link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">
+          {{ forloop.index }}: {{ item.title }}
+        </a>
       {% endfor %}
     </nav>
 
