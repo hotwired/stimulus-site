@@ -8,6 +8,18 @@ collections:
     output: true
     permalink: /:collection/:name
 
+defaults:
+  - scope:
+      type: handbook
+    values:
+      collection_title: Handbook
+      layout: handbook
+
+titles_from_headings:
+  enabled:     true
+  strip_title: false
+  collections: true
+
 exclude:
   - Gemfile
   - Gemfile.lock

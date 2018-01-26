@@ -1,7 +1,4 @@
 ---
-title: Stimulus Handbook - Hello, Stimulus
-heading: 3: Building Something Real
-layout: handbook
 ---
 
 # 3: Building Something Real

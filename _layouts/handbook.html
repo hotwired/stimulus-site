@@ -9,13 +9,13 @@
     <nav class="handbook__nav">
       <p class="handbook__nav-title">The Handbook:</p>
       <a name="start"></a>
-      {% for item in site.handbook %}        
-        <a class="handbook-nav__link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">{{ item.heading }}</a>
+      {% for item in site.handbook %}
+        <a class="handbook-nav__link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
       {% endfor %}
     </nav>
 
     <section class="handbook__content">
-    {{ content }}  
+    {{ content }}
     </section>
 
   </main>
