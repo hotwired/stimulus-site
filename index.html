@@ -34,8 +34,8 @@ export default class extends Controller {
   static targets = [ "name", "output" ]
 
   greet() {
-    const output = `Hello, ${this.name}!`
-    this.outputTarget.textContent = output
+    const text = `Hello, ${this.name}!`
+    this.outputTarget.textContent = text
   }
 
   get name() {
