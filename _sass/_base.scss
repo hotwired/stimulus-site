@@ -125,11 +125,6 @@ hr {
   border-top: 1px solid #f7f5f2;
 }
 
-img:not([width]):not([height]) {
-  height: auto;
-  width: 100%;
-}
-
 code,
 pre {
   font-family: "source-code-pro", monospace;
