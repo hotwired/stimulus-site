@@ -1,5 +1,6 @@
 ---
 slug: /installing
+prefix: 6
 ---
 
 # Installing Stimulus in Your Application

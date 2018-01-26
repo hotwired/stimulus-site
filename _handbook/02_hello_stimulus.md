@@ -1,5 +1,6 @@
 ---
 slug: /hello-stimulus
+prefix: 2
 ---
 
 # Hello, Stimulus
