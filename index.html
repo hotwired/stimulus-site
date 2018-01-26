@@ -15,9 +15,12 @@ layout: default
 <!--BYO HTML-->
 <div data-controller="hello">
   <input data-target="hello.name" type="text">
+
   <button data-action="click->hello#greet">
     Greet
   </button>
+
+  <span data-target="hello.output"></span>
 </div>{% endhighlight %}
   </div>
 
@@ -28,12 +31,15 @@ layout: default
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static targets = [ "name", "output" ]
+
   greet() {
-    console.log(`Hello, ${this.name}!`)
+    const output = `Hello, ${this.name}!`
+    this.outputTarget.textContent = output
   }
 
   get name() {
-    return this.targets.find("name").value
+    return this.nameTarget.value
   }
 }{% endhighlight %}
   </div>

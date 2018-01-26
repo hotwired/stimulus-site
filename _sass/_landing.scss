@@ -5,7 +5,7 @@
   margin: 0 -2em;
   padding: 2em 1em;
   border-top: 0.25em solid $color-accent;
-  
+
   @include media(medium) {
     margin: 0;
     padding: 2em 7em 8.5em 7em;
@@ -35,7 +35,7 @@
     &:before {
       content: "";
       display: block;
-      position: absolute; 
+      position: absolute;
       width: 130%;
       height: 130%;
       z-index: -1;
@@ -79,7 +79,7 @@
 
   &:before {
     content: "";
-    position: absolute; 
+    position: absolute;
     display: block;
     width: 3.5em;
     height: 3.5em;
@@ -92,7 +92,7 @@
   }
 
   @include media(medium) {
-    
+
     &:before {
       width: 3.5em;
       height: 3.5em;
@@ -146,7 +146,7 @@
 
   &:before {
     content: "";
-    position: absolute; 
+    position: absolute;
     display: block;
     width: 3.5em;
     height: 3.5em;
@@ -226,6 +226,16 @@
   @include media(medium) {
     margin: 0 0 0 0.5em;
     width: 50%;
+  }
+
+  &:not(:empty) {
+    &::before {
+      content: "“";
+    }
+
+    &::after {
+      content: "”";
+    }
   }
 }
 
