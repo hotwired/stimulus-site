@@ -3,14 +3,9 @@
 
 # 4: Managing State
 
-<div class="warning">
-  <h3 class="warning__title">/// This chapter is a work in progress. ///</h3>
-  <p class="warning__message">We'll have it wrapped up in time for the 1.0 release. Thanks for your patience!</p>
-</div>
+Let's build a simple slideshow—a set of slides and two buttons for navigating them. We'll manage the slideshow's state with DOM data attributes using Stimulus’ Data API.
 
-* Let's build a simple slideshow: A set of slides and buttons for flipping through them
-* We'll manage the slideshow's state with DOM data attributes using the Stimulus data API
-* Start with the basic HTML:
+As usual, it all starts with some HTML:
 
 ```html
 <div data-controller="slideshow">
@@ -24,7 +19,7 @@
 </div>
 ```
 
-* Add a couple styles to hide all but the current slide:
+We'll add a couple styles for controlling visbility:
 
 ```css
 .slide {
@@ -36,15 +31,19 @@
 }
 ```
 
-* And here's our initial controller:
+Slides are all hidden by default, and we can reveal one by adding the `slide--current` class name to it.
+
+Now let's start writing our controller:
 
 ```js
 // src/controllers/slideshow_controller.js
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static targets = [ "slide" ]
+
   initialize() {
-    this.render()
+    this.showCurrentSlide()
   }
 
   next() {
@@ -53,24 +52,18 @@ export default class extends Controller {
   previous() {
   }
 
-  render() {
-    this.slideElements.forEach((element, index) => {
+  showCurrentSlide() {
+    this.slideTargets.forEach((element, index) => {
       element.classList.toggle("slide--current", index == this.index)
     })
   }
 
   get index() {
   }
-
-  get slideElements() {
-    return this.targets.findAll("slide")
-  }
 }
 ```
 
-* (Describe what `this.render()` does?)
-* (Describe what `this.targets.findAll()` does? Here or in `stimulus/handbook/02_hello_stimulus.md`?)
-* Now let's implement `get index()`:
+We have a few methods that aren't implemented yet, let's start with `get index()`:
 
 ```js
   get index() {
@@ -82,26 +75,23 @@ export default class extends Controller {
   }
 ```
 
-## Understanding the Data API
+> ### 💡 The Data API Explained
+>
+> Stimulus provides convenient methods for working with data attributes on controller elements. They use a controller's _identifier_ in the attribute name to _scope_ them to that controller. Let's see how the Data API works with our controller:
+> * `this.data.has("index")` checks if the element has a `data-slideshow-index` attribute
+> * `this.data.get("index")` returns the value of the element's `data-slideshow-index` attribute
+> * `this.data.set("index", value)` sets the value of the element's `data-slideshow-index` attribute
 
-* The data API provides convenient methods for working with _scoped_ data attributes
-* In the DOM, data attributes are scoped using the controller's _identifier_ (`slideshow` in this case)
-  * `this.data.has("index")` checks if the element has a `data-slideshow-index` attribute
-  * `this.data.get("index")` returns the value of the element's `data-slideshow-index` attribute
-  * `this.data.set("index", value)` sets the value of the element's `data-slideshow-index` attribute
-
-* Let's add a `set index()` method so we can write `index` too
-* We'll save the value using the data API, and then `render()` to change slides:
+Let's add a `set index()` method so we can write `index` too. We'll persist the value using the Data API, and then call `showCurrentSlide()` to change slides:
 
 ```js
   set index(value) {
     this.data.set("index", value)
-    this.render()
+    this.showCurrentSlide()
   }
 ```
 
-* Now we can implement the `next()` and `previous()` methods
-* They'll update the value of `index` if there's another slide to navigate to
+Now we can implement the `next()` and `previous()` action methods. They'll update the value of `index` if there's a slide to navigate to in that direction.
 
 ```js
   next() {
@@ -117,21 +107,21 @@ export default class extends Controller {
   }
 
   get lastIndex() {
-    return this.slideElements.length - 1
+    return this.slideTargets.length - 1
   }
-}
 ```
 
-* We've filled in the missing pieces
-* Let's take a look at our final controller:
+We've filled in all the missing pieces now. Let's take a look at our final controller:
 
 ```js
 // src/controllers/slideshow_controller.js
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static targets = [ "slide" ]
+
   initialize() {
-    this.render()
+    this.showCurrentSlide()
   }
 
   next() {
@@ -146,8 +136,8 @@ export default class extends Controller {
     }
   }
 
-  render() {
-    this.slideElements.forEach((element, index) => {
+  showCurrentSlide() {
+    this.slideTargets.forEach((element, index) => {
       element.classList.toggle("slide--current", index == this.index)
     })
   }
@@ -162,24 +152,20 @@ export default class extends Controller {
 
   set index(value) {
     this.data.set("index", value)
-    this.render()
+    this.showCurrentSlide()
   }
 
   get lastIndex() {
-    return this.slideElements.length - 1
-  }
-
-  get slideElements() {
-    return this.targets.findAll("slide")
+    return this.slideTargets.length - 1
   }
 }
 ```
 
-* Click through the slides and note how `data-slideshow-index` changes in the DOM
-* Try starting on a different slide by setting an initial index in the HTML:
+To wrap up, let's inspect our working controller in action:
+
+* Navigate through the slides and note how `data-slideshow-index` changes in the DOM.
+* Try starting on a different slide by setting an initial `index` in the HTML and reloading:
   ```html
   <div data-controller="slideshow"
        data-slideshow-index="2">…</div>
   ```
-
-Next: [Working With External Resources](05_working_with_external_resources#start)

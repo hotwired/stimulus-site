@@ -1,8 +1,3 @@
----
-title: The Origin of Stimulus
-layout: default
----
-
 # The Origin of Stimulus
 
 We write a lot of JavaScript at [Basecamp](https://basecamp.com), but we don’t use it to create “JavaScript applications” in the contemporary sense. All our applications have server-side rendered HTML at their core, then add sprinkles of JavaScript to make them sparkle.
@@ -19,7 +14,7 @@ We wanted Basecamp to feel like that too. As though we had followed the herd and
 
 This desire lead us to a two-punch solution: [Turbolinks](https://github.com/turbolinks/turbolinks) and Stimulus.
 
-## Turbolinks up high, Stimulus down low
+### Turbolinks up high, Stimulus down low
 
 Before I get to Stimulus, our new modest JavaScript framework, allow me to recap the proposition of Turbolinks. 
 
@@ -35,7 +30,7 @@ Prior to Stimulus, Basecamp used a smattering of different styles and patterns t
 
 While it was easy to add new code like this, it wasn’t a comprehensive solution, and we had too many in-house styles and patterns coexisting. That made it hard to reuse code, and it made it hard for new developers to learn a consistent approach.
 
-## The three core concepts in Stimulus 
+### The three core concepts in Stimulus 
 
 Stimulus rolls up the best of those patterns into a modest, small framework revolving around just three main concepts: Controllers, actions, and targets. 
 
@@ -57,7 +52,7 @@ Stimulus is concerned with manipulating this existing HTML document. Sometimes t
 There are cases where you’d want Stimulus to create new DOM elements, and you’re definitely free to do that. We might even add some sugar to make it easier in the future. But it’s the minority use case. The focus is on manipulating, not creating elements.
 
 
-## How Stimulus differs from mainstream JavaScript frameworks
+### How Stimulus differs from mainstream JavaScript frameworks
 
 This makes Stimulus very different from the majority of contemporary JavaScript frameworks. Almost all are focused on turning JSON into DOM elements via a template language of some sort. Many use these frameworks to birth an empty page, which is then filled exclusively with elements created through this JSON-to-template rendering.
 
@@ -68,7 +63,7 @@ It really is a remarkably different paradigm. One that I’m sure many veteran J
 If, on the other hand, you have nagging sense that what you’re working on does not warrant the intense complexity and application separation such contemporary techniques imply, then you’re likely to find refuge in our approach.
 
 
-## Stimulus and related ideas were extracted from the wild
+### Stimulus and related ideas were extracted from the wild
 
 At Basecamp we’ve used this architecture across several different versions of Basecamp and other applications for years. GitHub has used a similar approach to great effect. This is not only a valid alternative to the mainstream understanding of what a “modern” web application looks like, it’s an incredibly compelling one.
 
@@ -84,4 +79,6 @@ Above all, it’s a toolkit for small teams who want to compete on fidelity and 
 
 Give it a go.
 
--David Heinemeier Hansson
+---
+
+David Heinemeier Hansson
