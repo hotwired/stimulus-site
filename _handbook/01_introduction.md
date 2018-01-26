@@ -1,5 +1,5 @@
 ---
-slug: /
+slug: /introduction
 ---
 
 # Introduction

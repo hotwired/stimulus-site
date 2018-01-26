@@ -1,4 +1,8 @@
-# The Origin of Stimulus
+---
+slug: /
+---
+
+# Preface: The Origin of Stimulus
 
 We write a lot of JavaScript at [Basecamp](https://basecamp.com), but we don’t use it to create “JavaScript applications” in the contemporary sense. All our applications have server-side rendered HTML at their core, then add sprinkles of JavaScript to make them sparkle.
 
@@ -16,7 +20,7 @@ This desire lead us to a two-punch solution: [Turbolinks](https://github.com/tur
 
 ### Turbolinks up high, Stimulus down low
 
-Before I get to Stimulus, our new modest JavaScript framework, allow me to recap the proposition of Turbolinks. 
+Before I get to Stimulus, our new modest JavaScript framework, allow me to recap the proposition of Turbolinks.
 
 Turbolinks descends from an approach called [pjax](https://github.com/defunkt/jquery-pjax), developed at GitHub. The basic concept remains the same. The reason full-page refreshes often feel slow is not so much because the browser has to process a bunch of HTML sent from a server. Browsers are really good and really fast at that. And in most cases, the fact that an HTML payload tends to be larger than a JSON payload doesn’t matter either (especially with gzipping). No, the reason is that CSS and JavaScript has to be reinitialized and reapplied to the page again. Regardless of whether the files themselves are cached. This can be pretty slow if you have a fair amount of CSS and JavaScript.
 
@@ -30,9 +34,9 @@ Prior to Stimulus, Basecamp used a smattering of different styles and patterns t
 
 While it was easy to add new code like this, it wasn’t a comprehensive solution, and we had too many in-house styles and patterns coexisting. That made it hard to reuse code, and it made it hard for new developers to learn a consistent approach.
 
-### The three core concepts in Stimulus 
+### The three core concepts in Stimulus
 
-Stimulus rolls up the best of those patterns into a modest, small framework revolving around just three main concepts: Controllers, actions, and targets. 
+Stimulus rolls up the best of those patterns into a modest, small framework revolving around just three main concepts: Controllers, actions, and targets.
 
 It’s designed to read as a progressive enhancement when you look at the HTML it’s addressing. Such that you can look at a single template and know which behavior is acting upon it. Here’s an example:
 
