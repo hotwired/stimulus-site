@@ -9,15 +9,24 @@
     <nav class="handbook__nav">
       <p class="handbook__nav-title">The Handbook:</p>
       <a name="start"></a>
-      {% for item in site.handbook %}
-        <a class="handbook-nav__link{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">
-          {{ forloop.index }}: {{ item.title }}
+      {% for chapter in site.handbook %}
+        {% assign is_active = false %}
+        {% if page.url == chapter.url %}
+          {% assign is_active = true %}
+          {% assign next_chapter = site.handbook[forloop.index] %}
+        {% endif %}
+        <a class="handbook-nav__link{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
+          {{ forloop.index }}: {{ chapter.title }}
         </a>
       {% endfor %}
     </nav>
 
     <section class="handbook__content">
-    {{ content }}
+      {{ content }}
+
+      {% if next_chapter %}
+        <p>Next: <a href="{{ next_chapter.url }}">{{ next_chapter.title }}</a></p>
+      {% endif %}
     </section>
 
   </main>
