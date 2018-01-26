@@ -11,37 +11,16 @@ layout: default
 
   <div class="hero__step hero__step--pointer">
     <p class="hero__step-title">Sprinkle your HTML with controller, target, and action attributes:</p>
-{% highlight html %}
-<!--BYO HTML-->
-<div data-controller="hello">
-  <input data-target="hello.name" type="text">
-
-  <button data-action="click->hello#greet">
-    Greet
-  </button>
-
-  <span data-target="hello.output"></span>
-</div>{% endhighlight %}
+    {%- highlight html -%}
+    {%- include_relative _js/controllers/hello_example.html -%}
+    {%- endhighlight -%}
   </div>
 
   <div class="hero__step">
     <p class="hero__step-title">Write a compatible controller and watch Stimulus bring it to life:</p>
-{% highlight js %}
-// hello_controller.js
-import { Controller } from "stimulus"
-
-export default class extends Controller {
-  static targets = [ "name", "output" ]
-
-  greet() {
-    const text = `Hello, ${this.name}!`
-    this.outputTarget.textContent = text
-  }
-
-  get name() {
-    return this.nameTarget.value
-  }
-}{% endhighlight %}
+    {%- highlight js -%}
+    {%- include_relative _js/controllers/hello_controller.js -%}
+    {%- endhighlight -%}
   </div>
 
 </div>
