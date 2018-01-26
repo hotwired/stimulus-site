@@ -131,6 +131,25 @@ pre {
   padding:  0 0.1em;
 }
 
+table {
+  width: 100%;
+}
+
+thead {
+  background-color: $color-tint;
+  font-family: $sans-stack;
+}
+
+tr {
+  border-bottom: 0.125em solid $color-tint;
+}
+
+th,
+td {
+  vertical-align: middle;
+  padding: 0.5em;
+}
+
 // Fix: iOS Font Sizing —————————————————————— •
 // ——————————————————————————————————————————— •
 
