@@ -46,28 +46,6 @@ export default class extends Controller {
   <span class="hello__output" data-target="hello.output"></span>
 </div>
 
-<script>
-  (function() {
-    const application = Stimulus.Application.start()
-    application.register("hello", class extends Stimulus.Controller {
-
-      greet() {
-        console.log(`Hello, ${this.name}!`)
-        this.output.innerHTML = `"Hello, ${this.name}!"`
-      }
-
-      get name() {
-        return this.targets.find("name").value
-      }
-
-      get output() {
-        return this.targets.find("output")
-      }
-
-    })
-  })()
-</script>
-
 <hr>
 
 <p class="lede"><strong>Stimulus</strong> is a JavaScript framework with modest ambitions. It doesn't seek to take over your entire front-end—in fact, it's not concerned with rendering HTML at all. Instead, it's designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>

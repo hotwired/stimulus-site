@@ -21,5 +21,10 @@ titles_from_headings:
   collections: true
 
 exclude:
+  - node_modules
+  - .babelrc
   - Gemfile
   - Gemfile.lock
+  - package.json
+  - webpack.config.js
+  - yarn.lock
