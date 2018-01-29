@@ -168,11 +168,13 @@ We have progressively enhanced the PIN field: its Copy button's baseline state i
 
 ## Stimulus Controllers are Reusable
 
-* So far we've just seen a single controller on the page at a time
-* The controllers we've built are reusable
-* Any time we want to provide a way to copy a bit of text to the clipboard, all we need is markup on the page with the right annotations
-* Let's go ahead and add another one to the page
-* Copy and paste the markup, then change the `value` attribute:
+So far we've seen what happens when there's one instance of a controller on the page at a time.
+
+It's not unusual to have multiple instances of a controller on the page simultaneously. For example, we might want to display a list of PINs, each with its own Copy button.
+
+Our controller is reusable: any time we want to provide a way to copy a bit of text to the clipboard, all we need is markup on the page with the right annotations.
+
+Let's go ahead and add another PIN to the page. Copy and paste the `<div>` so there are two identical PIN fields, then change the `value` attribute of the second:
 
 ```html
 <div data-controller="clipboard">
@@ -181,9 +183,11 @@ We have progressively enhanced the PIN field: its Copy button's baseline state i
 </div>
 ```
 
+Reload the page and confirm that both buttons work.
+
 ## Actions and Targets Can Go on Any Kind of Element
 
-* Now let's add one more. This time we'll use a link instead of a button:
+Now let's add one more PIN field. This time we'll use a Copy _link_ instead of a button:
 
 ```html
 <div data-controller="clipboard">
@@ -191,7 +195,10 @@ We have progressively enhanced the PIN field: its Copy button's baseline state i
   <a href="#" data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</a>
 </div>
 ```
-* We don't want the browser's default behavior when clicking a link so let's update the `copy()` method to cancel the event:
+
+Stimulus lets us use any kind of element we want as long as it has an appropriate `data-action` attribute.
+
+Note that in this case, clicking the link will also cause the browser to follow the link's `href`. We can cancel this default behavior by calling `event.preventDefault()` in the action:
 
 ```js
   copy(event) {
@@ -201,5 +208,8 @@ We have progressively enhanced the PIN field: its Copy button's baseline state i
   }
 ```
 
-* We can use any kind of element we want as the trigger, as long as it has the `data-action` attribute on it
-* We could even have multiple elements with the same action
+Similarly, our `source` target need not be an `<input type="text">`. The controller only expects it to have a `value` property and a `select()` method. That means we can use a `<textarea>` instead:
+
+```html
+  PIN: <textarea data-target="clipboard.source" readonly>3737</textarea>
+```
