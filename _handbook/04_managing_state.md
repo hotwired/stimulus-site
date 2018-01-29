@@ -21,7 +21,7 @@ As usual, it all starts with some HTML:
 </div>
 ```
 
-We'll add a couple styles for controlling visbility:
+We'll add a couple styles for controlling visibility:
 
 ```css
 .slide {
