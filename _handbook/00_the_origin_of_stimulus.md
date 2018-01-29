@@ -1,6 +1,5 @@
 ---
 slug: /
-prefix: Preface
 ---
 
 # The Origin of Stimulus

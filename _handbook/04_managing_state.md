@@ -1,6 +1,5 @@
 ---
 slug: /managing-state
-prefix: 4
 ---
 
 # Managing State

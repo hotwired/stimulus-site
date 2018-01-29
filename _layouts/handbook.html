@@ -16,7 +16,7 @@
           {% assign next_chapter = site.handbook[forloop.index] %}
         {% endif %}
         <a class="handbook-nav__link{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
-          {{ chapter.prefix }}: {{ chapter.title }}
+          {% if forloop.index0 == 0 %}Preface{% else %}{{ forloop.index0 }}{% endif %}: {{ chapter.title }}
         </a>
       {% endfor %}
     </nav>

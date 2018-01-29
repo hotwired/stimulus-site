@@ -1,6 +1,5 @@
 ---
 slug: /introduction
-prefix: 1
 ---
 
 # Introduction
