@@ -118,7 +118,7 @@ To connect our action method to the button's `click` event, open `public/index.h
 </div>
 ```
 
-> ### 💡 Action Descriptors Explained
+> ### Action Descriptors Explained
 >
 > The `data-action` value `click->hello#greet` is called an _action descriptor_. This particular descriptor says:
 > * `click` is the event name
@@ -142,7 +142,7 @@ Stimulus lets us mark important elements as _targets_ so we can easily reference
 </div>
 ```
 
-> ### 💡 Target Descriptors Explained
+> ### Target Descriptors Explained
 >
 > The `data-target` value `hello.name` is called a _target descriptor_. This particular descriptor says:
 > * `hello` is the controller identifier

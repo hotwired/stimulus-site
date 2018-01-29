@@ -77,7 +77,7 @@ We have a few methods that aren't implemented yet, let's start with `get index()
   }
 ```
 
-> ### 💡 The Data API Explained
+> ### The Data API Explained
 >
 > Stimulus provides convenient methods for working with data attributes on controller elements. They use a controller's _identifier_ in the attribute name to _scope_ them to that controller. Let's see how the Data API works with our controller:
 > * `this.data.has("index")` checks if the element has a `data-slideshow-index` attribute
