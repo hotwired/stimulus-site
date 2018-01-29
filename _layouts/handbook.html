@@ -6,26 +6,27 @@
 
   <main id="content" class="handbook">
 
-    <nav class="handbook__nav">
-      <p class="handbook__nav-title">The Handbook:</p>
-      <a name="start"></a>
-      {% for chapter in site.handbook %}
-        {% assign is_active = false %}
-        {% if page.url == chapter.url %}
-          {% assign is_active = true %}
-          {% assign next_chapter = site.handbook[forloop.index] %}
-        {% endif %}
-        <a class="handbook-nav__link{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
-          {% if forloop.index0 == 0 %}Preface{% else %}{{ forloop.index0 }}{% endif %}: {{ chapter.title }}
-        </a>
-      {% endfor %}
-    </nav>
+    <section class="handbook__index">
+      <nav class="handbook__nav">
+        <p class="handbook__nav-title">The Handbook:</p>
+        {% for chapter in site.handbook %}
+          {% assign is_active = false %}
+          {% if page.url == chapter.url %}
+            {% assign is_active = true %}
+            {% assign next_chapter = site.handbook[forloop.index] %}
+          {% endif %}
+          <a class="handbook-nav__link{% if is_active %} active{% endif %}" href="{{ chapter.url }}#start">
+            {% if forloop.index0 == 0 %}Preface{% else %}{{ forloop.index0 }}{% endif %}: {{ chapter.title }}
+          </a>
+        {% endfor %}
+      </nav>
+    </section>
 
-    <section class="handbook__content">
+    <section id="start" class="handbook__content">
       {{ content }}
 
       {% if next_chapter %}
-        <p>Next: <a href="{{ next_chapter.url }}">{{ next_chapter.title }}</a></p>
+        <p>Next: <a href="{{ next_chapter.url }}#start">{{ next_chapter.title }}</a></p>
       {% endif %}
     </section>
 

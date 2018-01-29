@@ -3,8 +3,7 @@
 .handbook {
   margin: 0 auto;
   padding: 0 2em;
-  overflow-x: hidden;
-  
+
   @include media(medium) {
     max-width: 90em;
 
@@ -40,7 +39,7 @@
 
 // handbook nav /////////////////////////////////////////////////////////////////////
 
-.handbook__nav {
+.handbook__index {
   max-width: $column-width;
   grid-column: 2/3;
   margin: 0 auto 2em auto;
@@ -53,8 +52,13 @@
   }
 }
 
+.handbook__nav {
+  position: sticky;
+  top: 1em;
+}
+
 .handbook__nav-title {
-  margin: 0;
+  margin: 0 0 1em 0;
   font-family: $sans-stack;
   font-weight: bold;
   font-size: 0.9rem;
