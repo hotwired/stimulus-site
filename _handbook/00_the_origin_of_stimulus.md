@@ -1,5 +1,5 @@
 ---
-slug: /
+slug: /origin
 ---
 
 # The Origin of Stimulus
