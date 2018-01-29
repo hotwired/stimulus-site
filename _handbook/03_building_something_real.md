@@ -9,7 +9,7 @@ We've implemented our first controller and learned how Stimulus connects HTML to
 
 Let's take a look at something we can use in a real application by re-creating a controller from Basecamp.
 
-## Encapsulating the DOM Clipboard API
+## Wrapping the DOM Clipboard API
 
 Scattered throughout Basecamp's UI are buttons like these:
 
@@ -216,6 +216,6 @@ Similarly, our `source` target need not be an `<input type="text">`. The control
 
 ## Wrap-Up and Next Steps
 
-In this chapter we looked at a real-life example of wrapping up a browser API in a Stimulus controller. We gently modified our controller to be resilient against older browsers and degraded network conditions. We saw how multiple instances of the controller can appear on the page at once. Finally, we explored how actions and targets keep your HTML and JavaScript loosely coupled.
+In this chapter we looked at a real-life example of wrapping a browser API in a Stimulus controller. We gently modified our controller to be resilient against older browsers and degraded network conditions. We saw how multiple instances of the controller can appear on the page at once. Finally, we explored how actions and targets keep your HTML and JavaScript loosely coupled.
 
 Next, we'll learn about how Stimulus controllers manage state.
