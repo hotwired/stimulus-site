@@ -15,9 +15,9 @@ Scattered throughout Basecamp's UI are buttons like these:
 
 [img]
 
-When you click one, Basecamp copies a bit of text, such as a URL or an email address, to your clipboard.
+When you click one of these buttons, Basecamp copies a bit of text, such as a URL or an email address, to your clipboard.
 
-The web platform has [an API for accessing the system clipboard](https://www.w3.org/TR/clipboard-apis/) which is [well-supported in current browsers](https://caniuse.com/#feat=clipboard). But there's no HTML element that does what we need. To implement the Copy button, we must use JavaScript.
+The web platform has [an API for accessing the system clipboard](https://www.w3.org/TR/clipboard-apis/), but there's no HTML element that does what we need. To implement the Copy button, we must use JavaScript.
 
 ## Implementing a Copy Button
 
@@ -118,24 +118,29 @@ Load the page in your browser and click the Copy button. Then switch back to you
 
 [img]
 
-## Progressive Enhancement
+## Designing a Resilient User Interface
 
-* What if the browser doesn't support the copy API?
-* What if JavaScript failed to load due to a CDN issue? What if it's disabled entirely?
-* We can account for these cases using progressive enhancement techniques
-* We'll hide "Copy to Clipboard" button initially
-* Then we'll _feature-test_ support for the API
-* If it's supported, we'll add a class name to the element to reveal the button
-* Start by adding `class="clipboard-button"` to the button element:
+Although the clipboard API is [well-supported in current browsers](https://caniuse.com/#feat=clipboard), we might still expect to have a small number of people with older browsers using our application.
+
+We should also expect people to have problems accessing our application from time to time. For example, intermittent network connectivity or CDN availability could prevent some or all of our JavaScript from loading.
+
+It's tempting to write off support for older browsers as not worth the effort, or to dismiss network issues as temporary glitches that resolve themselves after a refresh. But often it's trivially easy to build features in a way that's gracefully resilient to these types of problems.
+
+This resilient approach, commonly known as _progressive enhancement_, is the practice of delivering web interfaces such that the basic functionality is implemented in HTML and CSS, and tiered upgrades to that base experience are layered on top with CSS and JavaScript, progressively, when their underlying technologies are supported by the browser.
+
+## Progressively Enhancing the PIN Field
+
+Let's look at how we can progressively enhance our PIN field so that the Copy button is invisible unless it's supported by the browser. That way we can avoid showing someone a button that doesn't work.
+
+We'll start by hiding the Copy button in CSS. Then we'll _feature-test_ support for the Clipboard API in our Stimulus controller. If the API is supported, we'll add a class name to the controller element to reveal the button.
+
+Start by adding `class="clipboard-button"` to the button element:
 
 ```html
-<div data-controller="clipboard">
-  PIN: <input data-target="clipboard.source" type="text" value="1234" readonly>
   <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
-</div>
 ```
 
-* Then add the following styles to `public/main.css`:
+Then add the following styles to `public/main.css`:
 
 ```css
 .clipboard-button {
@@ -147,24 +152,19 @@ Load the page in your browser and click the Copy button. Then switch back to you
 }
 ```
 
-* Now we'll add an `initialize` method to do the feature test
+Now implement a `connect` method in the controller which adds a class name to the controller's element when the API is supported:
 
 ```js
-export default class extends Controller {
-  static targets = [ "source" ]
-
-  initialize() {
+  connect() {
     if (document.queryCommandSupported("copy")) {
       this.element.classList.add("clipboard--supported")
     }
   }
-
-  copy() {
-    this.sourceTarget.select()
-    document.execCommand("copy")
-  }
-}
 ```
+
+If you wish, disable JavaScript in your browser, reload the page, and notice the Copy button is no longer visible.
+
+We have progressively enhanced the PIN field: its Copy button's baseline state is hidden, becoming visible only when our JavaScript detects support for the clipboard API.
 
 ## Stimulus Controllers are Reusable
 
