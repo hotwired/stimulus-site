@@ -47,7 +47,7 @@ When the element appears, Stimulus calls our `connect()` method and we kick off 
 
 Open your browser's Network inspector tab and reload the page. You'll see an initial full page request to `index.html` and then our controller's subsequent request to `messages.html`.
 
-# Refreshing Automatically
+## Refreshing Automatically
 
 We'd like to know if any new messages arrive while we're viewing the page so let's go a step further make our list refresh every 5 seconds. Start by configuring the refresh interval (in milliseconds) with a data attribute:
 
@@ -78,7 +78,7 @@ Now update the controller to check for a refresh interval and start a `setInterv
 
 Reload the page again. You'll see a new request being issued every 5 seconds in the Network inspector.
 
-# Cleaning Up
+## Cleaning Up
 
 Our `setInterval` timer starts on `connect()`, but there's nothing to stop it from running. If we navigate away using Turbolinks or remove the element by some other means, the timer will keep ticking and continue making network requests. Let's fix that by keeping a reference to the timer and canceling on `disconnect()` when the element disappears:
 
