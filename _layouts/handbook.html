@@ -1,11 +1,8 @@
 {% include head.html %}
-
 <body class="{% if page.class %} {{ page.class }}{% endif %}">
-
   {% include navigation.html %}
 
   <main id="content" class="handbook">
-
     <section class="handbook__index">
       <nav class="handbook__nav">
         <p class="handbook__nav-title">The Handbook:</p>
@@ -29,10 +26,8 @@
         <p>Next: <a href="{{ next_chapter.url }}">{{ next_chapter.title }}</a></p>
       {% endif %}
     </section>
-
   </main>
 
   {% include footer.html %}
-
 </body>
 </html>

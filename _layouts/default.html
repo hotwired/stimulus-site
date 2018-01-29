@@ -1,16 +1,11 @@
 {% include head.html %}
-
 <body class="{% if page.class %} {{ page.class }}{% endif %}">
-
   {% include navigation.html %}
 
   <main id="content" class="content">
-
     {{ content }}
-
-    {% include footer.html %}
-
   </main>
 
+  {% include footer.html %}
 </body>
 </html>
