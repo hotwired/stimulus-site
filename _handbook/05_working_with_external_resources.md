@@ -6,14 +6,14 @@ slug: /working-with-external-resources
 
 In this chapter we'll learn how to populate parts of a page asynchronously by loading and inserting remote fragments of HTML. We use this technique in Basecamp to keep our initial page loads fast, and to keep our views free of user-specific content so they can be cached most effectively.
 
-Start by adding the controller's markup to `public/index.html`:
+We're going to build a general purpose controller that populates its element with HTML fetched from the server, and we'll use it to load a list of unread messages like you'd see in an email inbox. Start by adding the controller's markup to `public/index.html`:
 
 ```html
 <div data-controller="content-loader"
      data-content-loader-url="/messages.html"></div>
 ```
 
-Then add a new `public/messages.html` file with a snippet of HTML. In a real application you'd load dynamically generated HTML from your server, but for demonstration purposes we'll use static content:
+Then create a new `public/messages.html` file with the HTML for our message list. In a real application you'd generate this HTML dynamically on the server, but for demonstration purposes we'll just use a static file:
 
 ```html
 <ol>
@@ -45,11 +45,11 @@ export default class extends Controller {
 
 When the element appears, Stimulus calls our `connect()` method and we kick off a [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) request to the URL specified in the element's data attributes. When the response comes back with HTML, we populate the element with it.
 
-Open your browser's Network inspector tab and reload the page. You'll see an initial request for `index.html` and then our controller's request to `messages.html`.
+Open your browser's Network inspector tab and reload the page. You'll see an initial full page request to `index.html` and then our controller's subsequent request to `messages.html`.
 
-# Using a Timer to Refresh
+# Refreshing Automatically
 
-Let's expand our controller's functionality with an optional timer for refreshing the content. We'll specify the refresh interval with a data attribute:
+We'd like to know if any new messages arrive while we're viewing the page so let's go a step further make our list refresh every 5 seconds. Start by configuring the refresh interval (in milliseconds) with a data attribute:
 
 ```html
 <div data-controller="content-loader"
@@ -57,7 +57,7 @@ Let's expand our controller's functionality with an optional timer for refreshin
      data-content-loader-refresh-interval="5000"></div>
 ```
 
-And update our controller to check for that attribute and start a `setInterval` timer when present:
+Now update the controller to check for a refresh interval and start a `setInterval` timer when present:
 
 ```js
   connect() {
@@ -78,9 +78,9 @@ And update our controller to check for that attribute and start a `setInterval` 
 
 Reload the page again. You'll see a new request being issued every 5 seconds in the Network inspector.
 
-# Managing the Whole Lifecycle
+# Cleaning Up
 
-Our `setInterval` timer starts on `connect()`, but there's nothing to stop it from running. If we navigate using Turbolinks or remove the element by some other means, our timer will keep ticking and continue making network requests. Let's fix that by keeping a reference to the timer and canceling it on `disconnect()`:
+Our `setInterval` timer starts on `connect()`, but there's nothing to stop it from running. If we navigate away using Turbolinks or remove the element by some other means, the timer will keep ticking and continue making network requests. Let's fix that by keeping a reference to the timer and canceling on `disconnect()` when the element disappears:
 
 ```js
   disconnect() {
@@ -101,7 +101,9 @@ Our `setInterval` timer starts on `connect()`, but there's nothing to stop it fr
 }
 ```
 
-Great! We're ensuring that our timer will always be stopped now. Let's take a look at our final controller:
+Great! We're properly managing the complete lifecycle now by ensuring our setup code in `connect()` is torn down in `disconnect()`.
+
+Let's take a look at our final controller:
 
 ```js
 // src/controllers/content_loader_controller.js
