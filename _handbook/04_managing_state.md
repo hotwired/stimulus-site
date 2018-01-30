@@ -177,7 +177,7 @@ export default class extends Controller {
 }
 ```
 
-We have renamed `showSlide()` to `showCurrentSlide()` and changed it to read from `this.index`. The `get index()` method returns the controller element's `data-slideshow-index` attribute as an integer. The `set index()` method sets that attribute and then refreshes the current slide.
+Here we've renamed `showSlide()` to `showCurrentSlide()` and changed it to read from `this.index`. The `get index()` method returns the controller element's `data-slideshow-index` attribute as an integer. The `set index()` method sets that attribute and then refreshes the current slide.
 
 Now our controller's state lives entirely in the DOM.
 
