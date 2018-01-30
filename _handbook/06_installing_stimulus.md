@@ -36,7 +36,7 @@ If your controller file is named… | its identifier will be…
 --------------------------------- | -----------------------
 clipboard_controller.js           | clipboard
 date_picker_controller.js         | date-picker
-users/list_item_controller.js     | users--list-item
+users/list_item_controller.js     | users\-\-list-item
 local-time-controller.js          | local-time
 
 ## Using Other Build Systems
