@@ -242,8 +242,12 @@
 // intro text /////////////////////////////////////////////////////////////////
 
 .lede {
-  text-align: justify;
+  text-align: center;
   font-size: 1.25em;
+
+  @include media(medium) {
+    text-align: justify;
+  }
 }
 
 // primary actions ////////////////////////////////////////////////////////////
