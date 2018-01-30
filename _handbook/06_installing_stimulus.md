@@ -4,7 +4,10 @@ slug: /installing
 
 # Installing Stimulus in Your Application
 
-To install Stimulus, add the [`stimulus` npm package](https://www.npmjs.com/package/stimulus) to your application's JavaScript bundle. Or, load [`stimulus.umd.js`](https://unpkg.com/stimulus/dist/stimulus.umd.js) in a `<script>` tag.
+To install Stimulus in your application, add the [`stimulus` npm package](https://www.npmjs.com/package/stimulus) to your JavaScript bundle. Or, load [`stimulus.umd.js`](https://unpkg.com/stimulus/dist/stimulus.umd.js) in a `<script>` tag.
+
+* TOC
+{:toc}
 
 ## Using webpack
 
