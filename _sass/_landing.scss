@@ -30,7 +30,7 @@
   @include media(medium) {
     display: flex;
     justify-content: space-between;
-    margin-top: -6em;
+    margin: -6em 0 2em 0;
 
     &:before {
       content: "";
