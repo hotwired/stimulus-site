@@ -90,13 +90,13 @@ If you prefer not to use a build system, you can load Stimulus in a `<script>` t
     (function() {
       const application = Stimulus.Application.start()
       application.register("hello", class extends Stimulus.Controller {
-        …
+        // ...
       })
     })()
   </script>
 <head>
 <body>
-  <div data-controller="hello">…</div>
+  <div data-controller="hello">...</div>
 </body>
 </html>
 ```
