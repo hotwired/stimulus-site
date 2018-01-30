@@ -32,7 +32,7 @@
             {% endif %}
             <li class="mobile-nav__list-item"><a class="{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
               {% if forloop.index0 == 0 %}Preface{% else %}{{ forloop.index0 }}{% endif %}: {{ chapter.title }}
-            </a>
+            </a></li>
           {% endfor %}
         </ul>
       </nav>
