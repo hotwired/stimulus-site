@@ -57,7 +57,7 @@ We'd like to know if any new messages arrive while we're viewing the page so let
      data-content-loader-refresh-interval="5000"></div>
 ```
 
-Now update the controller to check for a refresh interval and start a `setInterval` timer when present:
+Now update the controller to check for a refresh interval and start a `setInterval()` timer when present:
 
 ```js
   connect() {
@@ -80,7 +80,7 @@ Reload the page again. You'll see a new request being issued every 5 seconds in 
 
 ## Cleaning Up
 
-Our `setInterval` timer starts on `connect()`, but there's nothing to stop it from running. If we navigate away using Turbolinks or remove the element by some other means, the timer will keep ticking and continue making network requests. Let's fix that by keeping a reference to the timer and canceling on `disconnect()` when the element disappears:
+Our `setInterval()` timer starts on `connect()`, but there's nothing to stop it from running. If we navigate away using Turbolinks or remove the element by some other means, the timer will keep ticking and continue making network requests. Let's fix that by keeping a reference to the timer and canceling on `disconnect()` when the element disappears:
 
 ```js
   disconnect() {

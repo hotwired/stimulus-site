@@ -33,7 +33,7 @@ Open `public/index.html` and replace the contents of `<body>` with a rough sketc
 
 ## Setting Up the Controller
 
-Next, create `src/controllers/clipboard_controller.js` and add an empty method `copy`:
+Next, create `src/controllers/clipboard_controller.js` and add an empty method `copy()`:
 
 ```js
 // src/controllers/clipboard_controller.js
@@ -82,7 +82,7 @@ export default class extends Controller {
 
 Now we're ready to hook up the Copy button.
 
-We want a click on the button to invoke the `copy` method in our controller, so we'll add `data-action="clipboard#copy"`:
+We want a click on the button to invoke the `copy()` method in our controller, so we'll add `data-action="clipboard#copy"`:
 
 ```html
   <button data-action="clipboard#copy">Copy to Clipboard</button>
@@ -104,7 +104,7 @@ We want a click on the button to invoke the `copy` method in our controller, so 
 > select            | change
 > textarea          | change
 
-Finally, in our `copy` method, we can select the input field's contents and call the clipboard API:
+Finally, in our `copy()` method, we can select the input field's contents and call the clipboard API:
 
 ```js
   copy() {
@@ -151,7 +151,7 @@ Then add the following styles to `public/main.css`:
 }
 ```
 
-Now implement a `connect` method in the controller which adds a class name to the controller's element when the API is supported:
+Now implement a `connect()` method in the controller which adds a class name to the controller's element when the API is supported:
 
 ```js
   connect() {
