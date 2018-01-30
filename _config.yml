@@ -5,6 +5,7 @@ description: >-
 
 url: https://stimulusjs.org
 github_url: https://github.com/stimulusjs/stimulus
+repository: stimulusjs/stimulus
 
 theme: false
 

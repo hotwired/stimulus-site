@@ -49,3 +49,12 @@ layout: default
     Source Code
   </a>
 </div>
+
+<hr>
+
+<p>
+  {% assign release = site.github.latest_release %}
+  Current version: <a href="{{ release.html_url }}">{{ release.tag_name | remove_first: "v" }}</a>
+  <br>
+  Released {{ release.created_at | date: "%B %d, %Y" }}
+</p>
