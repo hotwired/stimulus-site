@@ -108,27 +108,3 @@
     }
   }
 }
-
-// incomplete chapter warning /////////////////////////////////////////////////
-
-.warning {
-  grid-column: 2/5;
-  background-color: #fff200;
-  margin: 1em 0 2em 0;
-  padding: 0.5em;
-  text-align: center;
-  -webkit-clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
-  clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
-}
-
-.warning__title {
-  margin: 0;
-  padding: 0;
-  text-align: center !important;
-}
-
-.warning__message {
-  margin: 0;
-  padding: 0;
-  font-family: $sans-stack;
-}
