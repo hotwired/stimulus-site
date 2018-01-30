@@ -10,7 +10,7 @@ We've implemented our first controller and learned how Stimulus connects HTML to
 
 Scattered throughout Basecamp's UI are buttons like these:
 
-[img]
+<img src="https://stimulusjs.org/images/bc3-clipboard-ui.png" width="500" height="122" class="handbook__screenshot">
 
 When you click one of these buttons, Basecamp copies a bit of text, such as a URL or an email address, to your clipboard.
 
@@ -112,8 +112,6 @@ Finally, in our `copy()` method, we can select the input field's contents and ca
 ```
 
 Load the page in your browser and click the Copy button. Then switch back to your text editor and paste. You should see the PIN `1234`.
-
-[img]
 
 ## Designing a Resilient User Interface
 
