@@ -4,9 +4,7 @@ slug: /building-something-real
 
 # Building Something Real
 
-We've implemented our first controller and learned how Stimulus connects HTML to JavaScript. But logging "Hello" to the console isn't particularly exciting, nor is it representative of the kinds of things we're likely to build.
-
-Let's take a look at something we can use in a real application by re-creating a controller from Basecamp.
+We've implemented our first controller and learned how Stimulus connects HTML to JavaScript. Now let's take a look at something we can use in a real application by recreating a controller from Basecamp.
 
 ## Wrapping the DOM Clipboard API
 
