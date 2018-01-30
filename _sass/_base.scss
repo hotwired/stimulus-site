@@ -53,7 +53,7 @@ h1 {
 
   @include media(medium) {
     font-size: 3em;
-    font-size: 4.5vw;
+    font-size: 4.75vw;
   }
 }
 
@@ -133,6 +133,7 @@ pre {
 
 table {
   width: 100%;
+  text-align: left;
 }
 
 thead {

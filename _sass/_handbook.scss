@@ -11,20 +11,23 @@
       max-width: 100%;
       padding: 0;
       display: grid;
-      grid-template-columns: 0.5fr 2.5fr 55vw 1fr;
+      grid-template-columns: 0.25fr 2.5fr 0.5fr 65vw 0.25fr;
     }
+  }
+
+  @include media(large) {
+    grid-template-columns: 0.5fr 2.5fr 0.5fr 60vw 1fr;
   }
 }
 
 .handbook__content {
-  grid-column: 3/4;
+  grid-column: 4/5;
   max-width: $column-width;
   margin: 0 auto;
 
   @include media(medium) {
     max-width: 100%;
     margin-top: 6em;
-    padding-left: 2em;
   }
 
   h1, h2, h3, h4, h5, h6 {
