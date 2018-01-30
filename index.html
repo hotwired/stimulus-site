@@ -31,7 +31,10 @@ layout: default
   <span class="hello__output" data-target="hello.output"></span>
 </div>
 
-<hr>
+<p class="version">
+  {% assign release = site.github.latest_release %}
+  <span>Current version: <a href="{{ release.html_url }}">{{ release.tag_name | remove_first: "v" }}</a> &mdash; released {{ release.created_at | date: "%B %d, %Y" }}</span>
+</p>
 
 <p class="lede"><strong>Stimulus</strong> is a JavaScript framework with modest ambitions. It doesn't seek to take over your entire front-end—in fact, it's not concerned with rendering HTML at all. Instead, it's designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>
 
@@ -49,12 +52,3 @@ layout: default
     Source Code
   </a>
 </div>
-
-<hr>
-
-<p>
-  {% assign release = site.github.latest_release %}
-  Current version: <a href="{{ release.html_url }}">{{ release.tag_name | remove_first: "v" }}</a>
-  <br>
-  Released {{ release.created_at | date: "%B %d, %Y" }}
-</p>

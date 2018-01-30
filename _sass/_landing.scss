@@ -251,6 +251,35 @@
   }
 }
 
+.version {
+  grid-column: 2/5;  
+  position: relative;
+  padding: 0;
+  margin: 2em 0 3em 0;
+  font-family: $sans-stack;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+
+  > span {
+    display: inline-block;
+    padding: 0.25em 1em;
+    background-color: $color-tint;
+    -webkit-clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+    clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid $color-tint;
+    z-index: -1;
+  }
+}
+
 // primary actions ////////////////////////////////////////////////////////////
 
 .actions {
