@@ -17,6 +17,26 @@
           </a>
         {% endfor %}
       </nav>
+
+      <input type="checkbox" id="hamburger" class="mobile-nav-checkbox"/>
+      <label class="mobile-nav-button" for="hamburger"><span></span> handbook chapters</label>
+
+      <nav class="mobile-nav" aria-hidden="true">
+        <label class="mobile-nav-button mobile-nav-button--close" for="hamburger"><span></span> close</label>
+        <ul class="mobile-nav__list">
+          {% for chapter in site.handbook %}
+            {% assign is_active = false %}
+            {% if page.url == chapter.url %}
+              {% assign is_active = true %}
+              {% assign next_chapter = site.handbook[forloop.index] %}
+            {% endif %}
+            <li class="mobile-nav__list-item"><a class="{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
+              {% if forloop.index0 == 0 %}Preface{% else %}{{ forloop.index0 }}{% endif %}: {{ chapter.title }}
+            </a>
+          {% endfor %}
+        </ul>
+      </nav>
+
     </section>
 
     <section id="start" class="handbook__content">
