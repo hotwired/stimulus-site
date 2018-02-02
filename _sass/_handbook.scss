@@ -140,44 +140,40 @@
   @include transform(translate(0, 0));
 }
 
-.mobile-nav__list {
+.mobile-nav__wrap {
   margin: 0;
   padding: 1em;
-  list-style-type: none;
 }
 
-.mobile-nav__list-item {
+.mobile-nav__link {
   margin: 0;
   padding: 0;
+  display: block;
+  padding: 0 0 1.5em 0;
+  font-size: 1.25em;
+  font-family: $sans-stack;
+  font-weight: 700;
+  line-height: 1.25;
 
-  a {
-    display: block;
-    padding: 0 0 1.5em 0;
-    font-size: 1.25em;
-    font-family: $sans-stack;
-    font-weight: 700;
-    line-height: 1.25;
+  &:hover {
+    text-decoration: none;
+  }
 
-    &:hover {
-      text-decoration: none;
-    }
-
-    &.active {
-      color: $color-background;
-    }
+  &.active {
+    color: $color-background;
   }
 }
 
 .mobile-nav-button {
-  display: block;
+  display: inline-block;
   margin: 1.5em auto 0 auto;
-  padding: 0.75em;
+  padding: 0.75em 1em;
   cursor: pointer;
   z-index: 2000;
   font-family: $sans-stack;
-  background-color: $color-accent;
-  -webkit-clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
-  clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
+  background-color: $color-background;
+  border-radius: 2em;
+  border: 0.125em solid $color-accent;
 
   @include media(medium) {
     display: none;
@@ -188,7 +184,7 @@
     top: -0.2em;
     width: 1.25em;
     height: 0.25em;
-    background-color: $color-background;
+    background-color: $color-accent;
     position: relative;
 
     &::after,
@@ -198,7 +194,7 @@
       position: absolute;
       width: 1.25em;
       height: 0.25em;
-      background-color: $color-background;
+      background-color: $color-accent;
     }
 
     &::before {
