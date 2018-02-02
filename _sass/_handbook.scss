@@ -91,6 +91,7 @@
   @include media(medium) {
     @include transform(translate(0, 0));
     @include transition(transform 0s ease-in-out);
+    height: inherit;
     opacity: 1;
     position: -webkit-sticky;
     position: sticky;
@@ -133,11 +134,11 @@
 
   @include media(medium) {
     text-align: left;
+    margin: 0 0 0 -0.2rem;
     padding: 0.5em;
-    margin-right: 0;
     font-size: 1em;
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.4;
 
     &.active {
       color: $color-text;
