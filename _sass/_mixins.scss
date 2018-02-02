@@ -36,6 +36,13 @@ $color-tint: #f7f5f2;
           transform: $attrs;
 }
 
+@mixin transition($attrs...) {
+  -webkit-transition: $attrs;
+     -moz-transition: $attrs;
+      -ms-transition: $attrs;
+          transition: $attrs;
+}
+
 
 // Hacks ————————————————————————————————————— •
 // ——————————————————————————————————————————— •
