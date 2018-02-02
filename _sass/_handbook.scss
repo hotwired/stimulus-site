@@ -63,60 +63,21 @@
   }
 }
 
+.handbook__checkbox {
+  display: none;
+}
+
+.handbook__checkbox:checked ~ .handbook__nav {
+  @include transform(translate(0, 0));
+  opacity: 1;
+}
+
 .handbook__nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 1em;
-
-  @include media(small) {
-    display: none;
-  }
-}
-
-.handbook__nav-title {
-  margin: 0 0 1em 0;
-  font-family: $sans-stack;
-  font-weight: bold;
-  font-size: 0.9rem;
-  text-align: center;
-  border-bottom: 0.25em solid $color-accent;
-
-  @include media(medium) {
-    text-align: left;
-  }
-}
-
-.handbook-nav__link {
-  display: block;
-  line-height: 1.5;
-  font-family: $sans-stack;
-  font-style: italic;
-
-  @include media(medium) {
-    text-align: left;
-    padding: 0.5em 0.5em;
-    margin-right: 0;
-  }
-
-  &.active {
-    background-color: $color-tint;
-    -webkit-clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
-    clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%);
-
-    @include media(large) {
-      -webkit-clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
-      clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
-    }
-  }
-}
-
-
-// mobile nav /////////////////////////////////////////////////////////////////
-
-.mobile-nav {
   @include transform(translate(-100%, 0));
-  @include transition(all 0.3s ease-in-out);
+  @include transition(transform 0.3s ease-in-out);
+  opacity: 0;
   position: fixed;
+  overflow-y: auto;
   top: 0;
   left: 0;
   display: block;
@@ -128,28 +89,35 @@
   background-color: $color-accent;
 
   @include media(medium) {
-    display: none;
+    @include transform(translate(0, 0));
+    @include transition(transform 0s ease-in-out);
+    opacity: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1em;
+    background-color: $color-background;
   }
 }
 
-.mobile-nav-checkbox {
+.handbook__nav-title {
   display: none;
+  margin: 0 0 1em 0;
+  font-family: $sans-stack;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  border-bottom: 0.25em solid $color-accent;
+
+  @include media(medium) {
+    display: block;
+    text-align: left;
+  }
 }
 
-.mobile-nav-checkbox:checked ~ .mobile-nav {
-  @include transform(translate(0, 0));
-}
-
-.mobile-nav__wrap {
-  margin: 0;
-  padding: 1em;
-}
-
-.mobile-nav__link {
-  margin: 0;
-  padding: 0;
+.handbook__nav-link {
   display: block;
-  padding: 0 0 1.5em 0;
+  margin: 0;
+  padding: 0 1em 1em 1em;
   font-size: 1.25em;
   font-family: $sans-stack;
   font-weight: 700;
@@ -162,9 +130,25 @@
   &.active {
     color: $color-background;
   }
+
+  @include media(medium) {
+    text-align: left;
+    padding: 0.5em;
+    margin-right: 0;
+    font-size: 1em;
+    font-style: italic;
+    line-height: 1.5;
+
+    &.active {
+      color: $color-text;
+      background-color: $color-tint;
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
+      clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
+    }
+  }
 }
 
-.mobile-nav-button {
+.handbook__mobile-button {
   display: inline-block;
   margin: 1.5em auto 0 auto;
   padding: 0.75em 1em;
@@ -207,7 +191,7 @@
   }
 }
 
-.mobile-nav-button--close {
+.handbook__mobile-button--close {
   margin: 1.5em auto;
   background-color: $color-accent;
 
