@@ -8,21 +8,30 @@
       <input type="checkbox" id="hamburger" class="handbook__checkbox"/>
       <label class="handbook__mobile-button" for="hamburger"><span></span> Table of Contents</label>
 
-      <nav class="handbook__nav">
-        <p class="handbook__nav-title">The Handbook:</p>
-        <label class="handbook__mobile-button handbook__mobile-button--close" for="hamburger"><span></span> close</label>
-        {% for chapter in site.handbook %}
-          {% assign is_active = false %}
-          {% if page.url == chapter.url %}
-            {% assign is_active = true %}
-            {% assign next_chapter = site.handbook[forloop.index] %}
-          {% endif %}
-          <a class="handbook__nav-link{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
-            {% if forloop.index0 == 0 %}Preface{% else %}{{ forloop.index0 }}{% endif %}: {{ chapter.title }}
-          </a>
+      <div class="handbook__nav">
+        {% for section in site.data.handbook.sections %}
+          <nav class="handbook__nav-section">
+            <p class="handbook__nav-title">{{ section.title }}:</p>
+            {% if forloop.index0 == 0 %}
+              <label class="handbook__mobile-button handbook__mobile-button--close" for="hamburger"><span></span> close</label>
+            {% endif %}
+            {% for chapter in site.handbook %}
+              {% assign section_name = chapter.section | default: "handbook" %}
+              {% if section.name == section_name %}
+                {% assign is_active = false %}
+                {% if page.url == chapter.url %}
+                  {% assign is_active = true %}
+                  {% assign next_chapter = site.handbook[forloop.index] %}
+                {% endif %}
+                <a class="handbook-nav__link{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
+                  {{ chapter.prefix | default: forloop.index0 }}:
+                  {{ chapter.title }}
+                </a>
+              {% endif %}
+            {% endfor %}
+          </nav>
         {% endfor %}
-      </nav>
-
+      </div>
     </section>
 
     <section id="start" class="handbook__content" data-controller="anchor" data-anchor-selector="h2,h3,h4">
