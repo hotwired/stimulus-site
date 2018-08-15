@@ -13,12 +13,20 @@ collections:
   handbook:
     output: true
     permalink: /:collection/:title
+  reference:
+    output: true
+    permalink: /:collection/:title
 
 defaults:
   - scope:
       type: handbook
     values:
       collection_title: Handbook
+      layout: handbook
+  - scope:
+      type: reference
+    values:
+      collection_title: Reference
       layout: handbook
 
 optional_front_matter:

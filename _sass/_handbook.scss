@@ -113,6 +113,10 @@
   text-align: center;
   border-bottom: 0.25em solid $color-accent;
 
+  &:not(:first-of-type) {
+    margin-top: 2em;
+  }
+
   @include media(medium) {
     display: block;
     text-align: left;
