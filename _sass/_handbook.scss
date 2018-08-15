@@ -106,16 +106,12 @@
 
 .handbook__nav-title {
   display: none;
-  margin: 0 0 1em 0;
+  margin: 1em 0 0 0;
   font-family: $sans-stack;
   font-weight: bold;
   font-size: 0.9rem;
   text-align: center;
   border-bottom: 0.25em solid $color-accent;
-
-  &:not(:first-of-type) {
-    margin-top: 2em;
-  }
 
   @include media(medium) {
     display: block;
@@ -131,6 +127,10 @@
   font-family: $sans-stack;
   font-weight: 700;
   line-height: 1.25;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
 
   &:hover {
     text-decoration: none;
