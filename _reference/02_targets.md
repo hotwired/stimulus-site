@@ -5,19 +5,40 @@ section: appendix
 
 # Targets
 
-## descriptor syntax
+By marking important elements as _targets_, controllers can easily reference them through corresponding properties.
 
-The `data-target` value `hello.name` is called a _target descriptor_. This particular descriptor says:
-* `hello` is the controller identifier
-* `name` is the target name
+## Descriptor Syntax
 
-## targets static array
+```html
+<div data-controller="person">
+  <input type="text" data-target="person.input person.firstName">
+  <input type="text" data-target="person.input person.lastName">
+  <h1 data-target="person.fullName"></h1>
+</div>
+```
 
-When Stimulus loads your controller class, it looks for target name strings in a static array called `targets`. For each target name in the array, Stimulus adds three new properties to your controller. Here, our `"source"` target name becomes the following properties:
+The `data-target` value `person.firstName` is called a _target descriptor_. This particular descriptor says:
+* `person` is the controller identifier
+* `firstName` is the target name
 
-* `this.sourceTarget` evaluates to the first `source` target in your controller's scope. If there is no `source` target, accessing the property throws an error.
-* `this.sourceTargets` evaluates to an array of all `source` targets in the controller's scope.
-* `this.hasSourceTarget` evaluates to `true` if there is a `source` target or `false` if not.
+## Controller Syntax: The `static targets` Array
+
+```js
+// src/controllers/person_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = [ "input", "firstName", "lastName", "fullName" ]
+
+  // …
+}
+```
+
+When Stimulus loads your controller class, it looks for target name strings in a static array called `targets`. For each target name in the array, Stimulus adds three new properties to your controller: `this.[name]Target`, `this.has[Name]Targets`, and `this.[name]Targets`.
+
+* `this.firstNameTarget` evaluates to the first `firstName` target in your controller's scope. If there is no `firstName` target, accessing the property throws an error.
+* `this.hasFullNameTarget` evaluates to `true` if there is a `fullName` target or `false` if not.
+* `this.inputTargets` evaluates to an array of all `input` targets in the controller's scope.
 
 ## naming convention: camel case property names
 
