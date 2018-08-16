@@ -7,41 +7,87 @@ section: appendix
 
 By marking important elements as _targets_, controllers can easily reference them through corresponding properties.
 
-## Descriptor Syntax
+## Descriptors
 
 ```html
 <div data-controller="person">
-  <input type="text" data-target="person.input person.firstName">
-  <input type="text" data-target="person.input person.lastName">
-  <h1 data-target="person.fullName"></h1>
+  <input type="text" data-target="person.fullName person.input">
+  <input type="text" data-target="person.emailAddress person.input">
+
+  <p data-target="person.display"></p>
 </div>
 ```
 
-The `data-target` value `person.firstName` is called a _target descriptor_. This particular descriptor says:
+The `data-target` value `person.fullName` is called a _target descriptor_. This particular descriptor says:
 * `person` is the controller identifier
-* `firstName` is the target name
+* `fullName` is the target name
 
-## Controller Syntax: The `static targets` Array
+## Definitions
+
+When Stimulus loads your controller class, it looks for target name strings in a static array called `targets`.
 
 ```js
 // src/controllers/person_controller.js
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "input", "firstName", "lastName", "fullName" ]
+  static targets = [ "fullName", "emailAddress", "input", "display" ]
 
   // …
 }
 ```
 
-When Stimulus loads your controller class, it looks for target name strings in a static array called `targets`. For each target name in the array, Stimulus adds three new properties to your controller: `this.[name]Target`, `this.has[Name]Targets`, and `this.[name]Targets`.
+### Target Properties
 
-* `this.firstNameTarget` evaluates to the first `firstName` target in your controller's scope. If there is no `firstName` target, accessing the property throws an error.
-* `this.hasFullNameTarget` evaluates to `true` if there is a `fullName` target or `false` if not.
-* `this.inputTargets` evaluates to an array of all `input` targets in the controller's scope.
+For each target name in the `static targets` array, Stimulus adds three new properties to your controller.
 
-## naming convention: camel case property names
+* `this.`**`name`**`Target` evaluates to the first matching target in your controller's scope. If there is no element, accessing the property throws an error.
+* `this.`**`name`**`Targets` evaluates to an array of all matching targets in the controller's scope.
+* `this.has`**`Name`**`Target` evaluates to `true` if there is a matching target or `false` if not.
 
-## difference between singular and plural and when you would want to use each
+## Naming Conventions
 
-## the singular accessor raises when there is no match; `has...`
+Always use camelCase for target names so they map cleanly to JavaScript controller properties.
+
+A kebab-case target name like `data-target="person.email-address"` would map to `this["email-addressTarget"]`, which is far less readable than `this.emailAddressTarget`.
+
+## Optional Targets
+
+Singular `this.`**`name`**`Target` properties assume the corresponding target element *should* be present and will throw an error if not. For targets that may or may not be present *by design*, always use `this.has`**`Name`**`Target` before accessing `this.`**`name`**`Target`.
+
+## Examples
+
+```js
+initialize() {
+  // Focus the *first* input target initially
+  this.inputTarget.focus()
+}
+
+update() {
+  if (this.emptyInputTarget) {
+    // If there's an empty input target, focus it
+    this.emptyInputTarget.focus()
+  } else {
+    // Otherwise, render the display target
+    this.render()
+  }
+}
+
+render() {
+  // Consider the display target optional
+  if (this.hasDisplayTarget) {
+    this.displayTarget.textContent = this.nameWithEmailAddress
+  }
+}
+
+get emptyInputTarget() {
+  // Find the first input target with no value, if any
+  return this.inputTargets.find(target => !target.value)
+}
+
+get nameWithEmailAddress() {
+  const name = this.fullNameTarget.value
+  const email = this.emailAddressTarget.value
+  return `${name} (${email})`
+}
+```
