@@ -11,23 +11,33 @@
       <nav class="handbook__nav">
         <label class="handbook__mobile-button handbook__mobile-button--close" for="hamburger"><span></span> close</label>
 
-        {% for chapter in site.tutorial %}
-          {% assign is_active = false %}
-          {% if page.url == chapter.url %}
-            {% assign is_active = true %}
-            {% assign next_chapter = site.handbook[forloop.index] %}
-          {% endif %}
-          <a class="handbook__nav-link{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
-            {% if forloop.index0 == 0 %}Preface{% else %}{{ forloop.index0 }}{% endif %}: {{ chapter.title }}
-          </a>
-        {% endfor %}
+        <ol class="handbook__nav-list">
+          {% for chapter in site.tutorial %}
+            {% assign is_active = false %}
+            {% if page.url == chapter.url %}
+              {% assign is_active = true %}
+              {% assign next_chapter = site.handbook[forloop.index] %}
+            {% endif %}
+            <li>
+              <a class="handbook__nav-link{% if is_active %} active{% endif %}" href="{{ chapter.url }}">
+                {% if forloop.index0 == 0 %}Preface{% else %}{{ forloop.index0 }}{% endif %}: {{ chapter.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ol>
 
-        <p class="handbook__nav-title">Reference:</p>
-        {% for chapter in site.reference %}
-          <a class="handbook__nav-link{% if page.url == chapter.url %} active{% endif %}" href="{{ chapter.url }}">
-            {{ chapter.title }}
-          </a>
-        {% endfor %}
+        <div class="handbook__nav-reference">
+          <p class="handbook__nav-title">Reference:</p>
+          <ul class="handbook__nav-list">
+            {% for chapter in site.reference %}
+              <li>
+                <a class="handbook__nav-link{% if page.url == chapter.url %} active{% endif %}" href="{{ chapter.url }}">
+                  {{ chapter.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </nav>
     </section>
 

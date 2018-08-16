@@ -82,7 +82,7 @@
   left: 0;
   display: block;
   margin: 0;
-  padding: 0;
+  padding: 0 0.5em;
   width: 100%;
   height: 100%;
   z-index: 1000;
@@ -91,6 +91,7 @@
   @include media(medium) {
     @include transform(translate(0, 0));
     @include transition(transform 0s ease-in-out);
+    padding: 0;
     height: inherit;
     opacity: 1;
     position: -webkit-sticky;
@@ -98,10 +99,6 @@
     top: 1em;
     background-color: $color-background;
   }
-}
-
-.handbook__nav-section {
-  margin-top: 1em;
 }
 
 .handbook__nav-title {
@@ -119,6 +116,15 @@
   }
 }
 
+.handbook__nav-list {
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .handbook__nav-link {
   display: block;
   margin: 0;
@@ -127,10 +133,6 @@
   font-family: $sans-stack;
   font-weight: 700;
   line-height: 1.25;
-
-  &:first-of-type {
-    padding-top: 0;
-  }
 
   &:hover {
     text-decoration: none;
@@ -153,6 +155,31 @@
       background-color: $color-tint;
       -webkit-clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
       clip-path: polygon(0% 0%, 100% 0%, 96% 100%, 0% 100%);
+    }
+  }
+}
+
+.handbook__nav-reference {
+  @include media(small) {
+    .handbook__nav-list {
+      display: inline-block;
+
+      li {
+        display: inline-block;
+
+        &:not(:last-of-type)::after {
+          display: inline-block;
+          font-weight: bold;
+          padding-left: 0.2em;
+          content: '/';
+        }
+      }
+    }
+
+    .handbook__nav-link {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
     }
   }
 }
