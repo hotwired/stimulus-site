@@ -25,7 +25,7 @@ Within a controller class, you can access the controller's:
 
 ## Modules
 
-Define controller classes in JavaScript modules, one per file:
+Define your controller classes in JavaScript modules, one per file:
 
 ```js
 // controllers/reference_controller.js
@@ -38,9 +38,9 @@ export default class extends Controller {
 
 Export each controller class as the module's default object.
 
-Place modules in a `controllers/` directory.
+Place these modules in the `controllers/` directory.
 
-Name the files `[identifier]_controller.js`, where `identifier` corresponds to each controller's identifier.
+Name the files `[identifier]_controller.js`, where `[identifier]` corresponds to each controller's identifier.
 
 ## Identifiers
 
@@ -48,13 +48,27 @@ An _identifier_ is the name you use to reference a controller class in HTML.
 
 When you add a `data-controller` attribute to an element, Stimulus reads the identifier from the attribute's value and creates a new instance of the corresponding controller class.
 
-For example, the following element has one controller, an instance of the controller class registered with the identifier `reference`:
+For example, this element has a controller which is an instance of the class defined in `controllers/reference_controller.js`:
 
 ```html
 <div data-controller="reference"></div>
 ```
 
+## Multiple Controllers
+
+The `data-controller` attribute's value is a space-separated list of identifiers:
+
+```html
+<div data-controller="clipboard list-item"></div>
+```
+
+It's normal for any given element on the page to have many controllers.
+
+Similarly, it's normal for an application to have many instances of a particular controller class at any given time.
+
 ## Naming Conventions
+
+Always use camelCase for method and property names.
 
 When an identifier is composed of more than one word, separate the words with dashes (`date-picker`, `list-item`).
 
@@ -64,15 +78,16 @@ You may namespace your controller modules using subfolders. Each slash (`/`) in 
 
 ## Registration
 
-If you use Stimulus with webpack, your application will automatically load and register controller classes following the conventions above.
+If you use Stimulus with the `@stimulus/webpack-helpers` package, your application will automatically load and register controller classes following the conventions above.
 
-If you don't use webpack, your application must manually load and register each controller class.
+If you don't use the webpack helpers, your application must manually load and register each controller class.
 
 ### Registering Controllers Manually
 
-To manually register a controller class with an identifier, call the `Application#register` method on your application:
+To manually register a controller class with an identifier, call the `Application#register` method on your application object:
 
 ```js
 import ReferenceController from "./controllers/reference_controller"
+
 application.register("reference", ReferenceController)
 ```

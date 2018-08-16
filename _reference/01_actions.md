@@ -5,18 +5,38 @@ section: appendix
 
 # Actions
 
-## descriptor syntax
+An _action_ is a connection between
 
-The `data-action` value `click->hello#greet` is called an _action descriptor_. This particular descriptor says:
-* `click` is the event name
-* `hello` is the controller identifier
-* `greet` is the name of the method to invoke
+* a controller method,
+* the controller's element, and
+* a DOM event listener
 
-## shorthand
+Actions are how you handle events in your controllers.
 
-The `click->hello#greet` _action descriptor_ can be shortened to `hello#greet`. That's because Stimulus defines `click` as the default event for actions on `<button>` elements.
+```html
+<div data-controller="gallery">
+  <button data-action="click->gallery#next"></button>
+  …
+</div>
+```
 
-Certain other elements have default events, too. Here's the full list:
+## Descriptors
+
+The string `click->gallery#next` is called an _action descriptor_. In this descriptor:
+
+* `click` is the name of the event to listen for
+* `gallery` is the controller identifier
+* `next` is the name of the method to invoke
+
+### Event Shorthand
+
+Stimulus lets you shorten the action descriptors for some common element/event pairs, such as the button/click pair above, by omitting the event name:
+
+```html
+  <button data-action="gallery#next"></button>
+```
+
+The full set of these shorthand pairs is as follows:
 
 Element           | Default event
 ----------------- | -------------
@@ -28,14 +48,35 @@ input type=submit | click
 select            | change
 textarea          | change
 
-## global event syntax
+### Global Events
 
-## working with events
+Sometimes a controller needs to listen for events dispatched on the global `window` or `document` objects.
 
-event argument on method
+You can append `@window` or `@document` to the event name in an action descriptor to install the event listener on `window` or `document`, respectively, as in the following example:
 
-canceling events (stopping propagation, preventing default behavior)
+```html
+<div data-controller="gallery"
+     data-action="resize@window->gallery#layout">
+  …
+</div>
+```
 
-## multiple actions on an element
+## Methods
 
-action ordering
+An _action method_ is the method in a controller which serves as an action's event listener.
+
+The first argument to an action method is the DOM event. You may want access to the event for a number of reasons, including:
+
+* to read the key code from a keyboard event
+* to read the coordinates of a mouse event
+* to read data from an input event
+* to prevent the browser's default behavior for an event
+* to find out which element dispatched an event before it bubbled up to this action
+
+## Multiple Actions
+
+The `data-action` attribute's value is a space-separated list of action descriptors.
+
+It's normal for any given element to have many actions.
+
+When an element has more than one action for the same event, Stimulus invokes the actions from left to right in the order that their descriptors appear.
