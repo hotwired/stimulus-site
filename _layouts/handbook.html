@@ -11,7 +11,7 @@
       <nav class="handbook__nav">
         <label class="handbook__mobile-button handbook__mobile-button--close" for="hamburger"><span></span> close</label>
 
-        {% for chapter in site.handbook %}
+        {% for chapter in site.tutorial %}
           {% assign is_active = false %}
           {% if page.url == chapter.url %}
             {% assign is_active = true %}
