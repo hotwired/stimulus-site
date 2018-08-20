@@ -1,5 +1,6 @@
 ---
-slug: /introduction
+permalink: /handbook/introduction
+nav_group: intro
 ---
 
 # Introduction

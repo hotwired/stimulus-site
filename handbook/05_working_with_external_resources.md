@@ -1,5 +1,6 @@
 ---
-slug: /working-with-external-resources
+permalink: /handbook/working-with-external-resources
+nav_group: intro
 ---
 
 # Working With External Resources

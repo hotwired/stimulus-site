@@ -1,6 +1,7 @@
 ---
-slug: /data
-section: appendix
+permalink: /handbook/data
+nav_group: reference
+nav_order: 04
 ---
 
 # Data

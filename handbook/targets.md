@@ -1,6 +1,7 @@
 ---
-slug: /targets
-section: appendix
+permalink: /handbook/targets
+nav_group: reference
+nav_order: 03
 ---
 
 # Targets

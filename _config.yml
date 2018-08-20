@@ -9,25 +9,12 @@ github_url: https://github.com/stimulusjs/stimulus
 
 theme: false
 
-collections_dir: collections
-
-collections:
-  tutorial: &handbook
-    output: true
-    permalink: /handbook/:slug
-  reference:
-    <<: *handbook
-
 defaults:
   - scope:
-      type: tutorial
-    values: &handbook
-      collection_title: Handbook
-      layout: handbook
-  - scope:
-      type: reference
+      path: handbook/*
     values:
-      <<: *handbook
+      layout: handbook
+      section_title: Handbook
 
 optional_front_matter:
   remove_originals: true

@@ -1,6 +1,7 @@
 ---
-slug: /controllers
-section: appendix
+permalink: /handbook/controllers
+nav_group: reference
+nav_order: 01
 ---
 
 # Controllers

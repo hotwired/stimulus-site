@@ -1,5 +1,6 @@
 ---
-slug: /building-something-real
+permalink: /handbook/building-something-real
+nav_group: intro
 ---
 
 # Building Something Real
