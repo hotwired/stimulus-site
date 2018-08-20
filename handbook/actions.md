@@ -12,20 +12,19 @@ An _action_ is a connection between
 * the controller's element, and
 * a DOM event listener
 
-Actions are how you handle events in your controllers.
+Actions are how you handle DOM events in your controllers.
 
 ```html
 <div data-controller="gallery">
-  <button data-action="click->gallery#next"></button>
-  …
+  <button data-action="click->gallery#next">…</button>
 </div>
 ```
 
 ## Descriptors
 
-The string `click->gallery#next` is called an _action descriptor_. In this descriptor:
+The `data-action` value `click->gallery#next` is called an _action descriptor_. In this descriptor:
 
-* `click` is the name of the event to listen for
+* `click` is the name of the DOM event to listen for
 * `gallery` is the controller identifier
 * `next` is the name of the method to invoke
 
@@ -34,7 +33,7 @@ The string `click->gallery#next` is called an _action descriptor_. In this descr
 Stimulus lets you shorten the action descriptors for some common element/event pairs, such as the button/click pair above, by omitting the event name:
 
 ```html
-  <button data-action="gallery#next"></button>
+  <button data-action="gallery#next">…</button>
 ```
 
 The full set of these shorthand pairs is as follows:
@@ -81,3 +80,21 @@ The `data-action` attribute's value is a space-separated list of action descript
 It's normal for any given element to have many actions.
 
 When an element has more than one action for the same event, Stimulus invokes the actions from left to right in the order that their descriptors appear.
+
+## Naming Conventions
+
+Always use camelCase to specify action names, since they map directly to methods on your controller.
+
+Avoid action names that simply repeat the event's name, such as `click`, `onClick`, or `clicked`:
+
+```html
+<button data-action="click->profile#click">…</button>
+```
+
+Instead, name your action methods based on what will happen when they're called:
+
+```html
+<button data-action="click->profile#showDialog">…</button>
+```
+
+This will help you reason about the behavior of a block of HTML without having to look at the controller source.

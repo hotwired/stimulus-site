@@ -6,89 +6,82 @@ nav_order: 03
 
 # Targets
 
-By marking important elements as _targets_, controllers can easily reference them through corresponding properties.
-
-## Descriptors
+Stimulus lets you annotate important elements in a controller's scope as _targets_ so you can easily access them by name.
 
 ```html
-<div data-controller="person">
-  <input type="text" data-target="person.fullName person.input">
-  <input type="text" data-target="person.emailAddress person.input">
-
-  <p data-target="person.display"></p>
+<div data-controller="search">
+  <input type="text" data-target="search.query">
+  <div data-target="search.errorMessage"></div>
+  <div data-target="search.results"></div>
 </div>
 ```
 
-The `data-target` value `person.fullName` is called a _target descriptor_. This particular descriptor says:
-* `person` is the controller identifier
-* `fullName` is the target name
+## Descriptors
+
+The `data-target` value `search.query` is called a _target descriptor_. This descriptor says:
+* `search` is the scope's controller identifier
+* `query` is the target name, which can be anything you choose
+
+The identifier in a target descriptor must match a `data-controller` identifier specified on the element or one of its parents.
 
 ## Definitions
 
-When Stimulus loads your controller class, it looks for target name strings in a static array called `targets`.
+Define target names in your controller class using the `static targets` array:
 
 ```js
-// src/controllers/person_controller.js
+// controllers/search_controller.js
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "fullName", "emailAddress", "input", "display" ]
-
+  static targets = [ "query", "errorMessage", "results" ]
   // …
 }
 ```
 
-### Target Properties
+**Note:** You may need to enable support in your JavaScript environment for the static class properties standard (see [babel-plugin-transform-class-properties](https://babeljs.io/docs/en/babel-plugin-transform-class-properties/)).
 
-For each target name in the `static targets` array, Stimulus adds three new properties to your controller.
+## Properties
 
-* `this.`**`name`**`Target` evaluates to the first matching target in your controller's scope. If there is no element, accessing the property throws an error.
-* `this.`**`name`**`Targets` evaluates to an array of all matching targets in the controller's scope.
-* `this.has`**`Name`**`Target` evaluates to `true` if there is a matching target or `false` if not.
+For each target name defined in the `static targets` array, Stimulus adds the following properties to your controller, where `[name]` corresponds to the target's name:
 
-## Naming Conventions
+Type        | Name                   | Value
+----------- | ---------------------- | -----
+Singular    | `this.[name]Target`    | The first matching target in scope
+Plural      | `this.[name]Targets`   | An array of all matching targets in scope
+Existential | `this.has[Name]Target` | A boolean indicating whether there is a matching target in scope
 
-Always use camelCase for target names so they map cleanly to JavaScript controller properties.
+<br>**Note:** Accessing the singular target property will throw an error when there is no matching element.
 
-A kebab-case target name like `data-target="person.email-address"` would map to `this["email-addressTarget"]`, which is far less readable than `this.emailAddressTarget`.
+## Multiple Targets
+
+The `data-target` attribute's value is a space-separated list of target descriptors.
+
+It's possible for an element to have more than one target descriptor. It's also common for multiple elements in a scope to share the same descriptor.
+
+```html
+<form data-controller="search checkbox">
+  <input type="checkbox" data-target="search.projects checkbox.input" …>
+  <input type="checkbox" data-target="search.messages checkbox.input" …>
+  …
+</form>
+```
+
+In the example above, the checkboxes are accessible inside the `search` controller as `this.projectsTarget` and `this.messagesTarget`, respectively.
+
+Inside the `checkbox` controller, `this.inputTargets` returns an array with both checkboxes.
 
 ## Optional Targets
 
-Singular `this.`**`name`**`Target` properties assume the corresponding target element *should* be present and will throw an error if not. For targets that may or may not be present *by design*, always use `this.has`**`Name`**`Target` before accessing `this.`**`name`**`Target`.
-
-## Examples
+If your controller needs to work with a target which may or may not be present, condition your code based on the value of the existential target property:
 
 ```js
-initialize() {
-  // Focus the *first* input target initially
-  this.inputTarget.focus()
-}
-
-update() {
-  if (this.emptyInputTarget) {
-    // If there's an empty input target, focus it
-    this.emptyInputTarget.focus()
-  } else {
-    // Otherwise, render the display target
-    this.render()
-  }
-}
-
-render() {
-  // Consider the display target optional
-  if (this.hasDisplayTarget) {
-    this.displayTarget.textContent = this.nameWithEmailAddress
-  }
-}
-
-get emptyInputTarget() {
-  // Find the first input target with no value, if any
-  return this.inputTargets.find(target => !target.value)
-}
-
-get nameWithEmailAddress() {
-  const name = this.fullNameTarget.value
-  const email = this.emailAddressTarget.value
-  return `${name} (${email})`
+if (this.hasResultsTarget) {
+  this.resultsTarget.innerHTML = "…"
 }
 ```
+
+## Naming Conventions
+
+Always use camelCase to specify target names, since they map directly to properties on your controller.
+
+Specify identifiers in target descriptors using kebab-case, the same way they appear in `data-controller` attributes.

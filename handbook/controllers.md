@@ -19,6 +19,8 @@ Controllers are instances of JavaScript classes that you define in your applicat
 
 Each controller class inherits from the `Controller` base class exported by the `stimulus` module.
 
+## Properties
+
 Within a controller class, you can access the controller's:
 
 * application, via the `this.application` property
@@ -55,6 +57,20 @@ For example, this element has a controller which is an instance of the class def
 <div data-controller="reference"></div>
 ```
 
+## Scopes
+
+When Stimulus connects a controller to an element, that element and all of its children make up the controller's _scope_.
+
+For example, the `<div>` and `<h1>` below are part of the controller's scope, but the surrounding `<main>` element is not.
+
+```html
+<main>
+  <div data-controller="reference">
+    <h1>Reference</h1>
+  </div>
+</main>
+```
+
 ## Multiple Controllers
 
 The `data-controller` attribute's value is a space-separated list of identifiers:
@@ -63,15 +79,23 @@ The `data-controller` attribute's value is a space-separated list of identifiers
 <div data-controller="clipboard list-item"></div>
 ```
 
-It's normal for any given element on the page to have many controllers.
+It's normal for any given element on the page to have many controllers. In the example above, the `<div>` has two connected controllers, `clipboard` and `list-item`.
 
-Similarly, it's normal for an application to have many instances of a particular controller class at any given time.
+Similarly, it's common for multiple elements on the page to reference the same controller class:
+
+```html
+<div data-controller="list-item">One</div>
+<div data-controller="list-item">Two</div>
+<div data-controller="list-item">Three</div>
+```
+
+Here, each `<div>` has its own instance of the `list-item` controller.
 
 ## Naming Conventions
 
-Always use camelCase for method and property names.
+Always use camelCase for method and property names in a controller class.
 
-When an identifier is composed of more than one word, separate the words with dashes (`date-picker`, `list-item`).
+When an identifier is composed of more than one word, separate the words with dashes (`date-picker`, `list-item`). This is called _kebab-case_.
 
 In filenames, separate multiple words using either dashes or underscores (`controllers/date_picker.js`, `controllers/list-item.js`).
 
