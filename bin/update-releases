@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+
+curl --silent "https://api.github.com/repos/stimulusjs/stimulus/releases" > _data/releases.json

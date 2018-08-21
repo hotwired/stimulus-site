@@ -32,7 +32,7 @@ layout: default
 </div>
 
 <p class="version">
-  {% assign release = site.data.releases.first %}
+  {%- assign release = site.data.releases | where_exp: "release","release.prerelease == false" | first -%}
   <span>Current version: <a href="{{ release.html_url }}">{{ release.tag_name | remove_first: "v" }}</a> &mdash; released {{ release.created_at | date: "%B %d, %Y" }}</span>
 </p>
 

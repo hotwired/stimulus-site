@@ -26,6 +26,7 @@ titles_from_headings:
 
 exclude:
   - node_modules
+  - bin
   - .babelrc
   - Gemfile
   - Gemfile.lock
