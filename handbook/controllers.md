@@ -8,10 +8,7 @@ nav_order: 00
 
 A _controller_ is the basic organizational unit of a Stimulus application.
 
-Each controller is a JavaScript object which belongs to two other objects:
-
-* a Stimulus `Application` instance
-* an HTML element
+Each controller is a JavaScript object which belongs to a Stimulus `Application` instance and is associated with an HTML element.
 
 ## Classes
 
@@ -53,6 +50,8 @@ When you add a `data-controller` attribute to an element, Stimulus reads the ide
 
 For example, this element has a controller which is an instance of the class defined in `controllers/reference_controller.js`:
 
+<meta data-controller="callout" data-callout-value="reference">
+
 ```html
 <div data-controller="reference"></div>
 ```
@@ -75,6 +74,8 @@ For example, the `<div>` and `<h1>` below are part of the controller's scope, bu
 
 The `data-controller` attribute's value is a space-separated list of identifiers:
 
+<meta data-controller="callout" data-callout-value="clipboard list-item">
+
 ```html
 <div data-controller="clipboard list-item"></div>
 ```
@@ -83,23 +84,25 @@ It's normal for any given element on the page to have many controllers. In the e
 
 Similarly, it's common for multiple elements on the page to reference the same controller class:
 
+<meta data-controller="callout" data-callout-value="list-item">
+
 ```html
-<div data-controller="list-item">One</div>
-<div data-controller="list-item">Two</div>
-<div data-controller="list-item">Three</div>
+<ul>
+  <li data-controller="list-item">One</li>
+  <li data-controller="list-item">Two</li>
+  <li data-controller="list-item">Three</li>
+</ul>
 ```
 
-Here, each `<div>` has its own instance of the `list-item` controller.
+Here, each `<li>` has its own instance of the `list-item` controller.
 
 ## Naming Conventions
 
 Always use camelCase for method and property names in a controller class.
 
-When an identifier is composed of more than one word, separate the words with dashes (`date-picker`, `list-item`). This is called _kebab-case_.
+When an identifier is composed of more than one word, write the words in kebab-case (i.e., by using dashes: `date-picker`, `list-item`).
 
-In filenames, separate multiple words using either dashes or underscores (`controllers/date_picker.js`, `controllers/list-item.js`).
-
-You may namespace your controller modules using subfolders. Each slash (`/`) in a namespaced controller module's path becomes two dashes (`--`) in its identifier.
+In filenames, separate multiple words using either dashes or underscores (kebab-case or snake_case: `controllers/date_picker.js`, `controllers/list-item.js`).
 
 ## Registration
 
@@ -109,10 +112,20 @@ If you don't use the webpack helpers, your application must manually load and re
 
 ### Registering Controllers Manually
 
-To manually register a controller class with an identifier, call the `Application#register` method on your application object:
+To manually register a controller class with an identifier, first import the class, then call the `Application#register` method on your application object:
 
 ```js
 import ReferenceController from "./controllers/reference_controller"
 
 application.register("reference", ReferenceController)
+```
+
+You can also register a controller class inline instead of importing it from a module:
+
+```js
+import { Controller } from "stimulus"
+
+application.register("reference", class extends Controller {
+  // …
+})
 ```
