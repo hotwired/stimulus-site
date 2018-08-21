@@ -2,18 +2,18 @@
 <body class="{% if page.class %} {{ page.class }}{% endif %}">
   {% include navigation.html %}
 
-  <main id="content" class="handbook">
-    <section class="handbook__index">
+  <main id="content" class="docs">
+    <section class="docs__index">
 
-      <input type="checkbox" id="hamburger" class="handbook__checkbox"/>
-      <label class="handbook__mobile-button" for="hamburger"><span></span> Table of Contents</label>
+      <input type="checkbox" id="hamburger" class="docs__checkbox"/>
+      <label class="docs__mobile-button" for="hamburger"><span></span> Table of Contents</label>
 
-      <nav class="handbook__nav">
-        <label class="handbook__mobile-button handbook__mobile-button--close" for="hamburger"><span></span> close</label>
+      <nav class="docs__nav">
+        <label class="docs__mobile-button docs__mobile-button--close" for="hamburger"><span></span> close</label>
 
-        <p class="handbook__nav-title">{{ page.section_title }}:</p>
+        <p class="docs__nav-title">{{ page.section_title }}:</p>
         {%- assign section_pages = site.pages | where: "section",page.section | sort: "order" -%}
-        <ul class="handbook__nav-list">
+        <ul class="docs__nav-list">
           {%- for section_page in section_pages -%}
             {%- assign is_active = false -%}
             {%- if page.url == section_page.url -%}
@@ -21,7 +21,7 @@
               {%- assign next_section_page = section_pages[forloop.index] -%}
             {%- endif -%}
             <li>
-              <a class="handbook__nav-link{% if is_active %} active{% endif %}" href="{{ section_page.url }}">
+              <a class="docs__nav-link{% if is_active %} active{% endif %}" href="{{ section_page.url }}">
                 {%- assign prefix = section_page.nav_prefix -%}
                 {%- unless prefix -%}
                   {%- assign index = section_page.path | split: "/" | reverse | first | abs -%}
@@ -37,7 +37,7 @@
       </nav>
     </section>
 
-    <section id="start" class="handbook__content" data-controller="anchor" data-anchor-selector="h2,h3,h4">
+    <section id="start" class="docs__content" data-controller="anchor" data-anchor-selector="h2,h3,h4">
       {{ content }}
 
       {% if next_section_page %}

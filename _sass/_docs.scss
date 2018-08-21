@@ -1,6 +1,6 @@
-// handbook layout ////////////////////////////////////////////////////////////
+// docs layout ////////////////////////////////////////////////////////////
 
-.handbook {
+.docs {
   margin: 0 auto;
   padding: 0 2em;
 
@@ -20,7 +20,7 @@
   }
 }
 
-.handbook__content {
+.docs__content {
   grid-column: 4/5;
   max-width: $column-width;
   margin: 0 auto;
@@ -39,7 +39,7 @@
   }
 }
 
-.handbook__screenshot {
+.docs__screenshot {
   max-width: 100%;
   height: auto;
   border: 1px solid transparentize($color-accent, 0.6);
@@ -48,9 +48,9 @@
 }
 
 
-// handbook nav /////////////////////////////////////////////////////////////////////
+// docs nav /////////////////////////////////////////////////////////////////////
 
-.handbook__index {
+.docs__index {
   max-width: $column-width;
   grid-column: 2/3;
   margin: 0 auto 2em auto;
@@ -63,16 +63,16 @@
   }
 }
 
-.handbook__checkbox {
+.docs__checkbox {
   display: none;
 }
 
-.handbook__checkbox:checked ~ .handbook__nav {
+.docs__checkbox:checked ~ .docs__nav {
   @include transform(translate(0, 0));
   opacity: 1;
 }
 
-.handbook__nav {
+.docs__nav {
   @include transform(translate(-100%, 0));
   @include transition(transform 0.3s ease-in-out);
   opacity: 0;
@@ -101,7 +101,7 @@
   }
 }
 
-.handbook__nav-title {
+.docs__nav-title {
   display: none;
   margin: 0 0 0.6em 0;
   font-family: $sans-stack;
@@ -116,7 +116,7 @@
   }
 }
 
-.handbook__nav-list {
+.docs__nav-list {
   list-style-type: none;
   margin: 0;
 
@@ -126,7 +126,7 @@
   }
 }
 
-.handbook__nav-link {
+.docs__nav-link {
   display: block;
   margin: 0;
   padding: 0 1em 1em 1em;
@@ -160,7 +160,7 @@
   }
 }
 
-.handbook__mobile-button {
+.docs__mobile-button {
   display: inline-block;
   margin: 1.5em auto 0 auto;
   padding: 0.75em 1em;
@@ -203,7 +203,7 @@
   }
 }
 
-.handbook__mobile-button--close {
+.docs__mobile-button--close {
   margin: 1.5em auto;
   background-color: $color-accent;
 
