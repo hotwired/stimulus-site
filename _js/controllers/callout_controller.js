@@ -15,7 +15,7 @@ export default class extends Controller {
   }
 
   get calloutRanges() {
-    return this.textRanges.map(([start, end]) => {
+    return this.matches.map(([start, end]) => {
       return this.createCalloutRange(start, end)
     })
   }
@@ -50,29 +50,33 @@ export default class extends Controller {
 
   get textNodes() {
     const nodes = []
-    const walker = document.createTreeWalker(this.preElement, NodeFilter.SHOW_TEXT)
-
-    let node
-    while (node = walker.nextNode()) {
-      nodes.push(node)
-    }
-
+    const iterator = this.createTextNodeIterator()
+    while (iterator.nextNode()) nodes.push(iterator.currentNode)
     return nodes
   }
 
-  get textRanges() {
-    let position = -1
-    const ranges = []
+  get matches() {
+    const matches = []
+    let match, position
+    while (match = this.findNextMatch(position)) matches.push(match), position = match[0]
+    return matches
+  }
 
-    while ((position = this.content.indexOf(this.value, position + 1)) != -1) {
-      ranges.push([position, position + this.value.length])
-    }
+  createTextNodeIterator() {
+    return document.createTreeWalker(this.contentElement, NodeFilter.SHOW_TEXT)
+  }
 
-    return ranges
+  findNextMatch(fromPosition = -1) {
+    const position = this.content.indexOf(this.value, fromPosition + 1)
+    return position == -1 ? null : [position, position + this.value.length]
+  }
+
+  get contentElement() {
+    return this.formattedCodeElement.querySelector("pre")
   }
 
   get content() {
-    return this.preElement.textContent
+    return this.contentElement.textContent
   }
 
   get value() {
@@ -82,10 +86,6 @@ export default class extends Controller {
   get className() {
     const suffix = this.data.get("class")
     return "callout" + (suffix ? "--" + suffix : "")
-  }
-
-  get preElement() {
-    return this.formattedCodeElement.querySelector("pre")
   }
 
   get formattedCodeElement() {
