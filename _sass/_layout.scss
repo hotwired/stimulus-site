@@ -72,6 +72,11 @@
   text-transform: none;
   font-size: 1rem;
 
+  &:not(:last-child)::after {
+    display: inline-block;
+    margin-left: 0.3rem;
+    content: "/";
+  }
 }
 
 // footer /////////////////////////////////////////////////////////////////////
