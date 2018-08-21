@@ -11,6 +11,7 @@
       <nav class="handbook__nav">
         <label class="handbook__mobile-button handbook__mobile-button--close" for="hamburger"><span></span> close</label>
 
+        <p class="handbook__nav-title">{{ page.section_title }}:</p>
         {%- assign section_pages = site.pages | where: "section",page.section | sort: "order" -%}
         <ul class="handbook__nav-list">
           {%- for section_page in section_pages -%}
