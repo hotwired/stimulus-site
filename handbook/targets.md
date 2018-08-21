@@ -8,6 +8,10 @@ nav_order: 03
 
 Stimulus lets you annotate important elements in a controller's scope as _targets_ so you can easily access them by name.
 
+<meta data-controller="callout" data-callout-value="search.query">
+<meta data-controller="callout" data-callout-value="search.errorMessage">
+<meta data-controller="callout" data-callout-value="search.results">
+
 ```html
 <div data-controller="search">
   <input type="text" data-target="search.query">
@@ -58,10 +62,14 @@ The `data-target` attribute's value is a space-separated list of target descript
 
 It's possible for an element to have more than one target descriptor, and it's common for multiple elements in a scope to share the same descriptor.
 
+<meta data-controller="callout" data-callout-value="search.projects" data-callout-class="pink">
+<meta data-controller="callout" data-callout-value="search.messages" data-callout-class="blue">
+<meta data-controller="callout" data-callout-value="checkbox.input" data-callout-class="green">
+
 ```html
 <form data-controller="search checkbox">
-  <input type="checkbox" data-target="search.projects checkbox.input" …>
-  <input type="checkbox" data-target="search.messages checkbox.input" …>
+  <input type="checkbox" data-target="search.projects checkbox.input">
+  <input type="checkbox" data-target="search.messages checkbox.input">
   …
 </form>
 ```

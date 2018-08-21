@@ -72,7 +72,21 @@ export default class extends Controller {
   }
 
   get contentElement() {
-    return this.formattedCodeElement.querySelector("pre")
+    const element = this.createContentElementIterator().nextNode()
+    if (!element) throw new Error("can't find content element")
+    return element
+  }
+
+  createContentElementIterator() {
+    return document.createTreeWalker(this.parentElement, NodeFilter.SHOW_ELEMENT, (node) => {
+      const follows = this.element.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING
+      const isContent = this.isContentElement(node)
+      return follows && isContent ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP
+    })
+  }
+
+  isContentElement(element) {
+    return element.tagName.toLowerCase() == "pre"
   }
 
   get content() {
@@ -88,7 +102,7 @@ export default class extends Controller {
     return "callout" + (suffix ? "--" + suffix : "")
   }
 
-  get formattedCodeElement() {
-    return this.element.nextElementSibling
+  get parentElement() {
+    return this.element.parentElement
   }
 }

@@ -96,7 +96,7 @@ Avoid action names that simply repeat the event's name, such as `click`, `onClic
 <meta data-controller="callout" data-callout-value="#click" data-callout-class="avoid">
 
 ```html
-<button data-action="click->profile#click">👎</button>
+<button data-action="click->profile#click">Don't</button>
 ```
 
 Instead, name your action methods based on what will happen when they're called:
@@ -104,7 +104,7 @@ Instead, name your action methods based on what will happen when they're called:
 <meta data-controller="callout" data-callout-value="#showDialog" data-callout-class="prefer">
 
 ```html
-<button data-action="click->profile#showDialog">👍</button>
+<button data-action="click->profile#showDialog">Do</button>
 ```
 
 This will help you reason about the behavior of a block of HTML without having to look at the controller source.
