@@ -56,7 +56,7 @@ Existential | `this.has[Name]Target` | A boolean indicating whether there is a m
 
 The `data-target` attribute's value is a space-separated list of target descriptors.
 
-It's possible for an element to have more than one target descriptor. It's also common for multiple elements in a scope to share the same descriptor.
+It's possible for an element to have more than one target descriptor, and it's common for multiple elements in a scope to share the same descriptor.
 
 ```html
 <form data-controller="search checkbox">
