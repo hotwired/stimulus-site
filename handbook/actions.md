@@ -14,6 +14,8 @@ An _action_ is a connection between
 
 Actions are how you handle DOM events in your controllers.
 
+<meta data-controller="callout" data-callout-value="click->gallery#next">
+
 ```html
 <div data-controller="gallery">
   <button data-action="click->gallery#next">…</button>
@@ -32,8 +34,10 @@ The `data-action` value `click->gallery#next` is called an _action descriptor_. 
 
 Stimulus lets you shorten the action descriptors for some common element/event pairs, such as the button/click pair above, by omitting the event name:
 
+<meta data-controller="callout" data-callout-value="gallery#next">
+
 ```html
-  <button data-action="gallery#next">…</button>
+<button data-action="gallery#next">…</button>
 ```
 
 The full set of these shorthand pairs is as follows:
@@ -53,6 +57,8 @@ textarea          | change
 Sometimes a controller needs to listen for events dispatched on the global `window` or `document` objects.
 
 You can append `@window` or `@document` to the event name in an action descriptor to install the event listener on `window` or `document`, respectively, as in the following example:
+
+<meta data-controller="callout" data-callout-value="resize@window">
 
 ```html
 <div data-controller="gallery"
@@ -87,14 +93,18 @@ Always use camelCase to specify action names, since they map directly to methods
 
 Avoid action names that simply repeat the event's name, such as `click`, `onClick`, or `clicked`:
 
+<meta data-controller="callout" data-callout-value="#click" data-callout-class="avoid">
+
 ```html
-<button data-action="click->profile#click">…</button>
+<button data-action="click->profile#click">👎</button>
 ```
 
 Instead, name your action methods based on what will happen when they're called:
 
+<meta data-controller="callout" data-callout-value="#showDialog" data-callout-class="prefer">
+
 ```html
-<button data-action="click->profile#showDialog">…</button>
+<button data-action="click->profile#showDialog">👍</button>
 ```
 
 This will help you reason about the behavior of a block of HTML without having to look at the controller source.
