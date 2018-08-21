@@ -1,30 +1,3 @@
-// main content ///////////////////////////////////////////////////////////////
-
-.content {
-  margin: 0 auto;
-  padding: 0 2em;
-  overflow-x: hidden;
-  max-width: $column-width;
-
-  @include media(medium) {
-    max-width: 90em;
-
-    @supports (display: grid) {
-      max-width: 100%;
-      padding: 0;
-      display: grid;
-      grid-template-columns: 0.25fr 1fr 65vw 1fr 0.25fr;
-    }
-  }
-  
-  @include media(large) {
-
-    @supports (display: grid) {
-      grid-template-columns: 1fr 1fr 55vw 1fr 1fr;
-    }
-  }
-}
-
 // top nav ////////////////////////////////////////////////////////////////////
 
 .nav {
@@ -98,7 +71,7 @@
   font-weight: bold;
   text-transform: none;
   font-size: 1rem;
-  
+
 }
 
 // footer /////////////////////////////////////////////////////////////////////
@@ -117,7 +90,7 @@
     &:before {
       content: "";
       display: block;
-      position: absolute; 
+      position: absolute;
       width: 100%;
       height: 100%;
       z-index: -1;

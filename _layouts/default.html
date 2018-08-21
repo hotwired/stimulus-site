@@ -1,43 +1,32 @@
-{% include head.html %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ site.title }}{% if page.section_title %} {{ page.section_title }}{% endif %}{% if page.title %}: {{ page.title }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stimulus is a JavaScript framework with modest ambitions. It doesn't seek to take over your entire front-end—in fact, it's not concerned with rendering HTML at all. Instead, it's designed to augment your HTML with just enough behavior to make it shine.">
+  <link rel="canonical" href="{{ page.url | replace: "index.html", "" | prepend: site.url }}">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/ted5yzm.css">
+  <script src="/js/main.js" async></script>
+</head>
 <body class="{% if page.class %} {{ page.class }}{% endif %}">
-  {% include navigation.html %}
+  <header class="nav">
+    <a class="nav__logo" href="/"><img  class="nav__icon" src="/images/logo-beige.svg" alt="Stimulus Logo">Stimulus</a>
+    <nav class="nav__links">
+      <a class="nav__links-item" href="{% link docs/handbook/01_introduction.md %}">Handbook</a> /
+      <a class="nav__links-item" href="{% link docs/reference/controllers.md %}">Reference</a> /
+      <a class="nav__links-item" href="{{ site.discourse_url }}">Discourse</a> /
+      <a class="nav__links-item" href="{{ site.github_url }}">Source Code</a>
+    </nav>
+  </header>
 
-  <main id="content" class="docs">
-    <section class="docs__index">
+  <main class="{{ page.layout_type }}">
+    {%- if page.layout_type == "docs" -%}
+      {% include docs_navigation.html %}
+    {%- endif -%}
 
-      <input type="checkbox" id="hamburger" class="docs__checkbox"/>
-      <label class="docs__mobile-button" for="hamburger"><span></span> Table of Contents</label>
-
-      <nav class="docs__nav">
-        <label class="docs__mobile-button docs__mobile-button--close" for="hamburger"><span></span> close</label>
-
-        <p class="docs__nav-title">{{ page.section_title }}:</p>
-        {%- assign section_pages = site.pages | where: "section",page.section | sort: "order" -%}
-        <ul class="docs__nav-list">
-          {%- for section_page in section_pages -%}
-            {%- assign is_active = false -%}
-            {%- if page.url == section_page.url -%}
-              {%- assign is_active = true -%}
-              {%- assign next_section_page = section_pages[forloop.index] -%}
-            {%- endif -%}
-            <li>
-              <a class="docs__nav-link{% if is_active %} active{% endif %}" href="{{ section_page.url }}">
-                {%- assign prefix = section_page.nav_prefix -%}
-                {%- unless prefix -%}
-                  {%- assign index = section_page.path | split: "/" | reverse | first | abs -%}
-                  {%- if index > 0 -%}
-                    {%- assign prefix = forloop.index0 -%}
-                  {%- endif -%}
-                {%- endunless -%}
-                {%- if prefix %}{{ prefix }}: {% endif %}{{ section_page.title }}
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </nav>
-    </section>
-
-    <section id="start" class="docs__content" data-controller="anchor" data-anchor-selector="h2,h3,h4">
+    <section class="{% if page.layout_type %}{{ page.layout_type }}__content{% endif %}" data-controller="anchor" data-anchor-selector="h2,h3,h4">
       {{ content }}
 
       {% if next_section_page %}
@@ -46,6 +35,14 @@
     </section>
   </main>
 
-  {% include footer.html %}
+  <footer class="foot">
+    <p><span class="foot__text"><img class="foot__icon" src="/images/basecamp-icon.svg" alt="Basecamp"> <br> Brought to you by the team at <a href="https://basecamp.com/">Basecamp</a>.</span></p>
+  </footer>
+
+  {%- if jekyll.environment == "production" %}
+    <script src="https://static.getclicky.com/js"></script>
+    <script>try{ clicky.init(101097384); }catch(e){}</script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="https://in.getclicky.com/101097384ns.gif"></p></noscript>
+  {%- endif %}
 </body>
 </html>

@@ -15,11 +15,13 @@ defaults:
     values:
       section: handbook
       section_title: Handbook
+      layout_type: docs
   - scope:
       path: "*/reference/*"
     values:
       section: reference
       section_title: Reference
+      layout_type: docs
 
 optional_front_matter:
   remove_originals: true
