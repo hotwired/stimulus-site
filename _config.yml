@@ -13,13 +13,11 @@ defaults:
   - scope:
       path: "*/handbook/*"
     values:
-      layout: handbook
       section: handbook
       section_title: Handbook
   - scope:
       path: "*/reference/*"
     values:
-      layout: handbook
       section: reference
       section_title: Reference
 
