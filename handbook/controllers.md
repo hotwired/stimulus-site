@@ -80,7 +80,7 @@ The `data-controller` attribute's value is a space-separated list of identifiers
 <div data-controller="clipboard list-item"></div>
 ```
 
-It's normal for any given element on the page to have many controllers. In the example above, the `<div>` has two connected controllers, `clipboard` and `list-item`.
+It's common for any given element on the page to have many controllers. In the example above, the `<div>` has two connected controllers, `clipboard` and `list-item`.
 
 Similarly, it's common for multiple elements on the page to reference the same controller class:
 
