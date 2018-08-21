@@ -84,7 +84,7 @@
   margin: 0;
   padding: 0 0.5em;
   width: 100%;
-  height: 100%;
+  max-height: 100vh;
   z-index: 1000;
   background-color: $color-accent;
 
@@ -103,7 +103,7 @@
 
 .handbook__nav-title {
   display: none;
-  margin: 1em 0 0 0;
+  margin: 0 0 0.6em 0;
   font-family: $sans-stack;
   font-weight: bold;
   font-size: 0.9rem;
@@ -122,6 +122,7 @@
 
 .handbook__nav-list {
   list-style-type: none;
+  margin: 0 0 1.8vh 0;
 
   li {
     margin: 0;
@@ -172,7 +173,7 @@
   @include media(medium) {
     text-align: left;
     margin: 0 0 0 -0.2rem;
-    padding: 0.5em;
+    padding: calc(0.6vh + 0.1em) 0.5em;
     font-size: 1em;
     font-style: italic;
     line-height: 1.4;
