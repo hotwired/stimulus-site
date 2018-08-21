@@ -1,7 +1,6 @@
 ---
-permalink: /handbook/targets
-nav_group: reference
-nav_order: 03
+permalink: /reference/targets
+order: 03
 ---
 
 # Targets

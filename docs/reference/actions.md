@@ -1,7 +1,6 @@
 ---
-permalink: /handbook/actions
-nav_group: reference
-nav_order: 02
+permalink: /reference/actions
+order: 02
 ---
 
 # Actions

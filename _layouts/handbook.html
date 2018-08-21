@@ -11,40 +11,36 @@
       <nav class="handbook__nav">
         <label class="handbook__mobile-button handbook__mobile-button--close" for="hamburger"><span></span> close</label>
 
-        {%- assign groups = site.pages | group_by: "nav_group" | where_exp: "group","group.name != ''" -%}
-        {%- for group in groups -%}
-          <p class="handbook__nav-title handbook__nav-title--{{ group.name }}">{{ group.name | capitalize }}:</p>
-          <ul class="handbook__nav-list handbook__nav-list--{{ group.name }}">
-            {%- assign items = group.items | sort: "nav_order" -%}
-            {%- for item in items -%}
-              {%- assign is_active = false -%}
-              {%- if page.url == item.url -%}
-                {%- assign is_active = true -%}
-                {%- assign next_item = items[forloop.index] -%}
-              {%- endif -%}
-              <li>
-                <a class="handbook__nav-link{% if is_active %} active{% endif %}" href="{{ item.url }}">
-                  {%- assign prefix = item.nav_prefix -%}
-                  {%- unless prefix -%}
-                    {%- assign index = item.path | split: "/" | reverse | first | abs -%}
-                    {%- if index > 0 -%}
-                      {%- assign prefix = forloop.index0 -%}
-                    {%- endif -%}
-                  {%- endunless -%}
-                  {%- if prefix %}{{ prefix }}: {% endif %}{{ item.title }}
-                </a>
-              </li>
-            {%- endfor -%}
-          </ul>
-        {%- endfor -%}
+        {%- assign section_pages = site.pages | where: "section",page.section | sort: "order" -%}
+        <ul class="handbook__nav-list">
+          {%- for section_page in section_pages -%}
+            {%- assign is_active = false -%}
+            {%- if page.url == section_page.url -%}
+              {%- assign is_active = true -%}
+              {%- assign next_section_page = section_pages[forloop.index] -%}
+            {%- endif -%}
+            <li>
+              <a class="handbook__nav-link{% if is_active %} active{% endif %}" href="{{ section_page.url }}">
+                {%- assign prefix = section_page.nav_prefix -%}
+                {%- unless prefix -%}
+                  {%- assign index = section_page.path | split: "/" | reverse | first | abs -%}
+                  {%- if index > 0 -%}
+                    {%- assign prefix = forloop.index0 -%}
+                  {%- endif -%}
+                {%- endunless -%}
+                {%- if prefix %}{{ prefix }}: {% endif %}{{ section_page.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
       </nav>
     </section>
 
     <section id="start" class="handbook__content" data-controller="anchor" data-anchor-selector="h2,h3,h4">
       {{ content }}
 
-      {% if next_item %}
-        <p>Next: <a href="{{ next_item.url }}">{{ next_item.title }}</a></p>
+      {% if next_section_page %}
+        <p>Next: <a href="{{ next_section_page.url }}">{{ next_section_page.title }}</a></p>
       {% endif %}
     </section>
   </main>

@@ -1,7 +1,6 @@
 ---
-permalink: /handbook/controllers
-nav_group: reference
-nav_order: 00
+permalink: /reference/controllers
+order: 00
 ---
 
 # Controllers

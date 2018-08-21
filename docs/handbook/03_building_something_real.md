@@ -1,6 +1,5 @@
 ---
 permalink: /handbook/building-something-real
-nav_group: intro
 ---
 
 # Building Something Real

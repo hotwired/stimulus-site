@@ -11,10 +11,17 @@ theme: false
 
 defaults:
   - scope:
-      path: handbook/*
+      path: "*/handbook/*"
     values:
       layout: handbook
+      section: handbook
       section_title: Handbook
+  - scope:
+      path: "*/reference/*"
+    values:
+      layout: handbook
+      section: reference
+      section_title: Reference
 
 optional_front_matter:
   remove_originals: true

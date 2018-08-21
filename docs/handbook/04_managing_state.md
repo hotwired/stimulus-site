@@ -1,6 +1,5 @@
 ---
 permalink: /handbook/managing-state
-nav_group: intro
 ---
 
 # Managing State

@@ -1,6 +1,5 @@
 ---
 permalink: /handbook/origin
-nav_group: intro
 nav_prefix: Preface
 ---
 

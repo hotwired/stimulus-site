@@ -1,7 +1,6 @@
 ---
-permalink: /handbook/data
-nav_group: reference
-nav_order: 04
+permalink: /reference/data
+order: 04
 ---
 
 # Data

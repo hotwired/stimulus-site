@@ -1,6 +1,5 @@
 ---
 permalink: /handbook/installing
-nav_group: intro
 ---
 
 # Installing Stimulus in Your Application
