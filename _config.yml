@@ -36,3 +36,6 @@ exclude:
   - package.json
   - webpack.config.js
   - yarn.lock
+
+plugins:
+  - jekyll-sitemap
