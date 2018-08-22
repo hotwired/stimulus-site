@@ -7,24 +7,7 @@ order: 00
 
 A _controller_ is the basic organizational unit of a Stimulus application.
 
-Each controller is a JavaScript object which belongs to a Stimulus `Application` instance and is associated with an HTML element.
-
-## Classes
-
-Controllers are instances of JavaScript classes that you define in your application.
-
-Each controller class inherits from the `Controller` base class exported by the `stimulus` module.
-
-## Properties
-
-Within a controller class, you can access the controller's:
-
-* application, via the `this.application` property
-* HTML element, via the `this.element` property
-
-## Modules
-
-Define your controller classes in JavaScript modules, one per file:
+Controllers are instances of JavaScript classes that you define in your application. Each controller class inherits from the `Controller` base class exported by the `stimulus` module.
 
 ```js
 // controllers/reference_controller.js
@@ -34,6 +17,17 @@ export default class extends Controller {
   // …
 }
 ```
+
+## Properties
+
+Each controller belongs to a Stimulus `Application` instance and is associated with an HTML element. Within a controller class, you can access the controller's:
+
+* application, via the `this.application` property
+* HTML element, via the `this.element` property
+
+## Modules
+
+Define your controller classes in JavaScript modules, one per file.
 
 Export each controller class as the module's default object.
 
