@@ -31,7 +31,7 @@ Define your controller classes in JavaScript modules, one per file:
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  // Your methods go here
+  // …
 }
 ```
 
