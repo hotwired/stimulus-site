@@ -7,7 +7,7 @@ order: 01
 
 Stimulus calls special methods on your controller at notable times during its lifecycle.
 
-You can implement these methods to set up or tear down associated state as the controller connects to and disconnects from the document.
+You can implement these methods to set up or tear down associated state when the controller connects to and disconnects from the document.
 
 Method       | Invoked by Stimulus…
 ------------ | --------------------
