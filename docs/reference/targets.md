@@ -61,9 +61,9 @@ The `data-target` attribute's value is a space-separated list of target descript
 
 It's possible for an element to have more than one target descriptor, and it's common for multiple elements in a scope to share the same descriptor.
 
-<meta data-controller="callout" data-callout-value="search.projects" data-callout-class="pink">
-<meta data-controller="callout" data-callout-value="search.messages" data-callout-class="blue">
-<meta data-controller="callout" data-callout-value="checkbox.input" data-callout-class="green">
+<meta data-controller="callout" data-callout-value="search.projects">
+<meta data-controller="callout" data-callout-value="search.messages">
+<meta data-controller="callout" data-callout-value="checkbox.input">
 
 ```html
 <form data-controller="search checkbox">
@@ -90,5 +90,3 @@ if (this.hasResultsTarget) {
 ## Naming Conventions
 
 Always use camelCase to specify target names, since they map directly to properties on your controller.
-
-Specify identifiers in target descriptors using kebab-case, the same way they appear in `data-controller` attributes.

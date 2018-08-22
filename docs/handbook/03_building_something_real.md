@@ -92,7 +92,7 @@ We want a click on the button to invoke the `copy()` method in our controller, s
 >
 > Certain other elements have default events, too. Here's the full list:
 >
-> Element           | Default event
+> Element           | Default Event
 > ----------------- | -------------
 > a                 | click
 > button            | click

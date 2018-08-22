@@ -54,7 +54,7 @@ Stimulus lets you shorten the action descriptors for some common element/event p
 
 The full set of these shorthand pairs is as follows:
 
-Element           | Default event
+Element           | Default Event
 ----------------- | -------------
 a                 | click
 button            | click
