@@ -5,9 +5,17 @@ order: 03
 
 # Lifecycle Callbacks
 
-Stimulus calls special methods on your controller at notable times during its lifecycle.
+Special methods called _lifecycle callbacks_ allow you to respond whenever a controller connects to and disconnects from the document.
 
-You can implement these methods to set up or tear down associated state when the controller connects to and disconnects from the document.
+```js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  connect() {
+    // …
+  }
+}
+```
 
 Method       | Invoked by Stimulus…
 ------------ | --------------------
