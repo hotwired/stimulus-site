@@ -1,5 +1,5 @@
 ---
-permalink: /reference/data
+permalink: /reference/data-maps
 order: 04
 ---
 
@@ -7,11 +7,11 @@ order: 04
 
 Each Stimulus controller has a _data map_ which lets you access special data attributes on the controller's element.
 
-<meta data-controller="callout" data-callout-value="data-content-loader-url=&quot;/messages.html&quot;">
+<meta data-controller="callout" data-callout-value="data-content-loader-url=&quot;/messages&quot;">
 
 ```html
 <div data-controller="content-loader"
-     data-content-loader-url="/messages.html">
+     data-content-loader-url="/messages">
 </div>
 ```
 
@@ -72,6 +72,6 @@ this.data.set("count", 1)
 then you'll get the string `"1"` back from `DataMap#get()`:
 
 ```js
-this.data.get("count")
+this.data.get("count") // "1"
 ```
 
