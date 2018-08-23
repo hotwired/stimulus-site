@@ -5,7 +5,7 @@ order: 02
 
 # Targets
 
-Stimulus lets you annotate important elements in a controller's scope as _targets_ so you can easily access them by name.
+_Targets_ let you reference important elements by name.
 
 <meta data-controller="callout" data-callout-value="search.query">
 <meta data-controller="callout" data-callout-value="search.errorMessage">
