@@ -31,8 +31,10 @@ exclude:
   - node_modules
   - bin
   - .babelrc
+  - Dockerfile
   - Gemfile
   - Gemfile.lock
+  - now.json
   - package.json
   - webpack.config.js
   - yarn.lock
