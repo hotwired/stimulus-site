@@ -1,17 +1,11 @@
 ---
 permalink: /reference/actions
-order: 02
+order: 01
 ---
 
 # Actions
 
-An _action_ is a connection between
-
-* a controller method,
-* the controller's element, and
-* a DOM event listener
-
-Actions are how you handle DOM events in your controllers.
+_Actions_ are how you handle DOM events in your controllers.
 
 <meta data-controller="callout" data-callout-value="click->gallery#next">
 
@@ -33,6 +27,12 @@ export default class extends Controller {
   }
 }
 ```
+
+An action is a connection between
+
+* a controller method,
+* the controller's element, and
+* a DOM event listener.
 
 ## Descriptors
 
