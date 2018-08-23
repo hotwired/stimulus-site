@@ -1,0 +1,6 @@
+{
+  "type": "static",
+  "public": true,
+  "name": "stimulusjs",
+  "alias": "stimulusjs.now.sh"
+}

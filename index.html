@@ -1,6 +1,11 @@
 ---
 title: A modest JavaScript framework for the HTML you already have.
+description: >-
+  Stimulus is a JavaScript framework with modest ambitions.
+  It doesn’t seek to take over your entire front-end—in fact, it’s not concerned with rendering HTML at all.
+  Instead, it’s designed to augment your HTML with just enough behavior to make it shine.
 layout: default
+layout_type: landing
 ---
 
 <div class="intro">
@@ -32,18 +37,18 @@ layout: default
 </div>
 
 <p class="version">
-  {% assign release = site.data.releases.first %}
+  {%- assign release = site.data.releases | where_exp: "release","release.prerelease == false" | first -%}
   <span>Current version: <a href="{{ release.html_url }}">{{ release.tag_name | remove_first: "v" }}</a> &mdash; released {{ release.created_at | date: "%B %d, %Y" }}</span>
 </p>
 
-<p class="lede"><strong>Stimulus</strong> is a JavaScript framework with modest ambitions. It doesn't seek to take over your entire front-end—in fact, it's not concerned with rendering HTML at all. Instead, it's designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>
+<p class="lede"><string>Stimulus</strong> is a JavaScript framework with modest ambitions. It doesn’t seek to take over your entire front-end—in fact, it’s not concerned with rendering HTML at all. Instead, it’s designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://github.com/turbolinks/turbolinks">Turbolinks</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>
 
 <div class="actions">
-  <a class="actions__item" href="{% link _handbook/01_introduction.md %}">
+  <a class="actions__item" href="{% link docs/handbook/01_introduction.md %}">
     <img class="actions__icon" src="/images/icon-guide.svg" alt="book icon">
     Handbook
   </a>
-  <a class="actions__item" href="{% link _handbook/06_installing_stimulus.md %}">
+  <a class="actions__item" href="{% link docs/handbook/06_installing_stimulus.md %}">
     <img class="actions__icon" src="/images/icon-install.svg" alt="install icon">
     Installation Guide
   </a>
