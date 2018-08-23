@@ -19,7 +19,7 @@ Controllers are instances of JavaScript classes that you define in your applicat
 
 ## Properties
 
-Each controller belongs to a Stimulus `Application` instance and is associated with an HTML element. Within a controller class, you can access the controller's:
+Every controller belongs to a Stimulus `Application` instance and is associated with an HTML element. Within a controller class, you can access the controller's:
 
 * application, via the `this.application` property
 * HTML element, via the `this.element` property
@@ -62,7 +62,8 @@ For example, the `<div>` and `<h1>` below are part of the controller's scope, bu
 
 The `data-controller` attribute's value is a space-separated list of identifiers:
 
-<meta data-controller="callout" data-callout-value="clipboard list-item">
+<meta data-controller="callout" data-callout-value="clipboard">
+<meta data-controller="callout" data-callout-value="list-item">
 
 ```html
 <div data-controller="clipboard list-item"></div>

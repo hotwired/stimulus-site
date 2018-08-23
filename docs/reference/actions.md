@@ -110,7 +110,14 @@ event.stopPropagation() | Stops the event before it bubbles up to other listener
 
 The `data-action` attribute's value is a space-separated list of action descriptors.
 
-It's common for any given element to have many actions.
+It's common for any given element to have many actions. For example, the following input element calls a `field` controller's `highlight()` method when it gains focus, and a `search` controller's `update()` method every time the element's value changes:
+
+<meta data-controller="callout" data-callout-value="focus->field#highlight">
+<meta data-controller="callout" data-callout-value="input->search#update">
+
+```html
+<input type="text" data-action="focus->field#highlight input->search#update">
+```
 
 When an element has more than one action for the same event, Stimulus invokes the actions from left to right in the order that their descriptors appear.
 
@@ -118,7 +125,7 @@ When an element has more than one action for the same event, Stimulus invokes th
 
 Always use camelCase to specify action names, since they map directly to methods on your controller.
 
-Avoid action names that simply repeat the event's name, such as `click`, `onClick`, or `clicked`:
+Avoid action names that simply repeat the event's name, such as `click`, `onClick`, or `handleClick`:
 
 <meta data-controller="callout" data-callout-value="#click" data-callout-class="avoid">
 
