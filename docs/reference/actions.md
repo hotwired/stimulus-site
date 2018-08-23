@@ -28,11 +28,11 @@ export default class extends Controller {
 }
 ```
 
-An action is a connection between
+An action is a connection between:
 
-* a controller method,
-* the controller's element, and
-* a DOM event listener.
+* a controller method
+* the controller's element
+* a DOM event listener
 
 ## Descriptors
 
