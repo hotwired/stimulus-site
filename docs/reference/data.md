@@ -3,53 +3,75 @@ permalink: /reference/data
 order: 04
 ---
 
-# Data
+# Data Maps
 
-Each Stimulus controller has a `this.data` object with `has()`, `get()`, `set()`, and `delete()` methods. These methods provide convenient access to `data` attributes on the controller's element, scoped by the controller's identifier.
+Each Stimulus controller has a _data map_ which lets you access special data attributes on the controller's element.
+
+<meta data-controller="callout" data-callout-value="data-content-loader-url=&quot;/messages.html&quot;">
 
 ```html
-<div data-controller="person" data-person-full-name="Javan Makhmali">…</div>
+<div data-controller="content-loader"
+     data-content-loader-url="/messages.html">
+</div>
 ```
 
-* **`this.data.has("fullName")`** returns `true` if the controller's element has a `data-person-full-name` attribute or `false` if not
-* **`this.data.get("fullName")`** returns the string value of the element's `data-person-full-name` attribute
-* **`this.data.set("fullName", name)`** sets the element's `data-person-full-name` attribute to the string value of `name`
-* **`this.data.delete("fullName")`** removes the element's `data-person-full-name` attribute and returns `true` if the element *had* the attribute or `false` if not
+<meta data-controller="callout" data-callout-value="this.data.get(&quot;url&quot;)">
+
+```js
+// controllers/content_loader_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  connect() {
+    fetch(this.data.get("url")).then(/* … */)
+  }
+}
+```
+
+The data map object is exposed to each controller through its `this.data` property.
+
+## Methods
+
+Use the following methods in a controller to access data attributes by key:
+
+Method                         | Result
+------------------------------ | ------
+this.data.get(key)             | Returns the string value of the mapped data attribute
+this.data.has(key)             | Returns true if the mapped data attribute exists
+this.data.set(key,&nbsp;value) | Sets the string value of the mapped data attribute
+this.data.delete(key)          | Deletes the mapped data attribute
 
 ## Naming Conventions
 
-Always use `camelCase` in JavaScript and `kebab-case` for HTML attributes.
+Keys map to attribute names using the format `data-[identifier]-[key]`.
+
+Write keys with multiple words as `camelCase` in JavaScript and `kebab-case` in HTML. For example, the following method call:
+
+<meta data-controller="callout" data-callout-value="fileType">
+
+```js
+this.data.get("fileType")
+```
+
+would return the value `"svg"`, given the following HTML:
+
+<meta data-controller="callout" data-callout-value="file-type">
+
+```html
+<div data-controller="reference" data-reference-file-type="svg">
+```
 
 ## Values Are Strings
 
-Attribute values are always `get()` and `set()` as strings. For example, `this.set("age", 1)` will convert the value `1` to `"1"`, and `this.get("age")` will return `"1"`.
-
-### Using Other Value Types
-
-String-only attribute values are consistent with the [HTMLElement.dataset
-](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) API and DOM attributes in general, but may be surprising if you're accustomed to [jQuery's `data()` method](https://api.jquery.com/jquery.data/).
-
-To persist values as other types, wrap the Data API with your own `get()`-and-`set()`er methods.
-
-```html
-<div data-controller="person" data-person-age="99">…</div>
-```
+Attribute values are always represented as strings, so if you pass a number to `DataMap#set()`:
 
 ```js
-initialize() {
-  console.log(this.data.get("age")) // "99"
-  console.log(this.age)             // 99
-
-  this.age = 100
-  console.log(this.data.get("age")) // "100"
-  console.log(this.age)             // 100
-}
-
-get age() {
-  return parseInt(this.data.get("age"))
-}
-
-set age(value) {
-  return this.data.set("age", value)
-}
+this.data.set("count", 1)
 ```
+
+then you'll get the string `"1"` back from `DataMap#get()`:
+
+```js
+this.data.get("count")
+```
+

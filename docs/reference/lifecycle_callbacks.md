@@ -7,6 +7,8 @@ order: 03
 
 Special methods called _lifecycle callbacks_ allow you to respond whenever a controller connects to and disconnects from the document.
 
+<meta data-controller="callout" data-callout-value="connect()">
+
 ```js
 import { Controller } from "stimulus"
 
@@ -16,6 +18,10 @@ export default class extends Controller {
   }
 }
 ```
+
+## Methods
+
+You may define any of the following methods in your controller:
 
 Method       | Invoked by Stimulus…
 ------------ | --------------------
