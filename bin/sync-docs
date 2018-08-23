@@ -4,6 +4,7 @@ set -eo pipefail
 sync() {
   local dirname="$1"
   (
+    rm -rf "$dirname"
     mkdir -p "$dirname"
     cd "$dirname"
     curl --silent "https://api.github.com/repos/stimulusjs/stimulus/contents/$dirname" \
