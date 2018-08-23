@@ -1,5 +1,46 @@
 [
   {
+    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12551933",
+    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12551933/assets",
+    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/12551933/assets{?name,label}",
+    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v1.1.0",
+    "id": 12551933,
+    "node_id": "MDc6UmVsZWFzZTEyNTUxOTMz",
+    "tag_name": "v1.1.0",
+    "target_commitish": "master",
+    "name": "",
+    "draft": false,
+    "author": {
+      "login": "sstephenson",
+      "id": 2603,
+      "node_id": "MDQ6VXNlcjI2MDM=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2603?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sstephenson",
+      "html_url": "https://github.com/sstephenson",
+      "followers_url": "https://api.github.com/users/sstephenson/followers",
+      "following_url": "https://api.github.com/users/sstephenson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/sstephenson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sstephenson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sstephenson/subscriptions",
+      "organizations_url": "https://api.github.com/users/sstephenson/orgs",
+      "repos_url": "https://api.github.com/users/sstephenson/repos",
+      "events_url": "https://api.github.com/users/sstephenson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sstephenson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "prerelease": false,
+    "created_at": "2018-08-23T21:34:54Z",
+    "published_at": "2018-08-23T21:37:37Z",
+    "assets": [
+
+    ],
+    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v1.1.0",
+    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v1.1.0",
+    "body": "* **NEW:** [Stimulus Reference](https://stimulusjs.org/reference/controllers) documentation\r\n* **NEW:** Ordered actions (#149)\r\n* **NEW:** @stimulus/polyfills package for legacy browser support (#134, #147, #170)\r\n* **CHANGED:** Applications now start when the DOM is interactive (#131)\r\n* **CHANGED:** Unminified UMD module for easier debugging (#151)\r\n* **FIXED:** Stimulus now accounts for missing mutation notifications from nodes removed by `innerHTML` assignment in IE 11 (#133) and, in rare cases, when annotating elements synchronously after removing them from an observed tree (#161)\r\n* **INTERNAL:** Upgraded to TypeScript 2.8.1 and Lerna 3.0.0-rc.0\r\n* **INTERNAL:** New build system (#155)\r\n"
+  },
+  {
     "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12212500",
     "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12212500/assets",
     "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/12212500/assets{?name,label}",
