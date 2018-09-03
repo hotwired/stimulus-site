@@ -1,12 +1,20 @@
-.highlighter-rouge {
-  max-width: 100%;
+div.highlighter-rouge {
   grid-column: 3/4;
-  margin-bottom: 2em;
+  margin: 0 -1em 2em -1em;
+  padding: 1em;
+  background: #f7f5f2;
 
   pre {
-    padding: 1em;
-    background: #f7f5f2;
     overflow: auto;
+    font-size: 0.9em;
+  }
+
+  @include media(medium) {
+    margin: 0 0 2em 0;
+
+    pre {
+      font-size: 1em;
+    }
   }
 }
 
