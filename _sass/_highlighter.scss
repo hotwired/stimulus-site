@@ -6,6 +6,10 @@ div.highlighter-rouge {
   background: $color-bg;
   position: relative;
 
+  @include media(medium) {
+    margin: 0 0 2em 0;
+  }
+
   &::after {
     display: block;
     content: "";
@@ -21,15 +25,6 @@ div.highlighter-rouge {
   pre {
     padding: 1em;
     overflow: auto;
-    font-size: 0.9em;
-  }
-
-  @include media(medium) {
-    margin: 0 0 2em 0;
-
-    pre {
-      font-size: 1em;
-    }
   }
 }
 
