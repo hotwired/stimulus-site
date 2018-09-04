@@ -1,17 +1,35 @@
-.highlighter-rouge {
-  max-width: 100%;
+$color-bg: #f7f5f2;
+
+div.highlighter-rouge {
   grid-column: 3/4;
-  margin-bottom: 2em;
+  margin: 0 -1em 2em -1em;
+  background: $color-bg;
+  position: relative;
+
+  @include media(medium) {
+    margin: 0 0 2em 0;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2em;
+    box-shadow: inset -2em 0 1.8em -1em $color-bg;
+  }
 
   pre {
     padding: 1em;
-    background: #f7f5f2;
     overflow: auto;
   }
 }
 
 .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f7f5f2; }
+.highlight  { background: $color-bg; }
 .highlight .c { color: #60a0b0; font-style: italic } /* Comment */
 .highlight .k { color: #007020; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
