@@ -27,7 +27,7 @@
   @include media(x-large) {
 
     @supports (display: grid) {
-      grid-template-columns: 2fr 1fr 90rem 1fr 2fr;
+      grid-template-columns: 1fr 5rem 80rem 5rem 1fr;
     }
   }
 }
@@ -82,6 +82,10 @@
       background: url("../images/pattern.svg") no-repeat center;
       background-size: 100%;
     }
+  }
+
+  @include media(x-large) {
+    grid-column: 3/4;
   }
 }
 
