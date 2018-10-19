@@ -72,7 +72,9 @@ $color-tint: #f7f5f2;
     @media (min-width: 40.236em) { @content; } // Tablets - Portrait
   } @else if $query == large {
     @media (min-width: 66em) { @content; } // Tablets - Landscape
-  }  @else {
+  } @else if $query == x-large {
+    @media (min-width: 120em) { @content; } // Desktops
+  } @else {
     @media (#{$query}) { @content; } // Custom
   }
 }

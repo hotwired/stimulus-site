@@ -23,6 +23,13 @@
       grid-template-columns: 1fr 1fr 55vw 1fr 1fr;
     }
   }
+
+  @include media(x-large) {
+
+    @supports (display: grid) {
+      grid-template-columns: 2fr 1fr 90rem 1fr 2fr;
+    }
+  }
 }
 
 // intro //////////////////////////////////////////////////////////////////////
@@ -44,6 +51,10 @@
   margin: 0.5em 0 0 0;
   text-align: center;
   color: $color-text;
+
+  @include media(x-large) {
+    font-size: 3.5em;
+  }
 }
 
 // hero code example //////////////////////////////////////////////////////////
@@ -100,6 +111,10 @@
       font-size: 0.875em;
       font-size: 1.4vw;
     }
+
+    @include media(x-large) {
+      font-size: 1.25em;
+    }
   }
 }
 
@@ -148,6 +163,10 @@
   @include media(large) {
     padding: 1em 2em;
     font-size: 1.5vw;
+  }
+
+  @include media(x-large) {
+    font-size: 1.5em;
   }
 }
 
