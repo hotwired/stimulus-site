@@ -52,8 +52,7 @@ h1 {
   font-weight: bold;
 
   @include media(medium) {
-    font-size: 3em;
-    font-size: 4.75vw;
+    font-size: calc(2em + 1.5vw);
   }
 }
 
