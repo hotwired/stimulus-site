@@ -1,5 +1,46 @@
 [
   {
+    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/14841937",
+    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/14841937/assets",
+    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/14841937/assets{?name,label}",
+    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v1.1.1",
+    "id": 14841937,
+    "node_id": "MDc6UmVsZWFzZTE0ODQxOTM3",
+    "tag_name": "v1.1.1",
+    "target_commitish": "master",
+    "name": "",
+    "draft": false,
+    "author": {
+      "login": "sstephenson",
+      "id": 2603,
+      "node_id": "MDQ6VXNlcjI2MDM=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2603?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sstephenson",
+      "html_url": "https://github.com/sstephenson",
+      "followers_url": "https://api.github.com/users/sstephenson/followers",
+      "following_url": "https://api.github.com/users/sstephenson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/sstephenson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sstephenson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sstephenson/subscriptions",
+      "organizations_url": "https://api.github.com/users/sstephenson/orgs",
+      "repos_url": "https://api.github.com/users/sstephenson/repos",
+      "events_url": "https://api.github.com/users/sstephenson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sstephenson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "prerelease": false,
+    "created_at": "2019-01-07T20:02:59Z",
+    "published_at": "2019-01-07T20:46:22Z",
+    "assets": [
+
+    ],
+    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v1.1.1",
+    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v1.1.1",
+    "body": "* **CHANGED**: Various documentation improvements (#190, #193, #206)\r\n* **FIXED**: Type declarations for webpack helpers in the `stimulus` package (#214)\r\n* **FIXED**: Pin `@stimulus/polyfills` dependencies to work around upstream changes (0251c87795f351a7462d00fa0f028b2daf967a01)"
+  },
+  {
     "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12551933",
     "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12551933/assets",
     "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/12551933/assets{?name,label}",
