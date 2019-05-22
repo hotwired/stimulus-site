@@ -31,9 +31,9 @@ exclude:
   - node_modules
   - bin
   - .babelrc
-  - Dockerfile
   - Gemfile
   - Gemfile.lock
+  - now-build.sh
   - now.json
   - package.json
   - webpack.config.js
