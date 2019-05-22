@@ -13,19 +13,24 @@ _Targets_ let you reference important elements by name.
 
 ```html
 <div data-controller="search">
-  <input type="text" data-target="search.query">
-  <div data-target="search.errorMessage"></div>
-  <div data-target="search.results"></div>
+  <input type="text" data-search-target="query">
+  <div data-search-target="errorMessage"></div>
+  <div data-search-target="results"></div>
 </div>
 ```
 
-## Descriptors
+## Attributes and Names
 
-The `data-target` value `search.query` is called a _target descriptor_. This descriptor says:
-* `search` is the scope's controller identifier
-* `query` is the target name, which can be anything you choose
+The `data-search-target` attribute is called a _target attribute_, and its value is a space-separated list of _target names_ which you can use to refer to the element in the `search` controller.
 
-The identifier in a target descriptor must match a `data-controller` identifier specified on the element or one of its parents.
+<meta data-controller="callout" data-callout-value="search">
+<meta data-controller="callout" data-callout-value="results">
+
+```html
+<div data-controller="s&zwnj;earch">
+  <div data-search-target="results"></div>
+</div>
+```
 
 ## Definitions
 
@@ -61,14 +66,14 @@ The `data-target` attribute's value is a space-separated list of target descript
 
 It's possible for an element to have more than one target descriptor, and it's common for multiple elements in a scope to share the same descriptor.
 
-<meta data-controller="callout" data-callout-value="search.projects">
-<meta data-controller="callout" data-callout-value="search.messages">
-<meta data-controller="callout" data-callout-value="checkbox.input">
+<meta data-controller="callout" data-callout-value="data-search-target=&quot;projects&quot;">
+<meta data-controller="callout" data-callout-value="data-search-target=&quot;messages&quot;">
+<meta data-controller="callout" data-callout-value="data-checkbox-target=&quot;input&quot;">
 
 ```html
 <form data-controller="search checkbox">
-  <input type="checkbox" data-target="search.projects checkbox.input">
-  <input type="checkbox" data-target="search.messages checkbox.input">
+  <input type="checkbox" data-search-target="projects" data-checkbox-target="input">
+  <input type="checkbox" data-search-target="messages" data-checkbox-target="input">
   …
 </form>
 ```

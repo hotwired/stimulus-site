@@ -108,7 +108,7 @@ export default class extends Controller {
 
 We want to call the `greet()` method when the button's `click` event is triggered. In Stimulus, controller methods which handle events are called _action methods_.
 
-To connect our action method to the button's `click` event, open `public/index.html` and add a magic `data-action` attribute to the button:
+To connect our action method to the button's `click` event, open `public/index.html` and add a `data-action` attribute to the button:
 
 ```html
 <div data-controller="hello">
@@ -132,11 +132,11 @@ We'll finish the exercise by changing our action to say hello to whatever name w
 
 In order to do that, first we need a reference to the input element inside our controller. Then we can read the `value` property to get its contents.
 
-Stimulus lets us mark important elements as _targets_ so we can easily reference them in the controller through corresponding properties. Open `public/index.html` and add a magic `data-target` attribute to the input element:
+Stimulus lets us mark important elements as _targets_ so we can easily reference them in the controller through corresponding properties. Open `public/index.html` and add a `data-hello-target` attribute to the input element:
 
 ```html
 <div data-controller="hello">
-  <input data-target="hello.name" type="text">
+  <input data-hello-target="name" type="text">
   <button data-action="click->hello#greet">Greet</button>
 </div>
 ```

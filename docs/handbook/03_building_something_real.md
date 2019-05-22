@@ -10,7 +10,7 @@ We've implemented our first controller and learned how Stimulus connects HTML to
 
 Scattered throughout Basecamp's UI are buttons like these:
 
-<img src="/assets/bc3-clipboard-ui.png" width="500" height="122" class="docs__screenshot">
+<img src="../../assets/bc3-clipboard-ui.png" width="500" height="122" class="docs__screenshot">
 
 When you click one of these buttons, Basecamp copies a bit of text, such as a URL or an email address, to your clipboard.
 
@@ -51,10 +51,10 @@ Then add `data-controller="clipboard"` to the outer `<div>`. Any time this attri
 
 ## Defining the Target
 
-We'll need a reference to the text field so we can select its contents before invoking the clipboard API. Add `data-target="clipboard.source"` to the text field:
+We'll need a reference to the text field so we can select its contents before invoking the clipboard API. Add `data-clipboard-target="source"` to the text field:
 
 ```html
-  PIN: <input data-target="clipboard.source" type="text" value="1234" readonly>
+  PIN: <input data-clipboard-target="source" type="text" value="1234" readonly>
 ```
 
 Now add a target definition to the controller so we can access the text field element as `this.sourceTarget`:
@@ -173,7 +173,7 @@ Let's go ahead and add another PIN to the page. Copy and paste the `<div>` so th
 
 ```html
 <div data-controller="clipboard">
-  PIN: <input data-target="clipboard.source" type="text" value="3737" readonly>
+  PIN: <input data-clipboard-target="source" type="text" value="3737" readonly>
   <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
 </div>
 ```
@@ -186,7 +186,7 @@ Now let's add one more PIN field. This time we'll use a Copy _link_ instead of a
 
 ```html
 <div data-controller="clipboard">
-  PIN: <input data-target="clipboard.source" type="text" value="3737" readonly>
+  PIN: <input data-clipboard-target="source" type="text" value="3737" readonly>
   <a href="#" data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</a>
 </div>
 ```
@@ -206,7 +206,7 @@ Note that in this case, clicking the link will also cause the browser to follow 
 Similarly, our `source` target need not be an `<input type="text">`. The controller only expects it to have a `value` property and a `select()` method. That means we can use a `<textarea>` instead:
 
 ```html
-  PIN: <textarea data-target="clipboard.source" readonly>3737</textarea>
+  PIN: <textarea data-clipboard-target="source" readonly>3737</textarea>
 ```
 
 ## Wrap-Up and Next Steps

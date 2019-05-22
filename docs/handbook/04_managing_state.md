@@ -21,10 +21,10 @@ As usual, we'll begin with HTML:
   <button data-action="slideshow#previous">←</button>
   <button data-action="slideshow#next">→</button>
 
-  <div data-target="slideshow.slide" class="slide">🐵</div>
-  <div data-target="slideshow.slide" class="slide">🙈</div>
-  <div data-target="slideshow.slide" class="slide">🙉</div>
-  <div data-target="slideshow.slide" class="slide">🙊</div>
+  <div data-slideshow-target="slide" class="slide">🐵</div>
+  <div data-slideshow-target="slide" class="slide">🙈</div>
+  <div data-slideshow-target="slide" class="slide">🙉</div>
+  <div data-slideshow-target="slide" class="slide">🙊</div>
 </div>
 ```
 
