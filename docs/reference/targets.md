@@ -27,7 +27,7 @@ The `data-search-target` attribute is called a _target attribute_, and its value
 <meta data-controller="callout" data-callout-value="results">
 
 ```html
-<div data-controller="s&zwnj;earch">
+<div data-controller="s​earch">
   <div data-search-target="results"></div>
 </div>
 ```
