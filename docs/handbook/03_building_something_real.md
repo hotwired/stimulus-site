@@ -147,7 +147,7 @@ Then add the following styles to `public/main.css`:
 }
 ```
 
-Now implement a `connect()` method in the controller which adds a class name to the controller's element when the API is supported:
+Now add a `connect()` method to the controller which will add a class name to the controller's element when the API is supported:
 
 ```js
   connect() {
@@ -156,6 +156,8 @@ Now implement a `connect()` method in the controller which adds a class name to 
     }
   }
 ```
+
+You can place this method anywhere in the controller's class body.
 
 If you wish, disable JavaScript in your browser, reload the page, and notice the Copy button is no longer visible.
 

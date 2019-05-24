@@ -55,7 +55,7 @@ export default class extends Controller {
 
 When the controller connects, we kick off a [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) request to the URL specified in the element's `data-content-loader-url` attribute. Then we load the returned HTML by assigning it to our element's `innerHTML` property.
 
-Open the network tab in your browser's developer console and reload the page. You'll see an initial full page request to `index.html`, followed by our controller's subsequent request to `messages.html`.
+Open the network tab in your browser's developer console and reload the page. You'll see a request representing the initial page load, followed by our controller's subsequent request to `messages.html`.
 
 ## Refreshing Automatically With a Timer
 
@@ -94,25 +94,32 @@ Reload the page and observe a new request once every five seconds in the develop
 
 We start our timer when the controller connects, but we never stop it. That means if our controller's element were to disappear, the controller would continue to issue HTTP requests in the background.
 
-We can fix this issue by modifying the `startRefreshing()` method to keep a reference to the timer. Then, in our `disconnect()` method, we can cancel it.
+We can fix this issue by modifying our `startRefreshing()` method to keep a reference to the timer:
 
 ```js
-  disconnect() {
-    this.stopRefreshing()
-  }
-
   startRefreshing() {
     this.refreshTimer = setInterval(() => {
       this.load()
     }, this.data.get("refreshInterval"))
   }
+```
 
+Then we can add a corresponding `stopRefreshing()` method below to cancel the timer:
+
+```js
   stopRefreshing() {
     if (this.refreshTimer) {
       clearInterval(this.refreshTimer)
     }
   }
-}
+```
+
+Finally, to instruct Stimulus to cancel the timer when the controller disconnects, we'll add a `disconnect()` method:
+
+```js
+  disconnect() {
+    this.stopRefreshing()
+  }
 ```
 
 Now we can be sure a content loader controller will only issue requests when it's connected to the DOM.
