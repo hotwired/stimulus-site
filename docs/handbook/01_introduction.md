@@ -34,8 +34,8 @@ Perplexed by modern JavaScript? Don't fret. Stimulus is a straightforward extens
 
 This handbook will guide you through Stimulus' core concepts by demonstrating how to write several fully functional controllers. Each chapter builds on the one before it; from start to finish, you'll learn how to:
 
-* print a greeting addressed to the name in a text box
-* copy text from a text box to the system clipboard when a button is clicked
+* print a greeting addressed to the name in a text field
+* copy text from a text field to the system clipboard when a button is clicked
 * navigate through a slide show with multiple slides
 * fetch HTML from the server into an element on the page automatically
 * set up Stimulus in your own application

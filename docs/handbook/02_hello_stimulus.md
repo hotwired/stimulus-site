@@ -29,9 +29,9 @@ Then visit http://localhost:9000/ in your browser.
 
 ## It All Starts With HTML
 
-Let's begin with a simple exercise: a text field with a button. When you click the button, we'll display the value of the text field in the console.
+Let's begin with a simple exercise using a text field and a button. When you click the button, we'll display the value of the text field in the console.
 
-Every Stimulus project starts with HTML, and this project is no exception. Open `public/index.html` and add the following markup just after the opening `<body>` tag:
+Every Stimulus project starts with HTML. Open `public/index.html` and add the following markup just after the opening `<body>` tag:
 
 ```html
 <div>
@@ -195,4 +195,4 @@ export default class extends Controller {
 
 Congratulations—you've just written your first Stimulus controller!
 
-We've covered the framework's core concepts: controllers, identifiers, actions, and targets. In the next chapter, we'll see how to put those together to build a real-life controller taken right from Basecamp.
+We've covered the framework's most important concepts: controllers, actions, and targets. In the next chapter, we'll see how to put those together to build a real-life controller taken right from Basecamp.
