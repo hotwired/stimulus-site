@@ -1,12 +1,12 @@
 <section class="docs__index">
-  <input type="checkbox" id="hamburger" class="docs__checkbox"/>
+  <input type="checkbox" id="hamburger" class="docs__checkbox">
   <label class="docs__mobile-button" for="hamburger"><span></span> Table of Contents</label>
 
   <nav class="docs__nav">
     <label class="docs__mobile-button docs__mobile-button--close" for="hamburger"><span></span> close</label>
 
     <p class="docs__nav-title">{{ page.section_title }}:</p>
-    {%- assign section_pages = site.pages | where: "section",page.section | sort: "order" -%}
+    {%- assign section_pages = site.pages | where: "section", page.section | sort: "name" -%}
     <ul class="docs__nav-list">
       {%- for section_page in section_pages -%}
         {%- assign is_active = false -%}
