@@ -69,7 +69,17 @@ We'll use the `data-content-loader-refresh-interval` attribute to specify how of
      data-content-loader-refresh-interval="5000"></div>
 ```
 
-Now we can update the controller to check for the interval and, if present, start a refresh timer:
+Now we can update the controller to check for the interval and, if present, start a refresh timer. Below the `load()` method, define a new `startRefreshing()` method:
+
+```js
+  startRefreshing() {
+    setInterval(() => {
+      this.load()
+    }, this.data.get("refreshInterval"))
+  }
+```
+
+Then update the `connect()` method to call `startRefreshing()` if an interval is present in HTML:
 
 ```js
   connect() {
@@ -79,13 +89,6 @@ Now we can update the controller to check for the interval and, if present, star
       this.startRefreshing()
     }
   }
-
-  startRefreshing() {
-    setInterval(() => {
-      this.load()
-    }, this.data.get("refreshInterval"))
-  }
-}
 ```
 
 Reload the page and observe a new request once every five seconds in the developer console. Then make a change to `public/messages.html` and wait for it to appear in the inbox.
