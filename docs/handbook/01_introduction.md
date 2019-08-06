@@ -22,14 +22,6 @@ Stimulus' use of data attributes helps separate content from behavior in the sam
 
 In turn, Stimulus helps you build small, reusable controllers, giving you just enough structure to keep your code from devolving into "JavaScript soup."
 
-A powerful consequence of using data attributes this way is that you can read a fragment of Stimulus markup and see exactly where and how the interactivity happens.
-
-Are you a solo programmer? Six months from now, a glance at your HTML template is all you'll need to remember how that front-end feature works.
-
-Working with another developer, or a whole team? Readable markup communicates intent, and Stimulus' attributes let your coworkers know which elements have JavaScript behavior attached and what they do.
-
-Perplexed by modern JavaScript? Don't fret. Stimulus is a straightforward extension to the HTML and CSS you already know.
-
 ## About This Book
 
 This handbook will guide you through Stimulus' core concepts by demonstrating how to write several fully functional controllers. Each chapter builds on the one before it; from start to finish, you'll learn how to:

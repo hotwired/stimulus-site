@@ -141,13 +141,7 @@ Stimulus lets us mark important elements as _targets_ so we can easily reference
 </div>
 ```
 
-> ### Target Descriptors Explained
->
-> The `data-target` value `hello.name` is called a _target descriptor_. This particular descriptor says:
-> * `hello` is the controller identifier
-> * `name` is the target name
-
-When we add `name` to our controller's list of target definitions, Stimulus automatically creates a `this.nameTarget` property which returns the first matching target element. We can use this property to read the element's `value` and build our greeting string.
+Next, we'll create a property for the target by adding `name` to our controller's list of target definitions. Stimulus will automatically create a `this.nameTarget` property which returns the first matching target element. We can use this property to read the element's `value` and build our greeting string.
 
 Let's try it out. Open `hello_controller.js` and update it like so:
 
