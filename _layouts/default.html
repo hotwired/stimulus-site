@@ -10,7 +10,7 @@
   <link rel="canonical" href="{{ page.url | replace: "index.html", "" | prepend: site.url }}">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://use.typekit.net/ted5yzm.css">
-  <script src="/js/main.js" async></script>
+  <script src="/js/main.js" defer></script>
 </head>
 <body>
   <header class="nav">
@@ -40,11 +40,5 @@
   <footer class="foot">
     <p><span class="foot__text"><img class="foot__icon" src="/images/basecamp-icon.svg" alt="Basecamp"> <br> Brought to you by the team at <a href="https://basecamp.com/">Basecamp</a>.</span></p>
   </footer>
-
-  {%- if jekyll.environment == "production" %}
-    <script src="https://static.getclicky.com/js"></script>
-    <script>try{ clicky.init(101097384); }catch(e){}</script>
-    <noscript><p><img alt="Clicky" width="1" height="1" src="https://in.getclicky.com/101097384ns.gif"></p></noscript>
-  {%- endif %}
 </body>
 </html>
