@@ -4,6 +4,7 @@ set -eo pipefail
 echo "--- Syncing…"
 bin/sync-docs
 bin/sync-releases
+bin/sync-beanstalk
 echo
 
 echo "--- Building JavaScript…"

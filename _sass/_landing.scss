@@ -186,7 +186,7 @@
   @include media(medium) {
     grid-column: 3/4;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     border: 0.25em solid #fff;
     box-shadow: 1px 10px 20px $color-accent;
   }
@@ -224,7 +224,7 @@
 .hello__input {
   display: block;
   margin: 0;
-  padding: 0.65em 0.6em;
+  padding: 0.5em;
   width: 100%;
   border: 2px solid $color-accent;
   font-family: $sans-stack;
@@ -243,7 +243,7 @@
 .hello__button {
   display: block;
   width: 100%;
-  padding: 0.78em 1em;
+  padding: 0.5em 1em;
   background-color: $color-accent;
   color: $color-text;
   font-family: $sans-stack;

@@ -2,7 +2,10 @@ const path = require("path")
 
 module.exports = {
   entry: {
-    main: "./_js/index.js"
+    main: [
+      "./_js/index.js",
+      "./_js/tracking.js",
+    ]
   },
 
   output: {
