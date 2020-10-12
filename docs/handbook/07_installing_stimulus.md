@@ -99,7 +99,7 @@ Define targets using `static get targets()` methods instead of `static targets =
 <head>
 <body>
   <div data-controller="hello">
-    <input data-target="hello.name" type="text">
+    <input data-hello-target="name" type="text">
     …
   </div>
 </body>

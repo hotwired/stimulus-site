@@ -8,7 +8,7 @@
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.2.3",
     "babel-loader": "^8.0.5",
-    "stimulus": "^1.1.1",
+    "stimulus": "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz",
     "turbolinks": "^5.2.0",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.1"
