@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "webpack -p"
+    "build-js": "webpack -p"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",

@@ -2,13 +2,7 @@
   "version": 2,
   "public": true,
   "scope": "stimulus",
-  "name": "stimulusjs",
   "alias": "stimulusjs.now.sh",
-  "builds": [
-    { "src": "now-build.sh", "use": "@now/static-build", "config": { "distDir": "_site" } }
-  ],
-  "routes": [
-    { "src": "/", "dest": "index.html" },
-    { "src": "^(.*)$", "dest": "$1.html" }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
