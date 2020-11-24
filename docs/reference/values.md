@@ -1,9 +1,9 @@
 ---
-permalink: /reference/data-maps
+permalink: /reference/values
 order: 04
 ---
 
-# Data Maps
+# Values
 
 Each Stimulus controller has a _data map_ which lets you access special data attributes on the controller's element.
 
