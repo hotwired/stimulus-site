@@ -21,28 +21,16 @@ As usual, we'll begin with HTML:
   <button data-action="slideshow#previous">←</button>
   <button data-action="slideshow#next">→</button>
 
-  <div data-slideshow-target="slide" class="slide">🐵</div>
-  <div data-slideshow-target="slide" class="slide">🙈</div>
-  <div data-slideshow-target="slide" class="slide">🙉</div>
-  <div data-slideshow-target="slide" class="slide">🙊</div>
+  <div data-slideshow-target="slide">🐵</div>
+  <div data-slideshow-target="slide">🙈</div>
+  <div data-slideshow-target="slide">🙉</div>
+  <div data-slideshow-target="slide">🙊</div>
 </div>
 ```
 
 Each `slide` target represents a single slide in the slideshow. Our controller will be responsible for making sure only one slide is visible at a time.
 
-We can use CSS to hide all slides by default, only showing them when the `slide--current` class is applied:
-
-```css
-.slide {
-  display: none;
-}
-
-.slide.slide--current {
-  display: block;
-}
-```
-
-Now let's draft our controller. Create a new file, `src/controllers/slideshow_controller.js`, as follows:
+Let's draft our controller. Create a new file, `src/controllers/slideshow_controller.js`, as follows:
 
 ```js
 // src/controllers/slideshow_controller.js
@@ -68,17 +56,13 @@ export default class extends Controller {
 
   showCurrentSlide() {
     this.slideTargets.forEach((element, index) => {
-      if (index == this.index) {
-        element.classList.add("slide--current")
-      } else {
-        element.classList.remove("slide--current")
-      }
+      element.hidden = index != this.index
     })
   }
 }
 ```
 
-Our controller defines a method, `showCurrentSlide()`, which loops over each slide target, toggling the `slide--current` class if its index matches.
+Our controller defines a method, `showCurrentSlide()`, which loops over each slide target, toggling the [`hidden` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) if its index matches.
 
 We initialize the controller by showing the first slide, and the `next()` and `previous()` action methods advance and rewind the current slide.
 
@@ -152,7 +136,6 @@ export default class extends Controller {
 ```js
 export default class extends Controller {
   static targets = [ "slide" ]
-  static classes = [ "currentSlide" ]
   static values = { index: Number }
 
   next() {
@@ -169,11 +152,7 @@ export default class extends Controller {
 
   showCurrentSlide() {
     this.slideTargets.forEach((element, index) => {
-      if (index == this.indexValue) {
-        element.classList.add(this.currentSlideClass)
-      } else {
-        element.classList.remove(this.currentSlideClass)
-      }
+      element.hidden = index != this.index
     })
   }
 }
