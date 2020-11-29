@@ -1,6 +1,6 @@
 ---
 permalink: /reference/targets
-order: 02
+order: 03
 ---
 
 # Targets

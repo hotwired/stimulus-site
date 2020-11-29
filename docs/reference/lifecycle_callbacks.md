@@ -1,6 +1,6 @@
 ---
 permalink: /reference/lifecycle-callbacks
-order: 03
+order: 01
 ---
 
 # Lifecycle Callbacks
