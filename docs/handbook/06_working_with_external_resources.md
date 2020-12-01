@@ -48,9 +48,7 @@ export default class extends Controller {
   load() {
     fetch(this.urlValue)
       .then(response => response.text())
-      .then(html => {
-        this.element.innerHTML = html
-      })
+      .then(html => this.element.innerHTML = html)
   }
 }
 ```
@@ -157,9 +155,7 @@ export default class extends Controller {
   load() {
     fetch(this.urlValue)
       .then(response => response.text())
-      .then(html => {
-        this.element.innerHTML = html
-      })
+      .then(html => this.element.innerHTML = html)
   }
 
   startRefreshing() {
