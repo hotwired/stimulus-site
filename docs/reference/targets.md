@@ -60,11 +60,9 @@ Existential | `this.has[Name]Target` | A boolean indicating whether there is a m
 
 <br>**Note:** Accessing the singular target property will throw an error when there is no matching element.
 
-## Multiple Targets
+## Shared Targets
 
-The `data-target` attribute's value is a space-separated list of target descriptors.
-
-It's possible for an element to have more than one target descriptor, and it's common for multiple elements in a scope to share the same descriptor.
+Elements can have more than one target attribute, and it's common for targets to be shared by multiple controllers.
 
 <meta data-controller="callout" data-callout-value="data-search-target=&quot;projects&quot;">
 <meta data-controller="callout" data-callout-value="data-search-target=&quot;messages&quot;">
