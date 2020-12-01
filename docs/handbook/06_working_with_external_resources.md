@@ -4,7 +4,7 @@ permalink: /handbook/working-with-external-resources
 
 # Working With External Resources
 
-In the last chapter we learned how to load and persist a controller's internal state using the Data API.
+In the last chapter we learned how to load and persist a controller's internal state using the Values API.
 
 Sometimes our controllers need to track the state of external resources, where by _external_ we mean anything that isn't in the DOM or a part of Stimulus. For example, we may need to issue an HTTP request and respond as the request's state changes. Or we may want to start a timer and then stop it when the controller is no longer connected. In this chapter we'll see how to do both of those things.
 
@@ -18,7 +18,7 @@ Begin by sketching the inbox in `public/index.html`:
 
 ```html
 <div data-controller="content-loader"
-     data-content-loader-url="/messages.html"></div>
+     data-content-loader-url-value="/messages.html"></div>
 ```
 
 Then create a new `public/messages.html` file with some HTML for our message list:
@@ -39,12 +39,14 @@ Now we can implement our controller:
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static values = { url: String }
+
   connect() {
     this.load()
   }
 
   load() {
-    fetch(this.data.get("url"))
+    fetch(this.urlValue)
       .then(response => response.text())
       .then(html => {
         this.element.innerHTML = html
@@ -53,7 +55,7 @@ export default class extends Controller {
 }
 ```
 
-When the controller connects, we kick off a [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) request to the URL specified in the element's `data-content-loader-url` attribute. Then we load the returned HTML by assigning it to our element's `innerHTML` property.
+When the controller connects, we kick off a [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) request to the URL specified in the element's `data-content-loader-url-value` attribute. Then we load the returned HTML by assigning it to our element's `innerHTML` property.
 
 Open the network tab in your browser's developer console and reload the page. You'll see a request representing the initial page load, followed by our controller's subsequent request to `messages.html`.
 
@@ -61,31 +63,35 @@ Open the network tab in your browser's developer console and reload the page. Yo
 
 Let's improve our controller by changing it to periodically refresh the inbox so it's always up-to-date.
 
-We'll use the `data-content-loader-refresh-interval` attribute to specify how often the controller should reload its contents, in milliseconds:
+We'll use the `data-content-loader-refresh-interval-value` attribute to specify how often the controller should reload its contents, in milliseconds:
 
 ```html
 <div data-controller="content-loader"
-     data-content-loader-url="/messages.html"
-     data-content-loader-refresh-interval="5000"></div>
+     data-content-loader-url-value="/messages.html"
+     data-content-loader-refresh-interval-value="5000"></div>
 ```
 
 Now we can update the controller to check for the interval and, if present, start a refresh timer. Below the `load()` method, define a new `startRefreshing()` method:
 
 ```js
+  static values = { url: String, refreshInterval: Number }
+
+  // …
+
   startRefreshing() {
     setInterval(() => {
       this.load()
-    }, this.data.get("refreshInterval"))
+    }, this.refreshIntervalValue)
   }
 ```
 
-Then update the `connect()` method to call `startRefreshing()` if an interval is present in HTML:
+Then update the `connect()` method to call `startRefreshing()` if an interval value is present:
 
 ```js
   connect() {
     this.load()
 
-    if (this.data.has("refreshInterval")) {
+    if (this.hasRefreshIntervalValue) {
       this.startRefreshing()
     }
   }
@@ -103,7 +109,7 @@ We can fix this issue by modifying our `startRefreshing()` method to keep a refe
   startRefreshing() {
     this.refreshTimer = setInterval(() => {
       this.load()
-    }, this.data.get("refreshInterval"))
+    }, this.refreshIntervalValue)
   }
 ```
 
@@ -134,10 +140,12 @@ Let's take a look at our final controller class:
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static values = { url: String, refreshInterval: Number }
+
   connect() {
     this.load()
 
-    if (this.data.has("refreshInterval")) {
+    if (this.hasRefreshIntervalValue) {
       this.startRefreshing()
     }
   }
@@ -147,7 +155,7 @@ export default class extends Controller {
   }
 
   load() {
-    fetch(this.data.get("url"))
+    fetch(this.urlValue)
       .then(response => response.text())
       .then(html => {
         this.element.innerHTML = html
@@ -157,7 +165,7 @@ export default class extends Controller {
   startRefreshing() {
     this.refreshTimer = setInterval(() => {
       this.load()
-    }, this.data.get("refreshInterval"))
+    }, this.refreshIntervalValue)
   }
 
   stopRefreshing() {
