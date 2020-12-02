@@ -160,7 +160,7 @@ export default class extends Controller {
 
 ## Wrap-Up and Next Steps
 
-In this chapter we've seen how to use the Stimulus Data API to load and persist the current index of a slideshow controller.
+In this chapter we've seen how to use the Stimulus Values API to load and persist the current index of a slideshow controller.
 
 From a usability perspective, our controller is incomplete. The Previous button appears to do nothing when you are looking at the first slide. Internally, `indexValue` decrements from `0` to `-1`. Could we make the value wrap around to the _last_ slide index instead? (There's a similar problem with the Next button.)
 
