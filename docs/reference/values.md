@@ -11,32 +11,27 @@ You can read and write [HTML data attributes](https://developer.mozilla.org/en-U
 
 Define values in a controller using the `static values` object. Put each value's _name_ on the left and its _type_ on the right.
 
-## Types and Cardinality
+## Types
 
 A value's type is one of `Array`, `Boolean`, `Number`, `Object`, or `String`. The type determines how the value is transcoded between JavaScript and HTML.
 
-Type | Encoded as… | Cardinality
----- | ----------- | -----------
-Array | `JSON.stringify(array)` | Plural
-Boolean | `boolean.toString()` | Singular
-Number | `number.toString()` | Singular
-Object | `JSON.stringify(object)` | Plural
-String | Itself | Singular
-
-<br>Types have _cardinality_, which refers to whether the names of the type's properties are singular or plural. Cardinality also determines how to name the type's data attributes.
+Type | Encoded as…
+---- | -----------
+Array | `JSON.stringify(array)`
+Boolean | `boolean.toString()`
+Number | `number.toString()`
+Object | `JSON.stringify(object)`
+String | Itself
 
 ## Properties and Attributes
 
 Stimulus automatically generates getter, setter, and existential properties for each value defined in a controller. These properties are linked to data attributes on the controller's element:
 
-Kind | Cardinality | Property name | Effect
----- | ----------- | ------------- | ------
-Getter | Singular | `this.[name]Value` | Reads `data-[identifier]-[name]-value`
-Getter | Plural | `this.[name]Values` | Reads `data-[identifier]-[name]-values`
-Setter | Singular | `this.[name]Value=` | Writes `data-[identifier]-[name]-value`
-Setter | Plural | `this.[name]Values=` | Writes `data-[identifier]-[name]-values`
-Existential | Singular | `this.has[Name]Value` | Tests for `data-[identifier]-[name]-value`
-Existential | Plural | `this.has[Name]Values` | Tests for `data-[identifier]-[name]-values`
+Kind | Property name | Effect
+---- | ------------- | ------
+Getter | `this.[name]Value` | Reads `data-[identifier]-[name]-value`
+Setter | `this.[name]Value=` | Writes `data-[identifier]-[name]-value`
+Existential | `this.has[Name]Value` | Tests for `data-[identifier]-[name]-value`
 
 ### Getters
 
@@ -66,7 +61,7 @@ The existential property for a value evaluates to `true` when the associated dat
 
 Value _change callbacks_ let you respond whenever a value's data attribute changes.
 
-Define a method `[name]Changed` in the controller, where `[name]` is the name of the value you want to observe for changes. The method receives its decoded value as the first argument.
+Define a method `[name]ValueChanged` in the controller, where `[name]` is the name of the value you want to observe for changes. The method receives its decoded value as the first argument.
 
 Stimulus invokes each change callback after the controller is initialized and again any time its associated data attribute changes. This includes changes as a result of assignment to the value's setter.
 
