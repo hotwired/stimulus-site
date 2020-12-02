@@ -75,31 +75,29 @@ You can append `@window` or `@document` to the event name in an action descripto
 ```html
 <div data-controller="gallery"
      data-action="resize@window->gallery#layout">
-  …
-</div>
 ```
 
 ### Options
 
-Sometimes you may need to pass [additional options](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Parameters) to the _Event Listener_ attached to the action.
+You can append one or more _action options_ to an action descriptor if you need to specify [DOM event listener options](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Parameters).
 
-* Options are set by adding one of the allowed tokens to the end of the _action descriptor_
-* Options are separated from the method by a column `:`
-* Add an exclamation mark `!` before a token to negate its value
+<meta data-controller="callout" data-callout-text-value=":!passive">
+<meta data-controller="callout" data-callout-text-value=":capture">
 
-**The followng option tokens are allowed:**
+```html
+<div data-controller="gallery"
+     data-action="scroll->gallery#layout:!passive">
+  <img data-action="click->gallery#open:capture">
+```
 
-Tokens        | EventListener option
-------------- | ---------------------
-`capture`     | `{ capture: true }`
-`once`        | `{ once: true }`
-`passive`     | `{ passive: true }`
-`!passive`    | `{ passive: false }`
+Stimulus supports the following action options:
 
-
-**Options can be combined if needed**
-
-`click->controller#method:!passive:once`
+Action option | DOM event listener option
+------------- | -------------------------
+`:capture`    | `{ capture: true }`
+`:once`       | `{ once: true }`
+`:passive`    | `{ passive: true }`
+`:!passive`   | `{ passive: false }`
 
 ## Event Objects
 
