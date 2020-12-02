@@ -25,7 +25,7 @@ As an alternative to hard-coding classes with JavaScript strings, Stimulus lets 
 
 Define CSS classes by logical name in your controller using the `static classes` array:
 
-<meta data-controller="callout" data-callout-value="static classes = [ &quot;loading&quot; ]">
+<meta data-controller="callout" data-callout-text-value="static classes = [ &quot;loading&quot; ]">
 
 ```js
 // controllers/search_controller.js
@@ -42,7 +42,7 @@ export default class extends Controller {
 
 The logical names defined in the controller's `static classes` array map to _CSS class attributes_ on the controller's element.
 
-<meta data-controller="callout" data-callout-value="data-search-loading-class=&quot;search--busy&quot;">
+<meta data-controller="callout" data-callout-text-value="data-search-loading-class=&quot;search--busy&quot;">
 
 ```html
 <form data-controller="search"
@@ -68,7 +68,7 @@ Name                    | Value
 
 For example, to display a loading indicator on the `search` controller's element before fetching results, you might implement the `loadResults` action like so:
 
-<meta data-controller="callout" data-callout-value="this.loadingClass">
+<meta data-controller="callout" data-callout-text-value="this.loadingClass">
 
 ```js
 export default class extends Controller {
@@ -88,8 +88,8 @@ export default class extends Controller {
 
 Use camelCase to specify logical names in CSS class definitions. Logical names map to camelCase CSS class properties:
 
-<meta data-controller="callout" data-callout-value="noResultsClass">
-<meta data-controller="callout" data-callout-value="noResults">
+<meta data-controller="callout" data-callout-text-value="noResultsClass">
+<meta data-controller="callout" data-callout-text-value="noResults">
 
 ```js
 export default class extends Controller {
@@ -106,7 +106,7 @@ export default class extends Controller {
 
 In HTML, write CSS class attributes in kebab-case:
 
-<meta data-controller="callout" data-callout-value="no-results">
+<meta data-controller="callout" data-callout-text-value="no-results">
 
 ```html
 <form data-controller="search"

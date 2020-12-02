@@ -1,6 +1,8 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static values = { text: String, type: String }
+
   initialize() {
     for (const range of this.calloutRanges) {
       const content = range.toString()
@@ -67,8 +69,8 @@ export default class extends Controller {
   }
 
   findNextMatch(fromPosition = -1) {
-    const position = this.content.indexOf(this.value, fromPosition + 1)
-    return position == -1 ? null : [position, position + this.value.length]
+    const position = this.content.indexOf(this.textValue, fromPosition + 1)
+    return position == -1 ? null : [position, position + this.textValue.length]
   }
 
   get contentElement() {
@@ -93,13 +95,8 @@ export default class extends Controller {
     return this.contentElement.textContent
   }
 
-  get value() {
-    return this.data.get("value")
-  }
-
   get className() {
-    const suffix = this.data.get("class")
-    return "callout" + (suffix ? "--" + suffix : "")
+    return "callout" + (this.hasTypeValue ? "--" + this.typeValue : "")
   }
 
   get parentElement() {

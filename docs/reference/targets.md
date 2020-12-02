@@ -7,9 +7,9 @@ order: 03
 
 _Targets_ let you reference important elements by name.
 
-<meta data-controller="callout" data-callout-value="search.query">
-<meta data-controller="callout" data-callout-value="search.errorMessage">
-<meta data-controller="callout" data-callout-value="search.results">
+<meta data-controller="callout" data-callout-text-value="search.query">
+<meta data-controller="callout" data-callout-text-value="search.errorMessage">
+<meta data-controller="callout" data-callout-text-value="search.results">
 
 ```html
 <div data-controller="search">
@@ -23,8 +23,8 @@ _Targets_ let you reference important elements by name.
 
 The `data-search-target` attribute is called a _target attribute_, and its value is a space-separated list of _target names_ which you can use to refer to the element in the `search` controller.
 
-<meta data-controller="callout" data-callout-value="search">
-<meta data-controller="callout" data-callout-value="results">
+<meta data-controller="callout" data-callout-text-value="search">
+<meta data-controller="callout" data-callout-text-value="results">
 
 ```html
 <div data-controller="s​earch">
@@ -64,9 +64,9 @@ Existential | `this.has[Name]Target` | A boolean indicating whether there is a m
 
 Elements can have more than one target attribute, and it's common for targets to be shared by multiple controllers.
 
-<meta data-controller="callout" data-callout-value="data-search-target=&quot;projects&quot;">
-<meta data-controller="callout" data-callout-value="data-search-target=&quot;messages&quot;">
-<meta data-controller="callout" data-callout-value="data-checkbox-target=&quot;input&quot;">
+<meta data-controller="callout" data-callout-text-value="data-search-target=&quot;projects&quot;">
+<meta data-controller="callout" data-callout-text-value="data-search-target=&quot;messages&quot;">
+<meta data-controller="callout" data-callout-text-value="data-checkbox-target=&quot;input&quot;">
 
 ```html
 <form data-controller="search checkbox">

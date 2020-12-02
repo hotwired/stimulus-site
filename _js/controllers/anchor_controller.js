@@ -1,13 +1,14 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static values = { selector: String }
+
   initialize() {
     this.anchorElements.forEach(installAnchorLink)
   }
 
   get anchorElements() {
-    const selector = this.data.get("selector")
-    const elements = this.element.querySelectorAll(selector)
+    const elements = this.element.querySelectorAll(this.selectorValue)
     return [].slice.call(elements)
   }
 }
