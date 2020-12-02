@@ -52,7 +52,7 @@ export default class extends Controller {
 
 For each target name defined in the `static targets` array, Stimulus adds the following properties to your controller, where `[name]` corresponds to the target's name:
 
-Type        | Name                   | Value
+Kind        | Name                   | Value
 ----------- | ---------------------- | -----
 Singular    | `this.[name]Target`    | The first matching target in scope
 Plural      | `this.[name]Targets`   | An array of all matching targets in scope
