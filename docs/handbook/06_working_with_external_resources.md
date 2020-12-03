@@ -4,7 +4,7 @@ permalink: /handbook/working-with-external-resources
 
 # Working With External Resources
 
-In the last chapter we learned how to load and persist a controller's internal state using the Values API.
+In the last chapter we learned how to load and persist a controller's internal state using values.
 
 Sometimes our controllers need to track the state of external resources, where by _external_ we mean anything that isn't in the DOM or a part of Stimulus. For example, we may need to issue an HTTP request and respond as the request's state changes. Or we may want to start a timer and then stop it when the controller is no longer connected. In this chapter we'll see how to do both of those things.
 
