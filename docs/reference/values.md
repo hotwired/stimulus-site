@@ -1,5 +1,6 @@
 ---
 permalink: /reference/values
+redirect_from: /reference/data-maps
 order: 04
 ---
 
