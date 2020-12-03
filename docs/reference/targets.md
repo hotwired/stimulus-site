@@ -46,8 +46,6 @@ export default class extends Controller {
 }
 ```
 
-**Note:** You may need to enable support in your JavaScript environment for the static class properties standard (see [@babel/plugin-proposal-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties)).
-
 ## Properties
 
 For each target name defined in the `static targets` array, Stimulus adds the following properties to your controller, where `[name]` corresponds to the target's name:
