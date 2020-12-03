@@ -74,6 +74,8 @@ export default class extends Controller {
 > * `this.sourceTarget` evaluates to the first `source` target in your controller's scope. If there is no `source` target, accessing the property throws an error.
 > * `this.sourceTargets` evaluates to an array of all `source` targets in the controller's scope.
 > * `this.hasSourceTarget` evaluates to `true` if there is a `source` target or `false` if not.
+>
+> You can read more about targets in the [reference documentation](/reference/targets).
 
 ## Connecting the Action
 
