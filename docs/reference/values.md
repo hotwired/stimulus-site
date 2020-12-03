@@ -5,11 +5,47 @@ order: 04
 
 # Values
 
-You can read and write [HTML data attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) as typed _values_ using special controller properties.
+You can read and write [HTML data attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) on controller elements as typed _values_ using special controller properties.
+
+<meta data-controller="callout" data-callout-text-value="data-loader-url-value=&quot;/messages&quot;">
+
+```html
+<div data-controller="loader"
+     data-loader-url-value="/messages">
+</div>
+```
+
+<meta data-controller="callout" data-callout-text-value="static values = { url: String }">
+<meta data-controller="callout" data-callout-text-value="this.urlValue">
+
+```js
+// controllers/loader_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static values = { url: String }
+
+  connect() {
+    fetch(this.urlValue).then(/* … */)
+  }
+}
+```
 
 ## Definitions
 
 Define values in a controller using the `static values` object. Put each value's _name_ on the left and its _type_ on the right.
+
+```js
+export default class extends Controller {
+  static values = {
+    url: String,
+    interval: Number,
+    params: Object
+  }
+
+  // …
+}
+```
 
 ## Types
 
@@ -65,6 +101,16 @@ Define a method `[name]ValueChanged` in the controller, where `[name]` is the na
 
 Stimulus invokes each change callback after the controller is initialized and again any time its associated data attribute changes. This includes changes as a result of assignment to the value's setter.
 
+```js
+export default class extends Controller {
+  static values = { url: String }
+
+  urlValueChanged() {
+    fetch(this.urlValue).then(/* … */)
+  }
+}
+```
+
 ## Naming Conventions
 
-Write value names as camelCase in JavaScript and kebab-case in HTML. For example, a value named `fileType` in the `reference` controller will have the associated data attribute `data-reference-file-type-value`.
+Write value names as camelCase in JavaScript and kebab-case in HTML. For example, a value named `contentType` in the `loader` controller will have the associated data attribute `data-loader-content-type-value`.
