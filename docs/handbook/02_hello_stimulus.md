@@ -44,7 +44,7 @@ Reload the page in your browser and you should see the text field and button.
 
 ## Controllers Bring HTML to Life
 
-At its core, Stimulus' purpose is to automatically connect DOM elements to JavaScript objects. Those objects are called _controllers_.
+At its core, Stimulus's purpose is to automatically connect DOM elements to JavaScript objects. Those objects are called _controllers_.
 
 Let's create our first controller by extending the framework's built-in `Controller` class. Create a new file named `hello_controller.js` in the `src/controllers/` folder. Then place the following code inside:
 
