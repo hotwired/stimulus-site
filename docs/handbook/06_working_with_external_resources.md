@@ -69,18 +69,22 @@ We'll use the `data-content-loader-refresh-interval-value` attribute to specify 
      data-content-loader-refresh-interval-value="5000"></div>
 ```
 
-Now we can update the controller to check for the interval and, if present, start a refresh timer. Below the `load()` method, define a new `startRefreshing()` method:
+Now we can update the controller to check for the interval and, if present, start a refresh timer.
+
+Add a `static values` definition to the controller, and define a new method `startRefreshing()`:
 
 ```js
+export default class extends Controller {
   static values = { url: String, refreshInterval: Number }
-
-  // …
 
   startRefreshing() {
     setInterval(() => {
       this.load()
     }, this.refreshIntervalValue)
   }
+
+  // …
+}
 ```
 
 Then update the `connect()` method to call `startRefreshing()` if an interval value is present:
