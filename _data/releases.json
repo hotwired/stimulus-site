@@ -1,5 +1,46 @@
 [
   {
+    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/34837947",
+    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/34837947/assets",
+    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/34837947/assets{?name,label}",
+    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v2.0.0",
+    "id": 34837947,
+    "author": {
+      "login": "sstephenson",
+      "id": 2603,
+      "node_id": "MDQ6VXNlcjI2MDM=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2603?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sstephenson",
+      "html_url": "https://github.com/sstephenson",
+      "followers_url": "https://api.github.com/users/sstephenson/followers",
+      "following_url": "https://api.github.com/users/sstephenson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/sstephenson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sstephenson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sstephenson/subscriptions",
+      "organizations_url": "https://api.github.com/users/sstephenson/orgs",
+      "repos_url": "https://api.github.com/users/sstephenson/repos",
+      "events_url": "https://api.github.com/users/sstephenson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sstephenson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "node_id": "MDc6UmVsZWFzZTM0ODM3OTQ3",
+    "tag_name": "v2.0.0",
+    "target_commitish": "master",
+    "name": "",
+    "draft": false,
+    "prerelease": false,
+    "created_at": "2020-12-04T17:20:00Z",
+    "published_at": "2020-12-04T17:21:29Z",
+    "assets": [
+
+    ],
+    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v2.0.0",
+    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v2.0.0",
+    "body": "* **NEW:** Values and CSS classes APIs (https://github.com/stimulusjs/stimulus/pull/202)\r\n* **NEW:** Support for DOM event listener options (https://github.com/stimulusjs/stimulus/pull/232)\r\n* **CHANGED:** Target attributes are now scoped by identifier (https://github.com/stimulusjs/stimulus/pull/202/commits/2235047c926f4b41abe92fadc250ca764b120e46)\r\n* **CHANGED:** Default event for text inputs from `change` to `input` (https://github.com/stimulusjs/stimulus/commit/14ba2abf75c7ce97e015199996239645d93cd1a9, https://github.com/stimulusjs/stimulus/issues/248)\r\n* **FIXED:** Invoking actions for events dispatched during connect (https://github.com/stimulusjs/stimulus/commit/6129975c2ab98b01e28c64ca9836d829cf6528ea, https://github.com/stimulusjs/stimulus/issues/222)\r\n* **FIXED:** Error using SVG elements in IE 11 (https://github.com/stimulusjs/stimulus/commit/aa76e25f104ed165a8985f9c93e25c7912ed218f, https://github.com/stimulusjs/stimulus/issues/274)\r\n* **FIXED:** Nested global action binding (https://github.com/stimulusjs/stimulus/commit/2b6facc403804c33d844d126315656a71f19a0dd, https://github.com/stimulusjs/stimulus/issues/307)\r\n\r\nIf you're upgrading from a previous version of Stimulus, note that the syntax for target attributes has changed to move the controller identifier into the attribute's name. The new format is `data-[identifier]-target=\"[name]\"` instead of `data-target=\"[identifier].[name]\"`. You can still use the old syntax, but you will see a warning in the console, and support will be removed in a future version.\r\n\r\nThe data map API from Stimulus 1.0 will continue to work but is no longer documented and should be considered internal. We suggest migrating to the new values API. "
+  },
+  {
     "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/14841937",
     "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/14841937/assets",
     "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/14841937/assets{?name,label}",
