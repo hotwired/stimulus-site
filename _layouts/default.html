@@ -28,7 +28,7 @@
       {% include docs_navigation.html %}
     {%- endif -%}
 
-    <section class="{% if page.layout_type %}{{ page.layout_type }}__content{% endif %}" data-controller="anchor" data-anchor-selector="h2,h3,h4">
+    <section class="{% if page.layout_type %}{{ page.layout_type }}__content{% endif %}" data-controller="anchor" data-anchor-selector-value="h2,h3,h4">
       {{ content }}
 
       {% if next_section_page %}

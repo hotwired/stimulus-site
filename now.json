@@ -2,10 +2,7 @@
   "version": 2,
   "public": true,
   "scope": "stimulus",
-  "name": "stimulusjs",
   "alias": "stimulusjs.now.sh",
-  "routes": [
-    { "src": "/", "dest": "index.html" },
-    { "src": "^(.*)$", "dest": "$1.html" }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }

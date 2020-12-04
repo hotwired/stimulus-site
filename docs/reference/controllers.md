@@ -39,7 +39,7 @@ When you add a `data-controller` attribute to an element, Stimulus reads the ide
 
 For example, this element has a controller which is an instance of the class defined in `controllers/reference_controller.js`:
 
-<meta data-controller="callout" data-callout-value="reference">
+<meta data-controller="callout" data-callout-text-value="reference">
 
 ```html
 <div data-controller="reference"></div>
@@ -63,8 +63,8 @@ For example, the `<div>` and `<h1>` below are part of the controller's scope, bu
 
 The `data-controller` attribute's value is a space-separated list of identifiers:
 
-<meta data-controller="callout" data-callout-value="clipboard">
-<meta data-controller="callout" data-callout-value="list-item">
+<meta data-controller="callout" data-callout-text-value="clipboard">
+<meta data-controller="callout" data-callout-text-value="list-item">
 
 ```html
 <div data-controller="clipboard list-item"></div>
@@ -74,7 +74,7 @@ It's common for any given element on the page to have many controllers. In the e
 
 Similarly, it's common for multiple elements on the page to reference the same controller class:
 
-<meta data-controller="callout" data-callout-value="list-item">
+<meta data-controller="callout" data-callout-text-value="list-item">
 
 ```html
 <ul>
@@ -92,7 +92,7 @@ Always use camelCase for method and property names in a controller class.
 
 When an identifier is composed of more than one word, write the words in kebab-case (i.e., by using dashes: `date-picker`, `list-item`).
 
-In filenames, separate multiple words using either dashes or underscores (kebab-case or snake_case: `controllers/date_picker.js`, `controllers/list-item.js`).
+In filenames, separate multiple words using either underscores or dashes (snake_case or kebab-case: `controllers/date_picker_controller.js`, `controllers/list-item-controller.js`).
 
 ## Registration
 
