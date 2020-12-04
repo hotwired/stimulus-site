@@ -10,7 +10,7 @@ We've implemented our first controller and learned how Stimulus connects HTML to
 
 Scattered throughout Basecamp's UI are buttons like these:
 
-<img src="../../assets/bc3-clipboard-ui.png" width="1023" height="317" class="docs__screenshot" alt="Screenshot showing a text field with an email address inside and a ”Copy to clipboard“ button to the right">
+<img src="/assets/bc3-clipboard-ui.png" width="1023" height="317" class="docs__screenshot" alt="Screenshot showing a text field with an email address inside and a ”Copy to clipboard“ button to the right">
 
 When you click one of these buttons, Basecamp copies a bit of text, such as a URL or an email address, to your clipboard.
 

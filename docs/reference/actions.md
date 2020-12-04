@@ -75,6 +75,7 @@ You can append `@window` or `@document` to the event name in an action descripto
 ```html
 <div data-controller="gallery"
      data-action="resize@window->gallery#layout">
+</div>
 ```
 
 ### Options

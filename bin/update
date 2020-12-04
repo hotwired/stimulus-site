@@ -10,7 +10,7 @@ echo
 echo "--- Building JavaScript…"
 yarn install
 echo
-yarn build
+yarn build-js
 echo
 
 echo "Done!"
