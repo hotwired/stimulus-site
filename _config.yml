@@ -2,7 +2,7 @@ title: Stimulus
 url: https://stimulusjs.org
 discourse_url: https://discourse.stimulusjs.org
 github_url: https://github.com/stimulusjs/stimulus
-description: The speed of a single-page web application without having to write any JavaScript.
+description: A modest JavaScript framework for the HTML you already have.
 
 theme: false
 
