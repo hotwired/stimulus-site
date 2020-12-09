@@ -2,6 +2,7 @@ title: Stimulus
 url: https://stimulusjs.org
 discourse_url: https://discourse.stimulusjs.org
 github_url: https://github.com/stimulusjs/stimulus
+description: The speed of a single-page web application without having to write any JavaScript.
 
 theme: false
 
@@ -12,12 +13,14 @@ defaults:
       section: handbook
       section_title: Handbook
       layout_type: docs
+      layout: docs
   - scope:
       path: "*/reference/*"
     values:
       section: reference
       section_title: Reference
       layout_type: docs
+      layout: docs
 
 optional_front_matter:
   remove_originals: true
