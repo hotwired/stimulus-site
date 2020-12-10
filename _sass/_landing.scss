@@ -16,6 +16,7 @@
   margin: 1.25em 0 2.25em 0;
   text-align: center;
   color: $color-text;
+  font-size: $font-xx-large;
   font-weight: 800;
   line-height: 1.3;
 
@@ -28,7 +29,7 @@
 
 .landing-hero {
   position: relative;
-  margin: -3em 0 0 0;
+  margin: -2em 0 0 0;
   padding: 0;
 
   @include media(medium) {
@@ -116,7 +117,7 @@
   margin: 0 0 0.25em 0;
   padding: 1em;
   font-family: $sans-stack;
-  font-size: 1.125em;
+  font-size: $font-medium;
   font-weight: bold;
   text-align: center;
   color: $color-background;
@@ -267,7 +268,10 @@
 
 .landing-summary {
   text-align: center;
-  font-size: $font-large;
+
+  @include media(medium) {
+    font-size: $font-large;
+  }
 }
 
 .landing-version {
