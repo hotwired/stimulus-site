@@ -1,4 +1,8 @@
-{%- assign section_pages = site.pages | where: "section",include.section | sort: "order" -%}
+{%- if include.section == "handbook" -%}
+  {%- assign section_pages = site.pages | where: "section",include.section -%}
+{%- else -%}
+  {%- assign section_pages = site.pages | where: "section",include.section | sort: "order" -%}
+{%- endif -%}
 
 <ul class="nav__sublist {% if page.section == include.section %} active{% endif %}">
   {%- for section_page in section_pages -%}
@@ -13,7 +17,7 @@
         {%- unless prefix -%}
           {%- assign index = section_page.path | split: "/" | reverse | first | abs -%}
           {%- if index > 0 -%}
-            {%- assign prefix = forloop.index0 | plus: 1 -%}
+            {%- assign prefix = forloop.index0 -%}
           {%- endif -%}
         {%- endunless -%}
         {%- if prefix %}{{ prefix }}: {% endif %}{{ section_page.title }}
