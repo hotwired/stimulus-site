@@ -5,8 +5,6 @@
   <title>{{ site.title }}{% if page.section_title %} {{ page.section_title }}{% endif %}{% if page.title %}: {{ page.title }}{% endif %}</title>
   {% if page.description -%}
     <meta name="description" content="{{ page.description }}">
-  {% else -%}
-    <meta name="description" content="{{ site.description }}">
   {% endif -%}
   <link rel="canonical" href="{{ page.url | replace: "index.html", "" | prepend: site.url }}">
 
