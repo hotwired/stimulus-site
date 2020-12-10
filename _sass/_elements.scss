@@ -147,7 +147,6 @@ hr {
 code,
 pre {
   font-family: $mono-stack;
-  //font-weight: 400;
   line-height: 1.25;
   padding:  0 0.1em;
   background-color: $color-tint;
@@ -160,6 +159,7 @@ pre {
 
 code {
   padding: 0.125em;
+  word-wrap: break-word;
 }
 
 table {
