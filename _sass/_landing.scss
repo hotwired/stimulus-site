@@ -71,6 +71,10 @@
     @include media(medium) {
       padding: 1.5em 0.5em 1.5em 1.5em;
       font-size: 0.875em;
+    }
+
+    @include media(large) {
+      font-size: 0.875em;
       font-size: 1.4vw;
     }
 

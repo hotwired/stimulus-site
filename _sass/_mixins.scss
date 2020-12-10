@@ -82,9 +82,9 @@ $color-brand: #d9c6a4;
 
 @mixin media($query) {
   @if $query == small {
-    @media (max-width: 47.99em) { @content; } // Handhelds - up to portrait tablet
+    @media (max-width: 39.99em) { @content; } // Handhelds - up to portrait tablet
   } @else if $query == medium {
-    @media (min-width: 48em) { @content; } // Tablets - Portrait
+    @media (min-width: 40em) { @content; } // Tablets - Portrait
   } @else if $query == large {
     @media (min-width: 66em) { @content; } // Tablets - Landscape
   } @else if $query == x-large {
