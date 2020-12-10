@@ -44,10 +44,13 @@ a {
     color: $color-text; 
   }
 
-  &:hover { 
-    text-decoration-color: $color-accent;
-    text-decoration-thickness: 0.2em;
-    text-decoration-width: 0.2em;
+  @media (hover: hover) {
+
+    &:hover { 
+      text-decoration-color: $color-accent;
+      text-decoration-thickness: 0.2em;
+      text-decoration-width: 0.2em;
+    }
   }
 
   &:active { 
