@@ -28,13 +28,13 @@
 
 .landing-hero {
   position: relative;
-  margin: -3em 0 2em 0;
+  margin: -3em 0 0 0;
   padding: 0;
 
   @include media(medium) {
     display: flex;
     justify-content: space-between;
-    margin-top: -4em;
+    margin: -4em 0 2em 0;
 
     &:before {
       content: "";
