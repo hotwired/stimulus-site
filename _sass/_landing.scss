@@ -227,6 +227,7 @@
   -webkit-appearance: none;
   border: none;
   outline: none;
+  cursor: pointer;
 
   @include media(medium) {
     width: auto;

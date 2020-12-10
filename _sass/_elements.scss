@@ -144,6 +144,7 @@ hr {
 code,
 pre {
   font-family: $mono-stack;
+  //font-weight: 400;
   line-height: 1.25;
   padding:  0 0.1em;
   background-color: $color-tint;
@@ -151,6 +152,7 @@ pre {
 
 pre {
   text-indent: -0.125em;
+  font-weight: 400;
 }
 
 code {
