@@ -35,8 +35,11 @@
     transition: fill 0.2s ease;
   }
 
-  &:hover path {
-    fill: $color-accent;
+  @media (hover: hover) {
+    
+    &:hover path {
+      fill: $color-accent;
+    }
   }
 }
 
