@@ -41,13 +41,13 @@
       content: "";
       display: block;
       position: absolute;
-      width: 130%;
-      height: 130%;
+      width: 120%;
+      height: 120%;
       z-index: -1;
-      top: -32%;
-      left: -11%;
+      top: -25%;
+      left: -10%;
       background: url("../images/pattern.svg") no-repeat center;
-      background-size: 88%;
+      background-size: 100%;
     }
   }
 }
@@ -188,9 +188,10 @@
   margin: 0;
   padding: 0.5em;
   width: 100%;
-  border: 2px solid $color-brand;
+  border: 2px solid $color-text;
   font-family: $sans-stack;
   font-size: 1em;
+  transition: border-color 0.2s ease;
 
   @include media(medium) {
     width: 46%;
@@ -206,8 +207,8 @@
   display: block;
   width: 100%;
   padding: 0.5em 1em;
-  background-color: $color-brand;
-  color: $color-text;
+  background-color: $color-text;
+  color: $color-brand;
   font-family: $sans-stack;
   font-size: 1em;
   font-weight: bold;
