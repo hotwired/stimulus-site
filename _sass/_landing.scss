@@ -47,7 +47,7 @@
       top: -32%;
       left: -11%;
       background: url("../images/pattern.svg") no-repeat center;
-      background-size: 100%;
+      background-size: 88%;
     }
   }
 }
@@ -58,7 +58,7 @@
   margin-bottom: 2em;
   background-color: $color-tint;
   border: 0.25em solid #fff;
-  box-shadow: 1px 10px 20px $color-brand;
+  box-shadow: 0 0 2em rgba($color-text, 0.1);
 
   @include media(medium) {
     width: 48%;
@@ -123,10 +123,6 @@
   color: $color-background;
   background-color: $color-text;
 
-  @include media(medium) {
-    font-size: 1em;
-  }
-
   @include media(large) {
     padding: 1em 2em;
     font-size: 1.75vw;
@@ -146,18 +142,11 @@
   padding: 1em;
   background-color: $color-tint;
   border: 0.25em solid #fff;
-  box-shadow: 1px 10px 20px $color-brand;
+  box-shadow: 0 0 2em rgba($color-text, 0.1);
 
   @include media(medium) {
-    grid-column: 3/4;
     display: flex;
     align-items: stretch;
-    //border: 0.25em solid #fff;
-    //box-shadow: 1px 10px 20px $color-brand;
-  }
-
-  @include media(large) {
-    grid-column: 3/4;
   }
 
   &:before {
