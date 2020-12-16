@@ -4,7 +4,6 @@ module.exports = {
   entry: {
     main: [
       "./_js/index.js",
-      "./_js/tracking.js",
     ]
   },
 
