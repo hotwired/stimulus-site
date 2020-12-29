@@ -1,9 +1,9 @@
 [
   {
-    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/34837947",
-    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/34837947/assets",
-    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/34837947/assets{?name,label}",
-    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v2.0.0",
+    "url": "https://api.github.com/repos/hotwired/stimulus/releases/34837947",
+    "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/34837947/assets",
+    "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/34837947/assets{?name,label}",
+    "html_url": "https://github.com/hotwired/stimulus/releases/tag/v2.0.0",
     "id": 34837947,
     "author": {
       "login": "sstephenson",
@@ -36,15 +36,15 @@
     "assets": [
 
     ],
-    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v2.0.0",
-    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v2.0.0",
+    "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v2.0.0",
+    "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v2.0.0",
     "body": "* **NEW:** Values and CSS classes APIs (https://github.com/stimulusjs/stimulus/pull/202)\r\n* **NEW:** Support for DOM event listener options (https://github.com/stimulusjs/stimulus/pull/232)\r\n* **CHANGED:** Target attributes are now scoped by identifier (https://github.com/stimulusjs/stimulus/pull/202/commits/2235047c926f4b41abe92fadc250ca764b120e46)\r\n* **CHANGED:** Default event for text inputs from `change` to `input` (https://github.com/stimulusjs/stimulus/commit/14ba2abf75c7ce97e015199996239645d93cd1a9, https://github.com/stimulusjs/stimulus/issues/248)\r\n* **FIXED:** Invoking actions for events dispatched during connect (https://github.com/stimulusjs/stimulus/commit/6129975c2ab98b01e28c64ca9836d829cf6528ea, https://github.com/stimulusjs/stimulus/issues/222)\r\n* **FIXED:** Error using SVG elements in IE 11 (https://github.com/stimulusjs/stimulus/commit/aa76e25f104ed165a8985f9c93e25c7912ed218f, https://github.com/stimulusjs/stimulus/issues/274)\r\n* **FIXED:** Nested global action binding (https://github.com/stimulusjs/stimulus/commit/2b6facc403804c33d844d126315656a71f19a0dd, https://github.com/stimulusjs/stimulus/issues/307)\r\n\r\nIf you're upgrading from a previous version of Stimulus, note that the syntax for target attributes has changed to move the controller identifier into the attribute's name. The new format is `data-[identifier]-target=\"[name]\"` instead of `data-target=\"[identifier].[name]\"`. You can still use the old syntax, but you will see a warning in the console, and support will be removed in a future version.\r\n\r\nThe data map API from Stimulus 1.0 will continue to work but is no longer documented and should be considered internal. We suggest migrating to the new values API. "
   },
   {
-    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/14841937",
-    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/14841937/assets",
-    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/14841937/assets{?name,label}",
-    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v1.1.1",
+    "url": "https://api.github.com/repos/hotwired/stimulus/releases/14841937",
+    "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/14841937/assets",
+    "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/14841937/assets{?name,label}",
+    "html_url": "https://github.com/hotwired/stimulus/releases/tag/v1.1.1",
     "id": 14841937,
     "author": {
       "login": "sstephenson",
@@ -77,15 +77,15 @@
     "assets": [
 
     ],
-    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v1.1.1",
-    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v1.1.1",
+    "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v1.1.1",
+    "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v1.1.1",
     "body": "* **CHANGED**: Various documentation improvements (#190, #193, #206)\r\n* **FIXED**: Type declarations for webpack helpers in the `stimulus` package (#214)\r\n* **FIXED**: Pin `@stimulus/polyfills` dependencies to work around upstream changes (0251c87795f351a7462d00fa0f028b2daf967a01)"
   },
   {
-    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12551933",
-    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12551933/assets",
-    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/12551933/assets{?name,label}",
-    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v1.1.0",
+    "url": "https://api.github.com/repos/hotwired/stimulus/releases/12551933",
+    "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/12551933/assets",
+    "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/12551933/assets{?name,label}",
+    "html_url": "https://github.com/hotwired/stimulus/releases/tag/v1.1.0",
     "id": 12551933,
     "author": {
       "login": "sstephenson",
@@ -118,15 +118,15 @@
     "assets": [
 
     ],
-    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v1.1.0",
-    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v1.1.0",
+    "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v1.1.0",
+    "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v1.1.0",
     "body": "* **NEW:** [Stimulus Reference](https://stimulusjs.org/reference/controllers) documentation\r\n* **NEW:** Ordered actions (#149)\r\n* **NEW:** @stimulus/polyfills package for legacy browser support (#134, #147, #170)\r\n* **CHANGED:** Applications now start when the DOM is interactive (#131)\r\n* **CHANGED:** Unminified UMD module for easier debugging (#151)\r\n* **FIXED:** Stimulus now accounts for missing mutation notifications from nodes removed by `innerHTML` assignment in IE 11 (#133) and, in rare cases, when annotating elements synchronously after removing them from an observed tree (#161)\r\n* **INTERNAL:** Upgraded to TypeScript 2.8.1 and Lerna 3.0.0-rc.0\r\n* **INTERNAL:** New build system (#155)\r\n"
   },
   {
-    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12212500",
-    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/12212500/assets",
-    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/12212500/assets{?name,label}",
-    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v1.1.0-beta.1",
+    "url": "https://api.github.com/repos/hotwired/stimulus/releases/12212500",
+    "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/12212500/assets",
+    "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/12212500/assets{?name,label}",
+    "html_url": "https://github.com/hotwired/stimulus/releases/tag/v1.1.0-beta.1",
     "id": 12212500,
     "author": {
       "login": "sstephenson",
@@ -159,15 +159,15 @@
     "assets": [
 
     ],
-    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v1.1.0-beta.1",
-    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v1.1.0-beta.1",
+    "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v1.1.0-beta.1",
+    "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v1.1.0-beta.1",
     "body": "* **NEW:** Ordered actions (#149)\r\n* **NEW:** @stimulus/polyfills package for legacy browser support (#134, #147, #170)\r\n* **CHANGED:** Applications now start when the DOM is interactive (#131)\r\n* **CHANGED:** Unminified UMD module for easier debugging (#151)\r\n* **FIXED:** Stimulus now accounts for missing mutation notifications from nodes removed by `innerHTML` assignment in IE 11 (#133) and, in rare cases, when annotating elements synchronously after removing them from an observed tree (#161)\r\n* **INTERNAL:** Upgraded to TypeScript 2.8.1 and Lerna 3.0.0-rc.0\r\n* **INTERNAL:** New build system (#155)\r\n"
   },
   {
-    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/9515669",
-    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/9515669/assets",
-    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/9515669/assets{?name,label}",
-    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v1.0.1",
+    "url": "https://api.github.com/repos/hotwired/stimulus/releases/9515669",
+    "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/9515669/assets",
+    "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/9515669/assets{?name,label}",
+    "html_url": "https://github.com/hotwired/stimulus/releases/tag/v1.0.1",
     "id": 9515669,
     "author": {
       "login": "javan",
@@ -200,15 +200,15 @@
     "assets": [
 
     ],
-    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v1.0.1",
-    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v1.0.1",
+    "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v1.0.1",
+    "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v1.0.1",
     "body": "* Fix inconsistent `this.has*Target` property names in different locales (https://github.com/stimulusjs/stimulus/pull/93)"
   },
   {
-    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/9445619",
-    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/9445619/assets",
-    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/9445619/assets{?name,label}",
-    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v0.9.0",
+    "url": "https://api.github.com/repos/hotwired/stimulus/releases/9445619",
+    "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/9445619/assets",
+    "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/9445619/assets{?name,label}",
+    "html_url": "https://github.com/hotwired/stimulus/releases/tag/v0.9.0",
     "id": 9445619,
     "author": {
       "login": "javan",
@@ -241,15 +241,15 @@
     "assets": [
 
     ],
-    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v0.9.0",
-    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v0.9.0",
+    "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v0.9.0",
+    "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v0.9.0",
     "body": "Initial public release"
   },
   {
-    "url": "https://api.github.com/repos/stimulusjs/stimulus/releases/9436792",
-    "assets_url": "https://api.github.com/repos/stimulusjs/stimulus/releases/9436792/assets",
-    "upload_url": "https://uploads.github.com/repos/stimulusjs/stimulus/releases/9436792/assets{?name,label}",
-    "html_url": "https://github.com/stimulusjs/stimulus/releases/tag/v1.0.0",
+    "url": "https://api.github.com/repos/hotwired/stimulus/releases/9436792",
+    "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/9436792/assets",
+    "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/9436792/assets{?name,label}",
+    "html_url": "https://github.com/hotwired/stimulus/releases/tag/v1.0.0",
     "id": 9436792,
     "author": {
       "login": "javan",
@@ -282,8 +282,8 @@
     "assets": [
 
     ],
-    "tarball_url": "https://api.github.com/repos/stimulusjs/stimulus/tarball/v1.0.0",
-    "zipball_url": "https://api.github.com/repos/stimulusjs/stimulus/zipball/v1.0.0",
+    "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v1.0.0",
+    "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v1.0.0",
     "body": "* **NEW**: Linked target properties (https://github.com/stimulusjs/stimulus/pull/61, https://github.com/stimulusjs/stimulus/pull/68)\r\n\r\n  Define a controller's target names and Stimulus automatically creates properties for accessing them:\r\n\r\n  ```js\r\n  export default class extends Controller {\r\n    static targets = [ \"source\" ]\r\n\r\n    initialize() {\r\n      this.sourceTarget    // Element\r\n      this.sourceTargets   // Element[]\r\n      this.hasSourceTarget // boolean\r\n    }\r\n  }\r\n  ```\r\n\r\n* **NEW**: Configurable error handler (https://github.com/stimulusjs/stimulus/pull/53)\r\n\r\n  ```js\r\n  const application = Application.start()\r\n\r\n  application.handleError = (error, message, detail) => {\r\n    console.warn(message, detail)\r\n    Raven.captureException(error)\r\n  }\r\n  ```\r\n\r\n* **NEW**: Namespaced identifiers (https://github.com/stimulusjs/stimulus/pull/65)\r\n\r\n  If your controller file is named… | its identifier will be…\r\n  --- | ---\r\n  list_item_controller.js | list-item\r\n  users/list_item_controller.js | users--list-item\r\n\r\n* **CHANGED**: Controller autoloading with webpack (https://github.com/stimulusjs/stimulus/pull/46)\r\n\r\n  A new `definitionsFromContext` helper replaces the old `autoload` helper:\r\n\r\n  ```diff\r\n  const application = Application.start()\r\n  -const context = require.context(\"./controllers\", true, /\\.js$/)\r\n  -autoload(context, application)\r\n  +const context = require.context(\"./controllers\", true, /\\.js$/)\r\n  +application.load(definitionsFromContext(context))\r\n  ```\r\n\r\n* **REMOVED**: Action method event target argument (https://github.com/stimulusjs/stimulus/pull/55)\r\n\r\n  Previously, action methods were invoked with two arguments: `event`, `eventTarget`. Now, only the `event` is passed:\r\n\r\n  ```diff\r\n  -greet(event, eventTarget) {\r\n  -  console.log(event, eventTarget)\r\n  +greet(event) {\r\n  +  console.log(event, event.target)\r\n   }\r\n   ```\r\n* **REMOVED**: Controller#{add,remove}Action (https://github.com/stimulusjs/stimulus/pull/50)\r\n\r\n  Noted for posterity since these methods were undocumented."
   }
 ]
