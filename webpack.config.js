@@ -9,8 +9,15 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, "js"),
-    filename: "[name].js"
+    filename: "[name].js",
+    module: true,
   },
+
+  experiments: {
+    outputModule: true,
+  },
+
+  mode: "production",
 
   module: {
     rules: [

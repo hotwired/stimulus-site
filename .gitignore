@@ -1,7 +1,5 @@
-.now
 .sass-cache
 .jekyll-metadata
-.vercel
 _site
 node_modules
 tmp

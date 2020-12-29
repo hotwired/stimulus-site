@@ -2,4 +2,4 @@
 set -eo pipefail
 
 echo "Syncing release data…"
-curl --silent "https://api.github.com/repos/stimulusjs/stimulus/releases" > _data/releases.json
+curl --silent "https://api.github.com/repos/hotwired/stimulus/releases" > _data/releases.json

@@ -7,7 +7,7 @@ sync() {
     rm -rf "$dirname"
     mkdir -p "$dirname"
     cd "$dirname"
-    curl --silent "https://api.github.com/repos/stimulusjs/stimulus/contents/$dirname" \
+    curl --silent "https://api.github.com/repos/hotwired/stimulus/contents/$dirname" \
       | jq ".[] | .download_url" \
       | xargs -n 1 -P 4 curl --silent -O
 

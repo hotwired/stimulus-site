@@ -36,8 +36,6 @@ exclude:
   - .babelrc
   - Gemfile
   - Gemfile.lock
-  - now-build.sh
-  - now.json
   - package.json
   - webpack.config.js
   - yarn.lock
