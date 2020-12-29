@@ -6,6 +6,6 @@
 
 # cache fonts forever
 [[headers]]
-  for = "/assets/fonts/*"
+  for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=365000000, immutable"
