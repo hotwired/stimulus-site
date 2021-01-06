@@ -4,8 +4,6 @@ discourse_url: https://discuss.hotwire.dev
 github_url: https://github.com/hotwired/stimulus
 description: A modest JavaScript framework for the HTML you already have.
 
-theme: false
-
 defaults:
   - scope:
       path: "*/handbook/*"
@@ -39,7 +37,5 @@ exclude:
   - package.json
   - webpack.config.js
   - yarn.lock
-
-plugins:
-  - jekyll-sitemap
-  - jekyll-redirect-from
+  - README.md
+  - netlify.toml
