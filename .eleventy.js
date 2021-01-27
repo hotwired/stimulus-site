@@ -41,6 +41,13 @@ module.exports = function(eleventyConfig) {
   };
 
   /* --------------------------------------------------------------------------
+  Liquid settings
+  -------------------------------------------------------------------------- */
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: true
+  });
+
+  /* --------------------------------------------------------------------------
   11ty settings
   -------------------------------------------------------------------------- */
   eleventyConfig.setLibrary('md', markdownIt(markdownItOptions));

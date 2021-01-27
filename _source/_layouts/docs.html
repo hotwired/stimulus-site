@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
 
-  {% include head.html %}
+  {% include "head.html" %}
 
   <body>
 
-    {% include jump.html %}
+    {% include "jump.html" %}
 
     <main class="grid {{ page.layout_type }}">
 
       <header class="docs__index grid__custom-item">
-        {% include navigation.html %}
+        {% include "navigation.html" %}
       </header>
 
       <section id="content" class="docs__content grid__custom-item">
@@ -18,14 +18,14 @@
         {{ content }}
 
         {%- if next_section_page -%}
-          <p><a class="button" href="{{ next_section_page.url }}">Next: {{ next_section_page.title }}</a></p>
+          <p><a class="button" href="{{ next_section_page.url }}">Next: {{ next_section_page.data.title }}</a></p>
         {%- endif -%}
 
       </section>
 
       <footer class="docs__footer grid__item grid__item--start-4 grid__item--span-8">
 
-        {% include footer.html %}
+        {% include "footer.html" %}
 
       </footer>
 

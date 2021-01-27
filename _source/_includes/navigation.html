@@ -1,5 +1,5 @@
 <a class="nav-logo" href="/" aria-label="Stimulus">
-  {% include svg/stimulus-logo.svg %}
+  {% include "svg/stimulus-logo.svg" %}
 </a>
 
 <input type="checkbox" id="hamburger" class="nav-checkbox"/>
@@ -11,14 +11,14 @@
 
   <ul class="nav__list {% if include.type == "horizontal" %} nav__list--horizontal{% endif %}">
     <li>
-      <a class="nav__list-link{% if page.section == "handbook" %} active{% endif %}" href="/docs/handbook/01_introduction/">Handbook</a>
+      <a class="nav__list-link{% if page.section == "handbook" %} active{% endif %}" href="/handbook/introduction/">Handbook</a>
 
-      {% include section-nav.html section="handbook" %}
+      {% include "section-nav.html", section="handbook" %}
     </li>
     <li>
-      <a class="nav__list-link{% if page.section == "reference" %} active{% endif %}" href="/docs/reference/controllers/">Reference</a>
+      <a class="nav__list-link{% if page.section == "reference" %} active{% endif %}" href="/reference/controllers">Reference</a>
 
-      {% include section-nav.html section="reference" %}
+      {% include "section-nav.html", section="reference" %}
     </li>
     <li>
       <a class="nav__list-link" href="{{ site.discourse_url }}" title="Have a question? Connect with other developers on the Stimulus Discourse community forum.">Community</a>

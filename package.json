@@ -14,7 +14,7 @@
     "onchange": "^7.1.0"
   },
   "scripts": {
-    "serve": "npm-run-all -s clean build:js -p watch:** --silent",
+    "serve": "npm-run-all -s clean build:js build:css -p watch:** --silent",
     "publish:stage": "ELEVENTY_ENV=stage run-s build:**",
     "publish:prod": "ELEVENTY_ENV=prod run-s build:**",
     "clean": "del-cli \"_public/**\"",
