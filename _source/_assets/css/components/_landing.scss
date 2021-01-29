@@ -46,7 +46,7 @@
       z-index: -1;
       top: -25%;
       left: -10%;
-      background: url("../images/pattern.svg") no-repeat center;
+      background: url("/assets/pattern.svg") no-repeat center;
       background-size: 100%;
     }
   }
@@ -65,9 +65,15 @@
     margin: 0;
   }
 
-  pre {
+  code[class*="language-"] {
+    padding: 0;
+    overflow: visible !important;
+  }
+
+  pre[class*="language-"] {
     padding: 1.5em 0.5em 1.5em 0.5em;
     overflow: auto;
+    margin: 0;
 
     @include media(medium) {
       padding: 1.5em 0.5em 1.5em 1.5em;
@@ -96,7 +102,7 @@
     top: 93%;
     right: 40%;
     z-index: 1;
-    background: url("../images/arrow.svg") no-repeat center;
+    background: url("/assets/arrow.svg") no-repeat center;
     background-size: 100%;
     transform: rotate(110deg);
   }
@@ -158,7 +164,7 @@
     top: -30%;
     right: 40%;
     z-index: 1;
-    background: url("../images/arrow.svg") no-repeat center;
+    background: url("/assets/arrow.svg") no-repeat center;
     background-size: 100%;
     transform: rotate(110deg);
 
@@ -331,16 +337,16 @@
 }
 
 .landing-actions__icon--guide {
-  -webkit-mask: url('/images/icon-guide.svg') center / 100% no-repeat;
-  mask: url('/images/icon-guide.svg') center / 100% no-repeat;
+  -webkit-mask: url('/assets/icon-guide.svg') center / 100% no-repeat;
+  mask: url('/assets/icon-guide.svg') center / 100% no-repeat;
 }
 
 .landing-actions__icon--install {
-  -webkit-mask: url('/images/icon-install.svg') center / 100% no-repeat;
-  mask: url('/images/icon-install.svg') center / 100% no-repeat;
+  -webkit-mask: url('/assets/icon-install.svg') center / 100% no-repeat;
+  mask: url('/assets/icon-install.svg') center / 100% no-repeat;
 }
 
 .landing-actions__icon--github {
-  -webkit-mask: url('/images/icon-github.svg') center / 100% no-repeat;
-  mask: url('/images/icon-github.svg') center / 100% no-repeat;
+  -webkit-mask: url('/assets/icon-github.svg') center / 100% no-repeat;
+  mask: url('/assets/icon-github.svg') center / 100% no-repeat;
 }

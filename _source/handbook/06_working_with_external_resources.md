@@ -1,5 +1,7 @@
 ---
-permalink: /handbook/working-with-external-resources
+title: Working With External Resources
+permalink: /handbook/working-with-external-resources.html
+nav_prefix: 06
 ---
 
 # Working With External Resources

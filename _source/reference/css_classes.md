@@ -1,5 +1,6 @@
 ---
-permalink: /reference/css-classes
+title: CSS Classes
+permalink: /reference/css-classes.html
 order: 05
 ---
 

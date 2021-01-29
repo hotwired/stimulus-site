@@ -1,6 +1,8 @@
 ---
+title: Introduction
 permalink: /handbook/introduction.html
 redirect_from: /handbook/
+nav_prefix: 01
 ---
 
 # Introduction

@@ -1,5 +1,7 @@
 ---
-permalink: /handbook/building-something-real
+title: Building Something Real
+permalink: /handbook/building-something-real.html
+nav_prefix: 03
 ---
 
 # Building Something Real

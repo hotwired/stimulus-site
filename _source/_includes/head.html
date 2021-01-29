@@ -2,9 +2,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ site.title }}{% if page.section_title %} {{ page.section_title }}{% endif %}{% if page.title %}: {{ page.title }}{% endif %}</title>
-  {% if page.description -%}
-    <meta name="description" content="{{ page.description }}">
+  <title>{{ site.title }}{% if section_title %} {{ section_title }}{% endif %}{% if title %}: {{ title }}{% endif %}</title>
+  {% if description -%}
+    <meta name="description" content="{{ description }}">
   {% endif -%}
   <link rel="canonical" href="{{ page.url | replace: "index.html", "" | prepend: site.url }}">
 

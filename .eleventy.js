@@ -1,19 +1,16 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const markdownify = require('./_source/_filters/markdownify.js');
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require('markdown-it-anchor');
+const markdownItToc = require('markdown-it-toc-done-right');
 const sortBy = require('./_source/_filters/sortBy.js');
 const where = require('./_source/_filters/where.js');
 
 module.exports = function(eleventyConfig) {
 
   /* --------------------------------------------------------------------------
-  plugins
+  plugins & custom filters
   -------------------------------------------------------------------------- */
   eleventyConfig.addPlugin(syntaxHighlight);
-
-  /* --------------------------------------------------------------------------
-  filters
-  -------------------------------------------------------------------------- */
-  eleventyConfig.addFilter('markdownify', markdownify);
   eleventyConfig.addFilter('sortBy', sortBy);
   eleventyConfig.addFilter('where', where);
 
@@ -21,36 +18,54 @@ module.exports = function(eleventyConfig) {
   BrowserSync settings
   -------------------------------------------------------------------------- */
   eleventyConfig.setBrowserSyncConfig({
+    ui: false,
+    logPrefix: false,
     files: [ // watch the files generated elsewhere
       '_public/assets/*.css',
       '_public/assets/*.js',
       '_public/assets',
       '!_public/assets/**/**.map'
     ],
-    ui: false,
-    logPrefix: false,
+    server: { // make URLs work without a .html extension
+      baseDir: "_public",
+      serveStaticOptions: {
+          extensions: ["html"]
+      }
+    },
+    snippetOptions: {
+      rule: { // put the snippet in the head for Turbo happiness
+        match: /<\/head>/i,
+        fn: function (snippet, match) {
+          return snippet + match;
+        }
+      }
+    },
   });
 
   /* --------------------------------------------------------------------------
   MarkdownIt settings
   -------------------------------------------------------------------------- */
-  let markdownIt = require('markdown-it');
-  let markdownItOptions = {
+  const markdownItOptions = {
     html: true, // allow HTML markup
     typographer: true // fancy quotes
   };
-
-  /* --------------------------------------------------------------------------
-  Liquid settings
-  -------------------------------------------------------------------------- */
-  eleventyConfig.setLiquidOptions({
-    dynamicPartials: true
+  const markdownLib = markdownIt(markdownItOptions);
+  markdownLib.use(markdownItAnchor, { // add anchors to headings
+    level: '2',
+    permalink: 'true',
+    permalinkClass: 'anchor',
+    permalinkSymbol: '﹟',
+    permalinkBefore: 'true'
+  });
+  markdownLib.use(markdownItToc, { // make a TOC with ${toc}
+    level: '2',
+    listType: 'ul'
   });
 
   /* --------------------------------------------------------------------------
   11ty settings
   -------------------------------------------------------------------------- */
-  eleventyConfig.setLibrary('md', markdownIt(markdownItOptions));
+  eleventyConfig.setLibrary('md', markdownLib);
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy({ '_source/_assets/fonts': 'assets/fonts' });
   eleventyConfig.addPassthroughCopy({ '_source/_assets/images': 'assets' });
@@ -62,7 +77,7 @@ module.exports = function(eleventyConfig) {
       layouts: '_layouts',
       includes: '_includes'
     },
-    templateFormats: ['html', 'md', 'liquid'],
+    templateFormats: ['html', 'md', 'liquid', 'njk'],
     htmlTemplateEngine: 'liquid'
   };
 };

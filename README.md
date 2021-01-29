@@ -10,8 +10,8 @@ Handbook and reference `docs/` changes should be made [in the `hotwired/stimulus
 
 To run the site locally:
 
-1. `bundle`
-1. `bundle exec jekyll serve`
+1. `npm install`
+1. `npm run serve`
 
 ## Copyright
 

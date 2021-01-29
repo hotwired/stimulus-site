@@ -1,11 +1,11 @@
 import "@hotwired/turbo"
 import { Application } from "stimulus"
-//import { definitionsFromContext } from "stimulus/webpack-helpers"
 
+import HelloController from "./controllers/hello_controller"
+import CalloutController from "./controllers/callout_controller"
 const application = Application.start()
-//TODO: fix controller loading
-//const context = require.context("./controllers", true, /\.js$/)
-//application.load(definitionsFromContext(context))
+application.register("hello", HelloController)
+application.register("callout", CalloutController)
 
 // Are we in an <iframe>?
 if (window.top !== window) {

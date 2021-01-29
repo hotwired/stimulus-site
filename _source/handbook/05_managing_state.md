@@ -1,5 +1,7 @@
 ---
-permalink: /handbook/managing-state
+title: Managing State
+permalink: /handbook/managing-state.html
+nav_prefix: 05
 ---
 
 # Managing State

@@ -1,5 +1,6 @@
 ---
-permalink: /reference/lifecycle-callbacks
+title: Lifecycle Callbacks
+permalink: /reference/lifecycle-callbacks.html
 order: 01
 ---
 

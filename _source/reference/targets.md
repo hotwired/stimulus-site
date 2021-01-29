@@ -1,5 +1,6 @@
 ---
-permalink: /reference/targets
+title: Targets
+permalink: /reference/targets.html
 order: 03
 ---
 

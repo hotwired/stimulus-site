@@ -1,14 +1,14 @@
 ---
-permalink: /handbook/installing
+title: Installing Stimulus in Your Application
+permalink: /handbook/installing.html
+nav_prefix: 07
 ---
 
 # Installing Stimulus in Your Application
-{:.no_toc}
 
 To install Stimulus in your application, add the [`stimulus` npm package](https://www.npmjs.com/package/stimulus) to your JavaScript bundle. Or, load [`stimulus.umd.js`](https://unpkg.com/stimulus/dist/stimulus.umd.js) in a `<script>` tag.
 
-* TOC
-{:toc}
+${toc}
 
 ## Using webpack
 
