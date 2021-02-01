@@ -155,16 +155,57 @@ pre {
   line-height: 1.25;
   padding:  0 0.1em;
   background-color: $color-tint;
+  direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+  hyphens: none;
 }
 
 pre {
-  text-indent: -0.125em;
+  position: relative;
+  overflow: auto;
+	margin: 0 -1em 2em -1em;
+  margin: calc(min(5vw, 4rem)*-1);
+  margin-top: 0;
+  margin-bottom: 2em;
   font-weight: 400;
+  background: $color-tint;
+
+  @include media(medium) {
+    margin: 0 0 2em 0;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2em;
+    box-shadow: inset -2em 0 1.8em -1em $color-tint;
+  }
 }
 
 code {
   padding: 0.125em;
   word-wrap: break-word;
+}
+
+pre > code {
+  display: block;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em;
 }
 
 table {

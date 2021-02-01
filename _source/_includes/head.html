@@ -6,7 +6,7 @@
   {% if description -%}
     <meta name="description" content="{{ description }}">
   {% endif -%}
-  <link rel="canonical" href="{{ page.url | replace: "index.html", "" | prepend: site.url }}">
+  <link rel="canonical" href="{{ page.url | remove: "index.html" | remove: ".html" | prepend: site.url }}">
 
   <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">

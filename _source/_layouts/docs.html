@@ -13,7 +13,7 @@ layout: base
     {{ content }}
 
     {%- assign current_collection = {{tags[0]}} -%}
-    {%- assign next_page = collections[current_collection] | getNextCollectionItem: page -%}
+    {%- assign next_page = collections[current_collection] | sortBy: "order" | getNextCollectionItem: page -%}
     {%- if next_page -%}
       <p><a class="button" href="{{ next_page.url | remove: ".html" }}">Next: {{ next_page.data.title }}</a></p>
     {%- endif -%}

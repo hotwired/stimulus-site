@@ -17,8 +17,7 @@
   },
   "scripts": {
     "serve": "npm-run-all -s clean build:js build:css -p watch:** --silent",
-    "publish:stage": "ELEVENTY_ENV=stage run-s build:**",
-    "publish:prod": "ELEVENTY_ENV=prod run-s build:**",
+    "publish": "run-s build:**",
     "clean": "del-cli \"_public/**\"",
     "build:11ty": "npx eleventy",
     "watch:11ty": "npx eleventy --serve --quiet",

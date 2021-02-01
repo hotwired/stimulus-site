@@ -1,7 +1,6 @@
 ---
 title: Controllers
 permalink: /reference/controllers.html
-redirect_from: /reference/
 order: 00
 ---
 

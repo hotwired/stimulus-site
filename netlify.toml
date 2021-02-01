@@ -1,11 +1,24 @@
 [build]
   # Directory that contains the deploy-ready HTML files and assets
-  publish = "_site/"
+  publish = "_public/"
   # Default build command.
-  command = "bundle exec jekyll build"
+  command = "npm run publish"
 
 # cache fonts forever
 [[headers]]
   for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=365000000, immutable"
+
+# redirects
+[[redirects]]
+  from = "/handbook/"
+  to = "/handbook/introduction"
+
+[[redirects]]
+  from = "/reference/"
+  to = "/reference/controllers"
+
+[[redirects]]
+  from = "/reference/data-maps"
+  to = "/reference/values"
