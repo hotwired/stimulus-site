@@ -19,7 +19,7 @@
     ]
     recursive = true
     pretty = true
-    skipPatterns = []
+    skipPatterns = [".js"]
     todoPatterns = []
     checkExternal = false
     followSourceMaps = false
