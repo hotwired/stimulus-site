@@ -10,6 +10,20 @@
   [headers.values]
     Cache-Control = "public, max-age=365000000, immutable"
 
+# fail the build if there are any broken links
+[[plugins]]
+  package = "netlify-plugin-checklinks"
+    [plugins.inputs]
+    entryPoints = [
+      "*.html",
+    ]
+    recursive = true
+    pretty = true
+    skipPatterns = []
+    todoPatterns = []
+    checkExternal = false
+    followSourceMaps = false
+
 # redirects
 [[redirects]]
   from = "/handbook/"
