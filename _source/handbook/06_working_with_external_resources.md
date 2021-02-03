@@ -1,5 +1,4 @@
 ---
-title: Working With External Resources
 permalink: /handbook/working-with-external-resources.html
 ---
 

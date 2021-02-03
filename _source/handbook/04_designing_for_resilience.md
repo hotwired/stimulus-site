@@ -1,5 +1,4 @@
 ---
-title: Designing For Resilience
 permalink: /handbook/designing-for-resilience.html
 ---
 

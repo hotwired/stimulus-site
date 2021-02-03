@@ -1,5 +1,4 @@
 ---
-title: Installing Stimulus in Your Application
 permalink: /handbook/installing.html
 ---
 

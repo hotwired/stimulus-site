@@ -1,5 +1,4 @@
 ---
-title: Controllers
 permalink: /reference/controllers.html
 order: 00
 ---

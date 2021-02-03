@@ -1,5 +1,4 @@
 ---
-title: Targets
 permalink: /reference/targets.html
 order: 03
 ---

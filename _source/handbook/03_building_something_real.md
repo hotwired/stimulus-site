@@ -1,5 +1,4 @@
 ---
-title: Building Something Real
 permalink: /handbook/building-something-real.html
 ---
 

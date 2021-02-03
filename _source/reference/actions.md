@@ -1,5 +1,4 @@
 ---
-title: Actions
 permalink: /reference/actions.html
 order: 02
 ---

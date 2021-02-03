@@ -1,5 +1,4 @@
 ---
-title: Introduction
 permalink: /handbook/introduction.html
 ---
 

@@ -1,5 +1,4 @@
 ---
-title: The Origin of Stimulus
 permalink: /handbook/origin.html
 nav_prefix: Preface
 ---

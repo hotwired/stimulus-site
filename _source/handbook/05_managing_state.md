@@ -1,5 +1,4 @@
 ---
-title: Managing State
 permalink: /handbook/managing-state.html
 ---
 

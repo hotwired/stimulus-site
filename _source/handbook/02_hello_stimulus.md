@@ -1,5 +1,4 @@
 ---
-title: Hello, Stimulus
 permalink: /handbook/hello-stimulus.html
 ---
 
