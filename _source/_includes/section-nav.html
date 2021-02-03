@@ -3,7 +3,7 @@
   {%- for entry in sortedEntries -%}
     <li>
       <a class="nav__sublist-link{% if page.url == entry.url %} active{% endif %}" href="{{ entry.url | remove: ".html" }}">
-        {%- if entry.data.nav_prefix %}{{ entry.data.nav_prefix }}: {% endif %}{{ entry.data.title }}
+        {%- if entry.data.nav_prefix %}{{ entry.data.nav_prefix }}{% else %}{{ entry.filePathStem | navPrefix }}{% endif %}: {{ entry.data.title }}
       </a>
     </li>
   {%- endfor -%}

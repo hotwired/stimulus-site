@@ -1,7 +1,6 @@
 ---
 title: Hello, Stimulus
 permalink: /handbook/hello-stimulus.html
-nav_prefix: 02
 ---
 
 # Hello, Stimulus

@@ -1,7 +1,6 @@
 ---
 title: Installing Stimulus in Your Application
 permalink: /handbook/installing.html
-nav_prefix: 07
 ---
 
 # Installing Stimulus in Your Application

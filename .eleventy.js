@@ -3,6 +3,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItToc = require('markdown-it-toc-done-right');
 const fullDate = require('./_source/_filters/fullDate.js');
+const navPrefix = require('./_source/_filters/navPrefix.js');
 const sortBy = require('./_source/_filters/sortBy.js');
 const where = require('./_source/_filters/where.js');
 
@@ -13,6 +14,7 @@ module.exports = function(eleventyConfig) {
   -------------------------------------------------------------------------- */
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addFilter('fullDate', fullDate);
+  eleventyConfig.addFilter('navPrefix', navPrefix);
   eleventyConfig.addFilter('sortBy', sortBy);
   eleventyConfig.addFilter('where', where);
 

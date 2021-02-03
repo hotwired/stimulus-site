@@ -1,7 +1,6 @@
 ---
 title: Designing For Resilience
 permalink: /handbook/designing-for-resilience.html
-nav_prefix: 04
 ---
 
 # Designing For Resilience
