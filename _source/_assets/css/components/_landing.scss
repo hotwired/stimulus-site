@@ -1,0 +1,352 @@
+// scss-lint:disable VendorPrefix
+
+// intro //////////////////////////////////////////////////////////////////////
+
+.landing-intro {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: $color-tint;
+  border-top: 0.4rem solid $color-brand;
+}
+
+.landing-intro__text {
+  position: relative;
+  z-index: 1;
+  margin: 1.25em 0 2.25em 0;
+  text-align: center;
+  color: $color-text;
+  font-size: $font-xx-large;
+  font-weight: 800;
+  line-height: 1.3;
+
+  @include media(medium) {
+    font-size: $font-xxxx-large;
+  }
+}
+
+// hero demo //////////////////////////////////////////////////////////////////
+
+.landing-hero {
+  position: relative;
+  margin: -2em 0 0 0;
+  padding: 0;
+
+  @include media(medium) {
+    display: flex;
+    justify-content: space-between;
+    margin: -4em 0 2em 0;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      z-index: -1;
+      top: -25%;
+      left: -10%;
+      background: url("/assets/pattern.svg") no-repeat center;
+      background-size: 100%;
+    }
+  }
+}
+
+.landing-hero__step {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2em;
+  background-color: $color-tint;
+  border: 0.25em solid #fff;
+  box-shadow: 0 0 2em rgba($color-text, 0.1);
+
+  @include media(medium) {
+    width: 48%;
+    margin: 0;
+  }
+
+  code[class*="language-"] {
+    padding: 0;
+    overflow: visible !important;
+  }
+
+  pre[class*="language-"] {
+    padding: 1.5em 0.5em 1.5em 0.5em;
+    overflow: auto;
+    margin: 0;
+
+    @include media(medium) {
+      padding: 1.5em 0.5em 1.5em 1.5em;
+      font-size: 0.875em;
+    }
+
+    @include media(large) {
+      font-size: 0.875em;
+      font-size: 1.4vw;
+    }
+
+    @include media(x-large) {
+      font-size: 1.05em;
+    }
+  }
+}
+
+.landing-hero__step--pointer {
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 3.5em;
+    height: 3.5em;
+    top: 93%;
+    right: 40%;
+    z-index: 1;
+    background: url("/assets/arrow.svg") no-repeat center;
+    background-size: 100%;
+    transform: rotate(110deg);
+  }
+
+  @include media(medium) {
+
+    &:before {
+      width: 3.5em;
+      height: 3.5em;
+      top: 30%;
+      right: -3.25em;
+      transform: rotate(10deg);
+    }
+  }
+}
+
+.landing-hero__step-title {
+  margin: 0 0 0.25em 0;
+  padding: 1em;
+  font-family: $sans-stack;
+  font-size: $font-medium;
+  font-weight: bold;
+  text-align: center;
+  color: $color-background;
+  background-color: $color-text;
+
+  @include media(large) {
+    padding: 1em 2em;
+    font-size: 1.75vw;
+  }
+
+  @include media(x-large) {
+    font-size: 1.5em;
+  }
+}
+
+// hero code output ///////////////////////////////////////////////////////////
+
+.landing-hello {
+  position: relative;
+  grid-column: 2/5;
+  margin-bottom: 2em;
+  padding: 1em;
+  background-color: $color-tint;
+  border: 0.25em solid #fff;
+  box-shadow: 0 0 2em rgba($color-text, 0.1);
+
+  @include media(medium) {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 3.5em;
+    height: 3.5em;
+    top: -30%;
+    right: 40%;
+    z-index: 1;
+    background: url("/assets/arrow.svg") no-repeat center;
+    background-size: 100%;
+    transform: rotate(110deg);
+
+    @include media(medium) {
+      top: -55%;
+      right: 35%;
+      transform: rotate(130deg);
+    }
+
+    @include media(large) {
+      top: -60%;
+      right: 35%;
+    }
+  }
+}
+
+.landing-hello__label {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.landing-hello__input {
+  display: block;
+  margin: 0;
+  padding: 0.5em;
+  width: 100%;
+  border: 2px solid $color-text;
+  font-family: $sans-stack;
+  font-size: 1em;
+  transition: border-color 0.2s ease;
+
+  @include media(medium) {
+    width: 46%;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-brand !important;
+  }
+}
+
+.landing-hello__button {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  background-color: $color-text;
+  color: $color-brand;
+  font-family: $sans-stack;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  line-height: normal;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  @include media(medium) {
+    width: auto;
+  }
+}
+
+.landing-hello__output {
+  display: block;
+  width: 100%;
+  margin: 1em 0 0 0;
+  padding: 1.1em 0.25em;
+  font-size: 1.25em;
+  line-height: 0;
+  color: $color-text;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 0.1em solid $color-text;
+
+  @include media(medium) {
+    margin: 0 0 0 0.5em;
+    width: 50%;
+  }
+
+  &:not(:empty) {
+    &::before {
+      content: "“";
+    }
+
+    &::after {
+      content: "”";
+    }
+  }
+}
+
+// below the fold content /////////////////////////////////////////////////////
+
+.landing-summary {
+  text-align: center;
+
+  @include media(medium) {
+    font-size: $font-large;
+  }
+}
+
+.landing-version {
+  grid-column: 2/5;
+  position: relative;
+  padding: 0;
+  margin: 0 0 4em 0;
+  font-family: $sans-stack;
+  font-weight: 600;
+  font-style: italic;
+  font-size: $font-small;
+  text-align: center;
+
+  > span {
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: $color-brand;
+    clip-path: polygon(5% 10%, 46% 1%, 46% 10%, 100% 0, 95% 90%, 31% 100%, 31% 90%, 0% 100%);
+  }
+}
+
+.landing-actions {
+  grid-column: 3/4;
+  margin: 0;
+
+  @include media(medium) {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}
+
+.landing-actions__item {
+  display: block;
+  margin-bottom: 1em;
+  padding: 1.5em 1em;
+  font-family: $sans-stack;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.25;
+  background-color: $color-background;
+  box-shadow: 0 0 2em rgba($color-text, 0.075);
+  border-radius: 0.5em;
+
+  @include media(small) {
+    max-width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include media(medium) {
+    width: 32%;
+    margin-bottom: 0;
+  }
+}
+
+.landing-actions__icon {
+  display: block;
+  width: 3.75em;
+  height: 3.75em;
+  margin: 0 auto 1em auto;
+  background-color: $color-brand;
+
+  .landing-actions__item:hover & {
+    background-color: $color-accent;
+  }
+}
+
+.landing-actions__icon--guide {
+  -webkit-mask: url('/assets/icon-guide.svg') center / 100% no-repeat;
+  mask: url('/assets/icon-guide.svg') center / 100% no-repeat;
+}
+
+.landing-actions__icon--install {
+  -webkit-mask: url('/assets/icon-install.svg') center / 100% no-repeat;
+  mask: url('/assets/icon-install.svg') center / 100% no-repeat;
+}
+
+.landing-actions__icon--github {
+  -webkit-mask: url('/assets/icon-github.svg') center / 100% no-repeat;
+  mask: url('/assets/icon-github.svg') center / 100% no-repeat;
+}
