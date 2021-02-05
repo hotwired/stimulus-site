@@ -1,24 +1,23 @@
+const glob = require('fast-glob');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItToc = require('markdown-it-toc-done-right');
-const fullDate = require('./_source/_filters/fullDate.js');
-const navPrefix = require('./_source/_filters/navPrefix.js');
-const sortBy = require('./_source/_filters/sortBy.js');
-const titleFromHeading = require('./_source/_filters/titleFromHeading.js');
-const where = require('./_source/_filters/where.js');
 
 module.exports = function(eleventyConfig) {
 
   /* --------------------------------------------------------------------------
-  plugins & custom filters
+  11ty plugins
   -------------------------------------------------------------------------- */
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addFilter('fullDate', fullDate);
-  eleventyConfig.addFilter('navPrefix', navPrefix);
-  eleventyConfig.addFilter('sortBy', sortBy);
-  eleventyConfig.addFilter('titleFromHeading', titleFromHeading);
-  eleventyConfig.addFilter('where', where);
+
+  /* --------------------------------------------------------------------------
+  filters
+  -------------------------------------------------------------------------- */
+  glob.sync(['_source/_filters/*.js']).forEach(file => {
+    let filters = require('./' + file);
+    Object.keys(filters).forEach(name => eleventyConfig.addFilter(name, filters[name]));
+  });
 
   /* --------------------------------------------------------------------------
   BrowserSync settings
