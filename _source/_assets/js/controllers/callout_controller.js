@@ -1,7 +1,9 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static values = { text: String, type: String }
+  static get values() {
+    return { text: String, type: String }
+  }
 
   initialize() {
     for (const range of this.calloutRanges) {
