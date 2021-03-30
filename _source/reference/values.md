@@ -15,7 +15,7 @@ You can read and write [HTML data attributes](https://developer.mozilla.org/en-U
 </div>
 ```
 
-<meta data-controller="callout" data-callout-text-value="static values = { url: String }">
+<meta data-controller="callout" data-callout-text-value="url: String">
 <meta data-controller="callout" data-callout-text-value="this.urlValue">
 
 ```js
