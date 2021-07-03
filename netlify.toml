@@ -36,3 +36,9 @@
 [[redirects]]
   from = "/reference/data-maps"
   to = "/reference/values"
+
+[[redirects]]
+  from = "/*"
+  to = "https://stimulus.hotwired.dev/:splat"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
