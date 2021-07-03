@@ -1,6 +1,6 @@
 # The Stimulus website
 
-This repository backs the website living at https://stimulus.hotwire.dev.
+This repository backs the website living at https://stimulus.hotwired.dev.
 
 ## Contributing
 

@@ -1,7 +1,7 @@
 {
   "title": "Stimulus",
   "description": "A modest JavaScript framework for the HTML you already have.",
-  "url": "https://stimulus.hotwire.dev",
-  "discourse_url": "https://discuss.hotwire.dev",
+  "url": "https://stimulus.hotwired.dev",
+  "discourse_url": "https://discuss.hotwired.dev",
   "github_url": "https://github.com/hotwired/stimulus"
 }
