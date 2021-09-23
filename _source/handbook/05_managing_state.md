@@ -34,7 +34,7 @@ Let's draft our controller. Create a new file, `src/controllers/slideshow_contro
 
 ```js
 // src/controllers/slideshow_controller.js
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ "slide" ]
@@ -96,7 +96,7 @@ Then, in our `initialize()` method, we could read that attribute, convert it to 
 
 ```js
   initialize() {
-    this.index = parseInt(this.element.getAttribute("data-index"))
+    this.index = Number(this.element.dataset.index)
     this.showCurrentSlide()
   }
 ```
@@ -143,7 +143,7 @@ Reload the page and verify that the console shows `1` and `Number`.
 Now let's update `initialize()` and the other methods in the controller to use `this.indexValue` instead of `this.index`. Here's how the controller should look when we're done:
 
 ```js
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ "slide" ]
@@ -182,7 +182,7 @@ We can define a Stimulus value change callback to clean up the repetition and sp
 First, remove the `initialize()` method and define a new method, `indexValueChanged()`. Then remove the calls to `this.showCurrentSlide()` from `next()` and `previous()`:
 
 ```js
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ "slide" ]
@@ -211,6 +211,20 @@ export default class extends Controller {
 Reload the page and confirm the slideshow behavior is the same.
 
 Stimulus calls the `indexValueChanged()` method at initialization and in response to any change to the `data-slideshow-index-value` attribute. You can even fiddle with the attribute in the web inspector and the controller will change slides in response. Go ahead—try it out!
+
+### Setting Defaults
+
+It's also possible to set a default values as part of the static definition. This is done like so:
+
+```js
+  static values = { index: { type: Number, default: 2 } }
+```
+
+That would start the index at 2, if no `data-slideshow-index-value` attribute was defined on the controller element. If you had other values, you can mix and match what needs a default and what doesn't:
+
+```js
+  static values = { index: Number, effect: { type: String, default: "kenburns" } }
+```
 
 ## Wrap-Up and Next Steps
 

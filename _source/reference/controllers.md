@@ -8,7 +8,7 @@ order: 00
 A _controller_ is the basic organizational unit of a Stimulus application.
 
 ```js
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   // …
@@ -44,6 +44,15 @@ For example, this element has a controller which is an instance of the class def
 <div data-controller="reference"></div>
 ```
 
+The following is an example of how Stimulus will generate identifiers for controllers in it's require context:
+
+If your controller file is named… | its identifier will be…
+--------------------------------- | -----------------------
+clipboard_controller.js           | clipboard
+date_picker_controller.js         | date-picker
+users/list_item_controller.js     | users\-\-list-item
+local-time-controller.js          | local-time
+
 ## Scopes
 
 When Stimulus connects a controller to an element, that element and all of its children make up the controller's _scope_.
@@ -56,6 +65,25 @@ For example, the `<div>` and `<h1>` below are part of the controller's scope, bu
     <h1>Reference</h1>
   </div>
 </main>
+```
+
+## Nested Scopes
+
+When nested, each controller is only aware of its own scope excluding the scope of any controllers nested within.
+
+For example, the `#parent` controller below is only aware of the `list.item` targets directly within its scope, but not any targets of the `#child` controller.
+
+```html
+<ul id="parent" data-controller="list">
+  <li data-target="list.item">One</li>
+  <li data-target="list.item">Two</li>
+  <li>
+    <ul id="child" data-controller="list">
+      <li data-target="list.item">I am</li>
+      <li data-target="list.item">a nested list</li>
+    </ul>
+  </li>
+</ul>
 ```
 
 ## Multiple Controllers
@@ -112,7 +140,7 @@ application.register("reference", ReferenceController)
 You can also register a controller class inline instead of importing it from a module:
 
 ```js
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 
 application.register("reference", class extends Controller {
   // …
