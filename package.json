@@ -1,8 +1,8 @@
 {
   "private": true,
   "dependencies": {
-    "@hotwired/turbo": "^7.0.0-beta.4",
-    "stimulus": "2.0.0"
+    "@hotwired/turbo": "^7.0.0-rc.5",
+    "@hotwired/stimulus": "^3.0.0-rc.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",

@@ -1,5 +1,5 @@
 import "@hotwired/turbo"
-import { Application } from "stimulus"
+import { Application } from "@hotwired/stimulus"
 import HelloController from "./controllers/hello_controller"
 import CalloutController from "./controllers/callout_controller"
 
