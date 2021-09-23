@@ -2,12 +2,13 @@
 set -eo pipefail
 
 sync() {
-  local dirname="$1"
+  local sourcedir="$1"
+  local destdir="$2"
   (
-    rm -rf "$dirname"
-    mkdir -p "$dirname"
-    cd "$dirname"
-    curl --silent "https://api.github.com/repos/hotwired/stimulus/contents/$dirname" \
+    rm -rf "$sourcedir"
+    mkdir -p "$sourcedir"
+    cd "$destdir"
+    curl --silent "https://api.github.com/repos/hotwired/stimulus/contents/$sourcedir" \
       | jq ".[] | .download_url" \
       | xargs -n 1 -P 4 curl --silent -O
 
@@ -17,10 +18,7 @@ sync() {
 }
 
 echo "Syncing Handbook docs…"
-sync "docs/handbook"
+sync "docs/handbook" "_source/handbook"
 
 echo "Syncing Reference docs…"
-sync "docs/reference"
-
-echo "Syncing assets…"
-sync "assets"
+sync "docs/reference" "_source/reference"
