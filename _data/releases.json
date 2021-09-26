@@ -38,7 +38,19 @@
     ],
     "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v3.0.0",
     "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v3.0.0",
-    "body": "[Release announcement](https://world.hey.com/hotwired/stimulus-3-c438d432) 🚀🎉"
+    "body": "[Release announcement](https://world.hey.com/hotwired/stimulus-3-c438d432) 🚀🎉",
+    "reactions": {
+      "url": "https://api.github.com/repos/hotwired/stimulus/releases/50188798/reactions",
+      "total_count": 92,
+      "+1": 25,
+      "-1": 0,
+      "laugh": 3,
+      "hooray": 33,
+      "confused": 0,
+      "heart": 18,
+      "rocket": 12,
+      "eyes": 1
+    }
   },
   {
     "url": "https://api.github.com/repos/hotwired/stimulus/releases/50153840",
