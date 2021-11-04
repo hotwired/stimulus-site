@@ -6,12 +6,22 @@ This repository backs the website living at https://stimulus.hotwired.dev.
 
 Handbook and reference `docs/` changes should be made [in the `hotwired/stimulus` repository](https://github.com/hotwired/stimulus/tree/master/docs), not here.
 
+To sync documentation:
+```bash
+bin/sync-docs
+```
+
+To sync releases:
+```bash
+bin/sync-releases
+```
+
 ## Developing
 
 To run the site locally:
 
-1. `npm install`
-1. `npm run serve`
+1. `yarn install`
+2. `yarn serve`
 
 ## Copyright
 
