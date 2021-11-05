@@ -90,13 +90,14 @@ If you prefer not to use a build system, you can load Stimulus in a `<script typ
 ```
 
 ## Overriding Attribute Defaults
+
 In case Stimulus `data-*` attributes conflict with another library in your project, they can be overridden when creating the Stimulus `Application`.
 
 - `data-controller`
 - `data-action`
 - `data-target`
 
-These core Stimulus attributes can be overridden (see: [schema.ts](../../src/core/schema.ts)):
+These core Stimulus attributes can be overridden (see: [schema.ts](https://github.com/hotwired/stimulus/blob/main/src/core/schema.ts)):
 
 ```js
 // src/application.js
