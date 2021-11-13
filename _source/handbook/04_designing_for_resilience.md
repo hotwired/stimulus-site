@@ -19,10 +19,13 @@ Let's look at how we can progressively enhance our PIN field so that the Copy bu
 
 We'll start by hiding the Copy button in CSS. Then we'll _feature-test_ support for the Clipboard API in our Stimulus controller. If the API is supported, we'll add a class name to the controller element to reveal the button.
 
-Start by adding `class="clipboard-button"` to the button element:
+Start by adding `data-clipboard-supported-class="clipboard--supported"` to the controller element, and `class="clipboard-button"` to the button element:
 
 ```html
-  <button data-action="clipboard#copy" class="clipboard-button" data-clipboard-supported-class="clipboard--supported">Copy to Clipboard</button>
+<div data-controller="clipboard" data-clipboard-supported-class="clipboard--supported">
+  PIN: <input data-clipboard-target="source" type="text" value="3737" readonly>
+  <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
+</div>
 ```
 
 Then add the following styles to `public/main.css`:
