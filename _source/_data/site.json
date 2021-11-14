@@ -3,5 +3,6 @@
   "description": "A modest JavaScript framework for the HTML you already have.",
   "url": "https://stimulus.hotwired.dev",
   "discourse_url": "https://discuss.hotwired.dev",
-  "github_url": "https://github.com/hotwired/stimulus"
+  "github_url": "https://github.com/hotwired/stimulus",
+  "stimulus_site_github_main_branch_url": "https://github.com/hotwired/stimulus/tree/master/docs"
 }
