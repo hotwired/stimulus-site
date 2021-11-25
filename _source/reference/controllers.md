@@ -191,8 +191,23 @@ So when the `Clipboard#copy` action is invoked, the `Effects#flash` action will 
 
 ```js
 class EffectsController extends Controller {
-  flash({ detail: content }) {
+  flash({ detail: { content } }) {
     console.log(content) // 1234
+  }
+}
+```
+
+## Directly Invoking Other Controllers
+
+If for some reason it is not possible to use events to communicate between controllers, you can reach a controller instance via the `getControllerForElementAndIdentifier` method from the application. This should only be used if you have a unique problem that cannot be solved through the more general way of using events, but if you must, this is how:
+
+```js
+class MyController extends Controller {
+  static targets = [ "other" ]
+
+  copy() {
+    const otherController = this.application.getControllerForElementAndIdentifier(this.otherTarget, 'other')
+    otherController.otherMethod()
   }
 }
 ```

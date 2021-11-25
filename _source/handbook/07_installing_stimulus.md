@@ -90,7 +90,6 @@ If you prefer not to use a build system, you can load Stimulus in a `<script typ
 ```
 
 ## Overriding Attribute Defaults
-
 In case Stimulus `data-*` attributes conflict with another library in your project, they can be overridden when creating the Stimulus `Application`.
 
 - `data-controller`
