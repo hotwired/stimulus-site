@@ -101,6 +101,13 @@ Action option | DOM event listener option
 `:passive`    | `{ passive: true }`
 `:!passive`   | `{ passive: false }`
 
+On top of that, Stimulus also supports the following action options which are not natively supported by the DOM event listener options:
+
+Custom action option | Description
+-------------------- | -----------
+`:stop`              | calls `.stopPropagation()` on the event before invoking the method
+`:prevent`           | calls `.preventDefault()` on the event before invoking the method
+
 ## Event Objects
 
 An _action method_ is the method in a controller which serves as an action's event listener.
@@ -145,7 +152,7 @@ It's common for any given element to have many actions. For example, the followi
 
 When an element has more than one action for the same event, Stimulus invokes the actions from left to right in the order that their descriptors appear.
 
-The action chain can be stopped at any point by calling `Event#stopImmediatePropagation()` within an action. Any addtional actions to the right will be ignored:
+The action chain can be stopped at any point by calling `Event#stopImmediatePropagation()` within an action. Any additional actions to the right will be ignored:
 
 ```javascript
 highlight: function(event) {
@@ -184,7 +191,7 @@ All parameters are automatically typecast to either a `Number`, `String`, `Objec
 
 Data attribute                                  | Param                | Type
 ----------------------------------------------- | -------------------- | --------
-`data-item-id-param="12345"`                    | `123`                | Number
+`data-item-id-param="12345"`                    | `12345`              | Number
 `data-item-url-param="/votes"`                  | `"/votes"`           | String
 `data-item-payload-param='{"value":"1234567"}'` | `{ value: 1234567 }` | Object
 `data-item-active-param="true"`                 | `true`               | Boolean
@@ -202,7 +209,7 @@ Data attribute                                  | Param                | Type
 </div>
 ```
 
-It will call both `SpinnerController#start` and `ItemController#upvote`, but only the latter will have any parameters passed to it:
+It will call both `ItemController#upvote` and `SpinnerController#start`, but only the former will have any parameters passed to it:
 
 ```js
 // ItemController
