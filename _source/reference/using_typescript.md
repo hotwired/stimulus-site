@@ -21,7 +21,7 @@ export default class MyController extends Controller<HTMLFormElement> {
 
 ## Define Controller Value Type
 
-To define the type of configured values is possible
+You can define the type of configured values 
 using the `declare` feature of TypeScript:
 
 ```ts
@@ -40,7 +40,7 @@ export default class MyController extends Controller {
 
 ## Define Controller Target Type
 
-To define the type of configured targets is possible
+You can define the type of configured targets 
 using the `declare` feature of TypeScript:
 
 ```ts
