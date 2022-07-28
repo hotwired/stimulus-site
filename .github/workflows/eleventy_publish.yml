@@ -7,7 +7,7 @@ on:
     inputs:
       confirmation:
         description: 'Are you sure you want to run the publish process manually?'
-        required: false 
+        required: true 
         type: boolean
 jobs:
   deploy:
@@ -20,10 +20,9 @@ jobs:
           node-version: 16.7.0
       - run: npm ci
       - run: npm run publish
-      # # These provide handy aliases to some pages
-      # - run: ln -s ./_public/handbook/introduction.html ./_public/handbook/index.html 
-      # - run: ln -s ./_public/reference/controllers.html ./_public/reference/index.html 
-      # - run: ln -s ./_public/reference/values.html ./_public/reference/data-maps.html
+      - run: cp _redirects/handbook-index.html _public/handbook/index.html
+      - run: cp _redirects/reference-index.html _public/reference/index.html
+      - run: cp _redirects/reference-data-maps.html _public/reference/data-maps.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
