@@ -17,7 +17,8 @@ jobs:
       # These provide handy aliases to some pages
       - run: ln -s _public/handbook/introduction.html _public/handbook/index.html 
       - run: ln -s _public/reference/controllers.html _public/reference/index.html 
-      - run: ln -s _public/reference/values.html _public/reference/data-maps.html 
+      - run: ln -s _public/reference/values.html _public/reference/data-maps.html
+      - run: cp CNAME _public
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
