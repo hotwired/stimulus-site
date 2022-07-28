@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stimulus: A modest JavaScript framework for the HTML you already have.</title>
+  <meta name="description" content="Stimulus is a JavaScript framework with modest ambitions. It doesn’t seek to take over your entire front-end—in fact, it’s not concerned with rendering HTML at all. Instead, it’s designed to augment your HTML with just enough behavior to make it shine.">
+  <link rel="canonical" href="https://stimulus.hotwired.dev/">
+
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#000000">
+  <link rel="apple-touch-icon" href="/assets/favicon-196x196.png">
+
+  <link rel="preload" href="/assets/fonts/Bitter-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Bitter-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Jost-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Jost-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/RobotoMono-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/RobotoMono-Italic.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="/assets/main.js" type="module"></script>
+  <script async defer data-domain="stimulus.hotwired.dev" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+
+  <body>
+
+    <a class="nav-skip" href="#content">Skip to content</a>
+
+<nav class="jump">
+  <ul class="jump__list">
+    <li><a class="jump__list-link jump__list-link--hotwire" href="https://hotwired.dev">Hotwire:</a></li>
+    <li><a class="jump__list-link" href="https://turbo.hotwired.dev">Turbo</a></li>
+    <li><a class="jump__list-link jump__list-link--active" href="https://stimulus.hotwired.dev">Stimulus</a></li>
+    <li><span class="jump__list-link jump__list-link--disabled">Strada <span class="jump__list-info">(Coming Soon!)</span></span></li>
+  </ul>
+</nav>
+
+
+    
+<header class="page-header">
+
+  <a class="nav-logo" href="/" aria-label="Stimulus">
+  <svg class="logo" viewBox="0 0 372.93 60.02" xmlns="http://www.w3.org/2000/svg">
+  <g class="logo__icon" fill="#d9c6a4">
+    <path d="m51.56 33.56h-3.91a7.71 7.71 0 0 0 -3.29.9l-27 15.86a7.52 7.52 0 0 1 -3.28.9h-14.08v7.06a1.77 1.77 0 0 0 1.76 1.72h56.48a1.77 1.77 0 0 0 1.76-1.75v-7.06h-14.12a7.52 7.52 0 0 1 -3.28-.9l-8.08-4.74a1 1 0 0 1 0-1.79l3.84-2.25a3.27 3.27 0 0 1 3 0l3 1.74a7.57 7.57 0 0 0 3.29.9h12.35v-10.59z"/><path d="m51.56 15.88h-3.91a7.71 7.71 0 0 0 -3.29.9l-27 15.87a7.66 7.66 0 0 1 -3.28.9h-14.08v10.59h12.35a7.71 7.71 0 0 0 3.29-.9l27-15.87a7.66 7.66 0 0 1 3.28-.9h14.08v-10.59z"/><path d="m58.24 0h-56.48a1.76 1.76 0 0 0 -1.76 1.76v7.06h14.12a7.66 7.66 0 0 1 3.28.9l8.08 4.75a1 1 0 0 1 0 1.78l-3.84 2.26a3.27 3.27 0 0 1 -3 0l-3-1.75a7.71 7.71 0 0 0 -3.29-.9h-12.35v10.59h12.35a7.57 7.57 0 0 0 3.29-.9l27-15.86a7.52 7.52 0 0 1 3.28-.9h14.08v-7.06a1.76 1.76 0 0 0 -1.76-1.73z"/>
+  </g>
+  <g class="logo__wordmark" fill="#000">
+    <path d="m108.44 6.17a8.2 8.2 0 0 0 -3.63-1.5 28.17 28.17 0 0 0 -4.91-.39h-9a30.08 30.08 0 0 0 -5 .39 11.92 11.92 0 0 0 -4.18 1.51 9.62 9.62 0 0 0 -3.12 3.13 14.16 14.16 0 0 0 -1.82 5.19l-1.46 8.42a13.23 13.23 0 0 0 -.1 5.37 5.9 5.9 0 0 0 1.92 3.24 8 8 0 0 0 3.7 1.61 27.31 27.31 0 0 0 5.21.44h8.49l-1.54 8.8h-8.65l.88-5.06-13.48 1.77-.54 3.22a14.25 14.25 0 0 0 -.12 5.33 5.74 5.74 0 0 0 1.84 3.24 7.61 7.61 0 0 0 3.61 1.6 28.34 28.34 0 0 0 5.16.42h10.22a30 30 0 0 0 5.25-.42 11.43 11.43 0 0 0 4.19-1.6 9.7 9.7 0 0 0 3.09-3.26 15.68 15.68 0 0 0 1.84-5.34l1.56-9a11.87 11.87 0 0 0 0-5.2 5.72 5.72 0 0 0 -2.16-3.08 8.86 8.86 0 0 0 -3.82-1.5 31.15 31.15 0 0 0 -5.16-.39h-8.49l1.43-8.28h7.77l-.74 4.45 13.24-1.67.54-3.15a11.46 11.46 0 0 0 0-5.18 5.73 5.73 0 0 0 -2.02-3.11z"/><path d="m150.46 4.83h-35.25l-2.1 12.05h10.73l-6.18 35.48h13.78l6.18-35.48h10.73z"/><path d="m154.4 4.83-8.29 47.53h13.79l8.28-47.53z"/><path d="m205.94 4.83-13.38 18.84-7.37-18.84h-10.29l-8.28 47.53h11.92l4.27-24.51 6.22 16.57 11.75-16.91-4.35 24.85h13.82l8.28-47.53z"/><path d="m246.88 4.83-6.24 35.89h-8.12l6.25-35.89h-13.77l-6.52 37.51a13.58 13.58 0 0 0 -.08 5.34 5.74 5.74 0 0 0 1.93 3.24 8.2 8.2 0 0 0 3.74 1.59 28.12 28.12 0 0 0 5.21.43h10.29a31.14 31.14 0 0 0 5.43-.43 11.7 11.7 0 0 0 4.3-1.59 9.62 9.62 0 0 0 3.09-3.24 15.83 15.83 0 0 0 1.81-5.34l6.5-37.51z"/><path d="m280.94 4.83h-13.79l-8.28 47.53h28.59l2.1-12.05h-14.8z"/><path d="m321.41 4.83-6.25 35.89h-8.11l6.25-35.89h-13.79l-6.51 37.51a13.58 13.58 0 0 0 -.08 5.34 5.69 5.69 0 0 0 1.93 3.24 8.16 8.16 0 0 0 3.74 1.59 28 28 0 0 0 5.21.43h10.28a31.18 31.18 0 0 0 5.44-.43 11.58 11.58 0 0 0 4.29-1.59 9.44 9.44 0 0 0 3.09-3.24 15.83 15.83 0 0 0 1.82-5.34l6.52-37.51z"/><path d="m372.65 9.26a5.74 5.74 0 0 0 -2-3.09 8.2 8.2 0 0 0 -3.65-1.5 28.09 28.09 0 0 0 -4.91-.39h-9a30.12 30.12 0 0 0 -5 .39 11.8 11.8 0 0 0 -4.17 1.51 9.55 9.55 0 0 0 -3.13 3.13 14 14 0 0 0 -1.79 5.19l-1.46 8.42a13.26 13.26 0 0 0 -.11 5.37 5.9 5.9 0 0 0 1.92 3.24 8.07 8.07 0 0 0 3.7 1.61 27.35 27.35 0 0 0 5.22.44h8.48l-1.52 8.8h-8.7l.89-5.06-13.48 1.77-.54 3.22a13.84 13.84 0 0 0 -.12 5.33 5.67 5.67 0 0 0 1.83 3.24 7.65 7.65 0 0 0 3.62 1.6 28.18 28.18 0 0 0 5.16.42h10.22a30 30 0 0 0 5.24-.42 11.55 11.55 0 0 0 4.2-1.6 9.7 9.7 0 0 0 3.09-3.26 15.9 15.9 0 0 0 1.83-5.34l1.56-9a11.72 11.72 0 0 0 0-5.2 5.72 5.72 0 0 0 -2.16-3.08 8.81 8.81 0 0 0 -3.82-1.5 31.06 31.06 0 0 0 -5.16-.39h-8.49l1.43-8.28h7.78l-.75 4.45 13.24-1.67.55-3.15a11.75 11.75 0 0 0 0-5.2z"/>
+  </g>
+</svg>
+</a>
+
+<input type="checkbox" id="hamburger" class="nav-checkbox"/>
+<label class="nav-mobile-button" for="hamburger"><span></span> Menu</label>
+
+<nav class="nav">
+
+  <label class="nav-mobile-button nav-mobile-button--close" for="hamburger"><span></span> close</label>
+
+  <ul class="nav__list  nav__list--horizontal">
+    <li>
+      <a class="nav__list-link" href="/handbook/introduction">Handbook</a>
+
+      <ul class="nav__sublist "><li>
+      <a class="nav__sublist-link" href="/handbook/origin">Preface: The Origin of Stimulus
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/introduction">1: Introduction
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/hello-stimulus">2: Hello, Stimulus
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/building-something-real">3: Building Something Real
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/designing-for-resilience">4: Designing For Resilience
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/managing-state">5: Managing State
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/working-with-external-resources">6: Working With External Resources
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/installing">7: Installing Stimulus in Your Application
+      </a>
+    </li></ul>
+
+    </li>
+    <li>
+      <a class="nav__list-link" href="/reference/controllers">Reference</a>
+
+      <ul class="nav__sublist "><li>
+      <a class="nav__sublist-link" href="/reference/controllers">Controllers
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/lifecycle-callbacks">Lifecycle Callbacks
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/actions">Actions
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/targets">Targets
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/css-classes">CSS Classes
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/using_typescript/">Using Typescript
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/values">Values
+      </a>
+    </li></ul>
+
+    </li>
+    <li>
+      <a class="nav__list-link" href="https://discuss.hotwired.dev" title="Have a question? Connect with other developers on the Stimulus Discourse community forum.">Community</a>
+    </li>
+    <li>
+      <a class="nav__list-link" href="https://github.com/hotwired/stimulus" title="Head over to GitHub for code, bug reports, and pull requests.">Source Code</a>
+    </li>
+  </ul>
+
+</nav>
+
+  
+</header>
+
+<main id="content" class="grid">
+
+  
+<div class="landing-intro grid">
+  <h1 class="landing-intro__text grid__item grid__item--start-2 grid__item--span-10">
+    A modest JavaScript framework for the HTML you already have.
+  </h1>
+</div>
+
+<div class="landing-hero grid__item grid__item--span-12">
+
+  <div class="landing-hero__step landing-hero__step--pointer">
+    <p class="landing-hero__step-title">Sprinkle your HTML with controller, target, and action attributes:</p>
+    <pre class="language-html"><code class="language-html"><span class="token comment">&lt;!--HTML from anywhere--></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hello<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">data-hello-target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>click->hello#greet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    Greet<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-hello-target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>output<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+  </div>
+
+  <div class="landing-hero__step">
+    <p class="landing-hero__step-title">Write a compatible controller and watch Stimulus bring it to life:</p>
+    <pre class="language-js"><code class="language-js"><span class="token comment">// hello_controller.js</span><br><span class="token keyword">import</span> <span class="token punctuation">{</span> Controller <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"stimulus"</span><br><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> targets <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"output"</span> <span class="token punctuation">]</span><br><br>  <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>outputTarget<span class="token punctuation">.</span>textContent <span class="token operator">=</span><br>      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>nameTarget<span class="token punctuation">.</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+  </div>
+
+</div>
+
+<div class="landing-hello" data-controller="hello">
+  <label class="landing-hello__label" for="hello">enter a name</label>
+  <input id="hello" class="landing-hello__input" data-hello-target="name" type="text" placeholder="enter a name">
+  <button class="landing-hello__button" data-action="click->hello#greet">Greet</button>
+  <span class="landing-hello__output" data-hello-target="output"></span>
+</div>
+
+<p class="landing-version">
+  <span>Current version: <a href="https://github.com/hotwired/stimulus/releases/tag/v3.1.0">3.1.0</a> &mdash; released July 18th 2022</span>
+</p>
+
+<p class="landing-summary"><string>Stimulus</strong> is a JavaScript framework with modest ambitions. It doesn’t seek to take over your entire front-end—in fact, it’s not concerned with rendering HTML at all. Instead, it’s designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://turbo.hotwired.dev">Turbo</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>
+
+<div class="landing-actions">
+  <a class="landing-actions__item" href="/handbook/introduction">
+    <div class="landing-actions__icon landing-actions__icon--guide" aria-hidden="true"></div>
+    Handbook
+  </a>
+
+  <a class="landing-actions__item" href="/handbook/installing">
+    <div class="landing-actions__icon landing-actions__icon--install" aria-hidden="true"></div>
+    Installation
+  </a>
+
+  <a class="landing-actions__item" href="https://github.com/hotwired/stimulus">
+    <div class="landing-actions__icon landing-actions__icon--github" aria-hidden="true"></div>
+    Source
+  </a>
+</div>
+
+
+</main>
+
+<footer class="page-footer">
+  
+  <p class="foot-logos">
+  <a href="https://basecamp.com/" target="_blank" rel="noopener">
+    <img width="253" height="56" src="/assets/logo-basecamp.svg" alt="Basecamp">
+  </a>
+  <a href="https://hey.com/" target="_blank" rel="noopener">
+    <img width="122" height="56" src="/assets/logo-hey.svg" alt="HEY">
+  </a>
+</p>
+<p class="foot-text">
+  <span>Brought to you by the team at <a href="https://basecamp.com/" target="_blank" rel="noopener">Basecamp</a> & <a href="https://hey.com/" target="_blank" rel="noopener">HEY</a>.</span>
+</p>
+
+
+</footer>
+
+  </body>
+
+</html>

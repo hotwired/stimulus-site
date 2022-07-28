@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stimulus Reference</title>
+  <link rel="canonical" href="https://stimulus.hotwired.dev/reference/css-classes">
+
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#000000">
+  <link rel="apple-touch-icon" href="/assets/favicon-196x196.png">
+
+  <link rel="preload" href="/assets/fonts/Bitter-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Bitter-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Jost-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Jost-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/RobotoMono-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/RobotoMono-Italic.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="/assets/main.js" type="module"></script>
+  <script async defer data-domain="stimulus.hotwired.dev" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+
+  <body>
+
+    <a class="nav-skip" href="#content">Skip to content</a>
+
+<nav class="jump">
+  <ul class="jump__list">
+    <li><a class="jump__list-link jump__list-link--hotwire" href="https://hotwired.dev">Hotwire:</a></li>
+    <li><a class="jump__list-link" href="https://turbo.hotwired.dev">Turbo</a></li>
+    <li><a class="jump__list-link jump__list-link--active" href="https://stimulus.hotwired.dev">Stimulus</a></li>
+    <li><span class="jump__list-link jump__list-link--disabled">Strada <span class="jump__list-info">(Coming Soon!)</span></span></li>
+  </ul>
+</nav>
+
+
+    <div class="nav__github-corner">
+  <svg width="60" height="60" viewBox="0 0 250 250" version="1.1" xmlns="github-corner"
+	style="fill:#000000; color:#FFFFFF;"
+	aria-hidden="true">
+	<a href="https://github.com/hotwired/stimulus/tree/master/docs/./reference/css_classes.md" target="_blank" class="github-corner">
+	<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+	<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+		fill="#FFFFFF" style="transform-origin: 130px 106px;" class="octo-arm">
+	</path>
+	<path
+		d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="#FFFFFF" class="octo-body">
+	</path>
+</a>
+</svg>
+</div>
+
+<main class="grid docs">
+
+  <header class="docs__index grid__custom-item">
+    <a class="nav-logo" href="/" aria-label="Stimulus">
+  <svg class="logo" viewBox="0 0 372.93 60.02" xmlns="http://www.w3.org/2000/svg">
+  <g class="logo__icon" fill="#d9c6a4">
+    <path d="m51.56 33.56h-3.91a7.71 7.71 0 0 0 -3.29.9l-27 15.86a7.52 7.52 0 0 1 -3.28.9h-14.08v7.06a1.77 1.77 0 0 0 1.76 1.72h56.48a1.77 1.77 0 0 0 1.76-1.75v-7.06h-14.12a7.52 7.52 0 0 1 -3.28-.9l-8.08-4.74a1 1 0 0 1 0-1.79l3.84-2.25a3.27 3.27 0 0 1 3 0l3 1.74a7.57 7.57 0 0 0 3.29.9h12.35v-10.59z"/><path d="m51.56 15.88h-3.91a7.71 7.71 0 0 0 -3.29.9l-27 15.87a7.66 7.66 0 0 1 -3.28.9h-14.08v10.59h12.35a7.71 7.71 0 0 0 3.29-.9l27-15.87a7.66 7.66 0 0 1 3.28-.9h14.08v-10.59z"/><path d="m58.24 0h-56.48a1.76 1.76 0 0 0 -1.76 1.76v7.06h14.12a7.66 7.66 0 0 1 3.28.9l8.08 4.75a1 1 0 0 1 0 1.78l-3.84 2.26a3.27 3.27 0 0 1 -3 0l-3-1.75a7.71 7.71 0 0 0 -3.29-.9h-12.35v10.59h12.35a7.57 7.57 0 0 0 3.29-.9l27-15.86a7.52 7.52 0 0 1 3.28-.9h14.08v-7.06a1.76 1.76 0 0 0 -1.76-1.73z"/>
+  </g>
+  <g class="logo__wordmark" fill="#000">
+    <path d="m108.44 6.17a8.2 8.2 0 0 0 -3.63-1.5 28.17 28.17 0 0 0 -4.91-.39h-9a30.08 30.08 0 0 0 -5 .39 11.92 11.92 0 0 0 -4.18 1.51 9.62 9.62 0 0 0 -3.12 3.13 14.16 14.16 0 0 0 -1.82 5.19l-1.46 8.42a13.23 13.23 0 0 0 -.1 5.37 5.9 5.9 0 0 0 1.92 3.24 8 8 0 0 0 3.7 1.61 27.31 27.31 0 0 0 5.21.44h8.49l-1.54 8.8h-8.65l.88-5.06-13.48 1.77-.54 3.22a14.25 14.25 0 0 0 -.12 5.33 5.74 5.74 0 0 0 1.84 3.24 7.61 7.61 0 0 0 3.61 1.6 28.34 28.34 0 0 0 5.16.42h10.22a30 30 0 0 0 5.25-.42 11.43 11.43 0 0 0 4.19-1.6 9.7 9.7 0 0 0 3.09-3.26 15.68 15.68 0 0 0 1.84-5.34l1.56-9a11.87 11.87 0 0 0 0-5.2 5.72 5.72 0 0 0 -2.16-3.08 8.86 8.86 0 0 0 -3.82-1.5 31.15 31.15 0 0 0 -5.16-.39h-8.49l1.43-8.28h7.77l-.74 4.45 13.24-1.67.54-3.15a11.46 11.46 0 0 0 0-5.18 5.73 5.73 0 0 0 -2.02-3.11z"/><path d="m150.46 4.83h-35.25l-2.1 12.05h10.73l-6.18 35.48h13.78l6.18-35.48h10.73z"/><path d="m154.4 4.83-8.29 47.53h13.79l8.28-47.53z"/><path d="m205.94 4.83-13.38 18.84-7.37-18.84h-10.29l-8.28 47.53h11.92l4.27-24.51 6.22 16.57 11.75-16.91-4.35 24.85h13.82l8.28-47.53z"/><path d="m246.88 4.83-6.24 35.89h-8.12l6.25-35.89h-13.77l-6.52 37.51a13.58 13.58 0 0 0 -.08 5.34 5.74 5.74 0 0 0 1.93 3.24 8.2 8.2 0 0 0 3.74 1.59 28.12 28.12 0 0 0 5.21.43h10.29a31.14 31.14 0 0 0 5.43-.43 11.7 11.7 0 0 0 4.3-1.59 9.62 9.62 0 0 0 3.09-3.24 15.83 15.83 0 0 0 1.81-5.34l6.5-37.51z"/><path d="m280.94 4.83h-13.79l-8.28 47.53h28.59l2.1-12.05h-14.8z"/><path d="m321.41 4.83-6.25 35.89h-8.11l6.25-35.89h-13.79l-6.51 37.51a13.58 13.58 0 0 0 -.08 5.34 5.69 5.69 0 0 0 1.93 3.24 8.16 8.16 0 0 0 3.74 1.59 28 28 0 0 0 5.21.43h10.28a31.18 31.18 0 0 0 5.44-.43 11.58 11.58 0 0 0 4.29-1.59 9.44 9.44 0 0 0 3.09-3.24 15.83 15.83 0 0 0 1.82-5.34l6.52-37.51z"/><path d="m372.65 9.26a5.74 5.74 0 0 0 -2-3.09 8.2 8.2 0 0 0 -3.65-1.5 28.09 28.09 0 0 0 -4.91-.39h-9a30.12 30.12 0 0 0 -5 .39 11.8 11.8 0 0 0 -4.17 1.51 9.55 9.55 0 0 0 -3.13 3.13 14 14 0 0 0 -1.79 5.19l-1.46 8.42a13.26 13.26 0 0 0 -.11 5.37 5.9 5.9 0 0 0 1.92 3.24 8.07 8.07 0 0 0 3.7 1.61 27.35 27.35 0 0 0 5.22.44h8.48l-1.52 8.8h-8.7l.89-5.06-13.48 1.77-.54 3.22a13.84 13.84 0 0 0 -.12 5.33 5.67 5.67 0 0 0 1.83 3.24 7.65 7.65 0 0 0 3.62 1.6 28.18 28.18 0 0 0 5.16.42h10.22a30 30 0 0 0 5.24-.42 11.55 11.55 0 0 0 4.2-1.6 9.7 9.7 0 0 0 3.09-3.26 15.9 15.9 0 0 0 1.83-5.34l1.56-9a11.72 11.72 0 0 0 0-5.2 5.72 5.72 0 0 0 -2.16-3.08 8.81 8.81 0 0 0 -3.82-1.5 31.06 31.06 0 0 0 -5.16-.39h-8.49l1.43-8.28h7.78l-.75 4.45 13.24-1.67.55-3.15a11.75 11.75 0 0 0 0-5.2z"/>
+  </g>
+</svg>
+</a>
+
+<input type="checkbox" id="hamburger" class="nav-checkbox"/>
+<label class="nav-mobile-button" for="hamburger"><span></span> Menu</label>
+
+<nav class="nav">
+
+  <label class="nav-mobile-button nav-mobile-button--close" for="hamburger"><span></span> close</label>
+
+  <ul class="nav__list ">
+    <li>
+      <a class="nav__list-link" href="/handbook/introduction">Handbook</a>
+
+      <ul class="nav__sublist "><li>
+      <a class="nav__sublist-link" href="/handbook/origin">Preface: The Origin of Stimulus
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/introduction">1: Introduction
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/hello-stimulus">2: Hello, Stimulus
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/building-something-real">3: Building Something Real
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/designing-for-resilience">4: Designing For Resilience
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/managing-state">5: Managing State
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/working-with-external-resources">6: Working With External Resources
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/installing">7: Installing Stimulus in Your Application
+      </a>
+    </li></ul>
+
+    </li>
+    <li>
+      <a class="nav__list-link active" href="/reference/controllers">Reference</a>
+
+      <ul class="nav__sublist  active"><li>
+      <a class="nav__sublist-link" href="/reference/controllers">Controllers
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/lifecycle-callbacks">Lifecycle Callbacks
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/actions">Actions
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/targets">Targets
+      </a>
+    </li><li>
+      <a class="nav__sublist-link active" href="/reference/css-classes">CSS Classes
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/using_typescript/">Using Typescript
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/values">Values
+      </a>
+    </li></ul>
+
+    </li>
+    <li>
+      <a class="nav__list-link" href="https://discuss.hotwired.dev" title="Have a question? Connect with other developers on the Stimulus Discourse community forum.">Community</a>
+    </li>
+    <li>
+      <a class="nav__list-link" href="https://github.com/hotwired/stimulus" title="Head over to GitHub for code, bug reports, and pull requests.">Source Code</a>
+    </li>
+  </ul>
+
+</nav>
+
+  </header>
+
+  <section id="content" class="docs__content grid__custom-item">
+
+    <h1>CSS Classes</h1>
+<p>In HTML, a <em>CSS class</em> defines a set of styles which can be applied to elements using the <code>class</code> attribute.</p>
+<p>CSS classes are a convenient tool for changing styles and playing animations programmatically. For example, a Stimulus controller might add a “loading” class to an element when it is performing an operation in the background, and then style that class in CSS to display a progress indicator:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search--busy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.search--busy</span> <span class="token punctuation">{</span><br>  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>throbber.svg<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>As an alternative to hard-coding classes with JavaScript strings, Stimulus lets you refer to CSS classes by <em>logical name</em> using a combination of data attributes and controller properties.</p>
+<h2 id="definitions"><a class="anchor" href="#definitions">﹟</a> Definitions</h2>
+<p>Define CSS classes by logical name in your controller using the <code>static classes</code> array:</p>
+<meta data-controller="callout" data-callout-text-value="static classes = [ &quot;loading&quot; ]">
+<pre class="language-js"><code class="language-js"><span class="token comment">// controllers/search_controller.js</span><br><span class="token keyword">import</span> <span class="token punctuation">{</span> Controller <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span><br><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> classes <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"loading"</span> <span class="token punctuation">]</span><br><br>  <span class="token comment">// …</span><br><span class="token punctuation">}</span></code></pre>
+<h2 id="attributes"><a class="anchor" href="#attributes">﹟</a> Attributes</h2>
+<p>The logical names defined in the controller’s <code>static classes</code> array map to <em>CSS class attributes</em> on the controller’s element.</p>
+<meta data-controller="callout" data-callout-text-value="data-search-loading-class=&quot;search--busy&quot;">
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span><br>      <span class="token attr-name">data-search-loading-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search--busy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search#loadResults<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Construct a CSS class attribute by joining together the controller identifier and logical name in the format <code>data-[identifier]-[logical-name]-class</code>. The attribute’s value can be a single CSS class name or a list of multiple class names.</p>
+<p><strong>Note:</strong> CSS class attributes must be specified on the same element as the <code>data-controller</code> attribute.</p>
+<p>If you want to specify multiple CSS classes for a logical name, separate the classes with spaces:</p>
+<meta data-controller="callout" data-callout-text-value="data-search-loading-class=&quot;bg-gray-500 animate-spinner cursor-busy&quot;">
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span><br>      <span class="token attr-name">data-search-loading-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-gray-500 animate-spinner cursor-busy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search#loadResults<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="properties"><a class="anchor" href="#properties">﹟</a> Properties</h2>
+<p>For each logical name defined in the <code>static classes</code> array, Stimulus adds the following <em>CSS class properties</em> to your controller:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Singular</td>
+<td><code>this.[logicalName]Class</code></td>
+<td>The value of the CSS class attribute corresponding to <code>logicalName</code></td>
+</tr>
+<tr>
+<td>Plural</td>
+<td><code>this.[logicalName]Classes</code></td>
+<td>An array of all classes in the corresponding CSS class attribute, split by spaces</td>
+</tr>
+<tr>
+<td>Existential</td>
+<td><code>this.has[LogicalName]Class</code></td>
+<td>A boolean indicating whether or not the CSS class attribute is present</td>
+</tr>
+</tbody>
+</table>
+<p><br>Use these properties to apply CSS classes to elements with the <code>add()</code> and <code>remove()</code> methods of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">DOM <code>classList</code> API</a>.</p>
+<p>For example, to display a loading indicator on the <code>search</code> controller’s element before fetching results, you might implement the <code>loadResults</code> action like so:</p>
+<meta data-controller="callout" data-callout-text-value="this.loadingClass">
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> classes <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"loading"</span> <span class="token punctuation">]</span><br><br>  <span class="token function">loadResults</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>loadingClass<span class="token punctuation">)</span><br><br>    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token comment">/* … */</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>If a CSS class attribute contains a list of class names, its singular CSS class property returns the first class in the list.</p>
+<p>Use the plural CSS class property to access all class names as an array. Combine this with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax</a> to apply multiple classes at once:</p>
+<meta data-controller="callout" data-callout-text-value="...this.loadingClasses">
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> classes <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"loading"</span> <span class="token punctuation">]</span><br><br>  <span class="token function">loadResults</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">this</span><span class="token punctuation">.</span>element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>loadingClasses<span class="token punctuation">)</span><br><br>    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token comment">/* … */</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p><strong>Note:</strong> Stimulus will throw an error if you attempt to access a CSS class property when a matching CSS class attribute is not present.</p>
+<h2 id="naming-conventions"><a class="anchor" href="#naming-conventions">﹟</a> Naming Conventions</h2>
+<p>Use camelCase to specify logical names in CSS class definitions. Logical names map to camelCase CSS class properties:</p>
+<meta data-controller="callout" data-callout-text-value="noResultsClass">
+<meta data-controller="callout" data-callout-text-value="noResults">
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> classes <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"loading"</span><span class="token punctuation">,</span> <span class="token string">"noResults"</span> <span class="token punctuation">]</span><br><br>  <span class="token function">loadResults</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token comment">// …</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>results<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">this</span><span class="token punctuation">.</span>element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>noResultsClass<span class="token punctuation">)</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>In HTML, write CSS class attributes in kebab-case:</p>
+<meta data-controller="callout" data-callout-text-value="no-results">
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span><br>      <span class="token attr-name">data-search-loading-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search--busy<span class="token punctuation">"</span></span><br>      <span class="token attr-name">data-search-no-results-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search--empty<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>When constructing CSS class attributes, follow the conventions for identifiers as described in <a href="controllers#naming-conventions">Controllers: Naming Conventions</a>.</p>
+<p><a class="button" href="/reference/using_typescript/">Next: Using Typescript</a></p></section>
+
+  <footer class="docs__footer grid__item grid__item--start-4 grid__item--span-8">
+
+    <p class="foot-logos">
+  <a href="https://basecamp.com/" target="_blank" rel="noopener">
+    <img width="253" height="56" src="/assets/logo-basecamp.svg" alt="Basecamp">
+  </a>
+  <a href="https://hey.com/" target="_blank" rel="noopener">
+    <img width="122" height="56" src="/assets/logo-hey.svg" alt="HEY">
+  </a>
+</p>
+<p class="foot-text">
+  <span>Brought to you by the team at <a href="https://basecamp.com/" target="_blank" rel="noopener">Basecamp</a> & <a href="https://hey.com/" target="_blank" rel="noopener">HEY</a>.</span>
+</p>
+
+
+  </footer>
+
+</main>
+
+
+  </body>
+
+</html>

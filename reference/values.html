@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stimulus Reference</title>
+  <link rel="canonical" href="https://stimulus.hotwired.dev/reference/values">
+
+  <link rel="alternate icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#000000">
+  <link rel="apple-touch-icon" href="/assets/favicon-196x196.png">
+
+  <link rel="preload" href="/assets/fonts/Bitter-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Bitter-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Jost-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Jost-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/RobotoMono-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/RobotoMono-Italic.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="/assets/main.js" type="module"></script>
+  <script async defer data-domain="stimulus.hotwired.dev" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+
+  <body>
+
+    <a class="nav-skip" href="#content">Skip to content</a>
+
+<nav class="jump">
+  <ul class="jump__list">
+    <li><a class="jump__list-link jump__list-link--hotwire" href="https://hotwired.dev">Hotwire:</a></li>
+    <li><a class="jump__list-link" href="https://turbo.hotwired.dev">Turbo</a></li>
+    <li><a class="jump__list-link jump__list-link--active" href="https://stimulus.hotwired.dev">Stimulus</a></li>
+    <li><span class="jump__list-link jump__list-link--disabled">Strada <span class="jump__list-info">(Coming Soon!)</span></span></li>
+  </ul>
+</nav>
+
+
+    <div class="nav__github-corner">
+  <svg width="60" height="60" viewBox="0 0 250 250" version="1.1" xmlns="github-corner"
+	style="fill:#000000; color:#FFFFFF;"
+	aria-hidden="true">
+	<a href="https://github.com/hotwired/stimulus/tree/master/docs/./reference/values.md" target="_blank" class="github-corner">
+	<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+	<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+		fill="#FFFFFF" style="transform-origin: 130px 106px;" class="octo-arm">
+	</path>
+	<path
+		d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="#FFFFFF" class="octo-body">
+	</path>
+</a>
+</svg>
+</div>
+
+<main class="grid docs">
+
+  <header class="docs__index grid__custom-item">
+    <a class="nav-logo" href="/" aria-label="Stimulus">
+  <svg class="logo" viewBox="0 0 372.93 60.02" xmlns="http://www.w3.org/2000/svg">
+  <g class="logo__icon" fill="#d9c6a4">
+    <path d="m51.56 33.56h-3.91a7.71 7.71 0 0 0 -3.29.9l-27 15.86a7.52 7.52 0 0 1 -3.28.9h-14.08v7.06a1.77 1.77 0 0 0 1.76 1.72h56.48a1.77 1.77 0 0 0 1.76-1.75v-7.06h-14.12a7.52 7.52 0 0 1 -3.28-.9l-8.08-4.74a1 1 0 0 1 0-1.79l3.84-2.25a3.27 3.27 0 0 1 3 0l3 1.74a7.57 7.57 0 0 0 3.29.9h12.35v-10.59z"/><path d="m51.56 15.88h-3.91a7.71 7.71 0 0 0 -3.29.9l-27 15.87a7.66 7.66 0 0 1 -3.28.9h-14.08v10.59h12.35a7.71 7.71 0 0 0 3.29-.9l27-15.87a7.66 7.66 0 0 1 3.28-.9h14.08v-10.59z"/><path d="m58.24 0h-56.48a1.76 1.76 0 0 0 -1.76 1.76v7.06h14.12a7.66 7.66 0 0 1 3.28.9l8.08 4.75a1 1 0 0 1 0 1.78l-3.84 2.26a3.27 3.27 0 0 1 -3 0l-3-1.75a7.71 7.71 0 0 0 -3.29-.9h-12.35v10.59h12.35a7.57 7.57 0 0 0 3.29-.9l27-15.86a7.52 7.52 0 0 1 3.28-.9h14.08v-7.06a1.76 1.76 0 0 0 -1.76-1.73z"/>
+  </g>
+  <g class="logo__wordmark" fill="#000">
+    <path d="m108.44 6.17a8.2 8.2 0 0 0 -3.63-1.5 28.17 28.17 0 0 0 -4.91-.39h-9a30.08 30.08 0 0 0 -5 .39 11.92 11.92 0 0 0 -4.18 1.51 9.62 9.62 0 0 0 -3.12 3.13 14.16 14.16 0 0 0 -1.82 5.19l-1.46 8.42a13.23 13.23 0 0 0 -.1 5.37 5.9 5.9 0 0 0 1.92 3.24 8 8 0 0 0 3.7 1.61 27.31 27.31 0 0 0 5.21.44h8.49l-1.54 8.8h-8.65l.88-5.06-13.48 1.77-.54 3.22a14.25 14.25 0 0 0 -.12 5.33 5.74 5.74 0 0 0 1.84 3.24 7.61 7.61 0 0 0 3.61 1.6 28.34 28.34 0 0 0 5.16.42h10.22a30 30 0 0 0 5.25-.42 11.43 11.43 0 0 0 4.19-1.6 9.7 9.7 0 0 0 3.09-3.26 15.68 15.68 0 0 0 1.84-5.34l1.56-9a11.87 11.87 0 0 0 0-5.2 5.72 5.72 0 0 0 -2.16-3.08 8.86 8.86 0 0 0 -3.82-1.5 31.15 31.15 0 0 0 -5.16-.39h-8.49l1.43-8.28h7.77l-.74 4.45 13.24-1.67.54-3.15a11.46 11.46 0 0 0 0-5.18 5.73 5.73 0 0 0 -2.02-3.11z"/><path d="m150.46 4.83h-35.25l-2.1 12.05h10.73l-6.18 35.48h13.78l6.18-35.48h10.73z"/><path d="m154.4 4.83-8.29 47.53h13.79l8.28-47.53z"/><path d="m205.94 4.83-13.38 18.84-7.37-18.84h-10.29l-8.28 47.53h11.92l4.27-24.51 6.22 16.57 11.75-16.91-4.35 24.85h13.82l8.28-47.53z"/><path d="m246.88 4.83-6.24 35.89h-8.12l6.25-35.89h-13.77l-6.52 37.51a13.58 13.58 0 0 0 -.08 5.34 5.74 5.74 0 0 0 1.93 3.24 8.2 8.2 0 0 0 3.74 1.59 28.12 28.12 0 0 0 5.21.43h10.29a31.14 31.14 0 0 0 5.43-.43 11.7 11.7 0 0 0 4.3-1.59 9.62 9.62 0 0 0 3.09-3.24 15.83 15.83 0 0 0 1.81-5.34l6.5-37.51z"/><path d="m280.94 4.83h-13.79l-8.28 47.53h28.59l2.1-12.05h-14.8z"/><path d="m321.41 4.83-6.25 35.89h-8.11l6.25-35.89h-13.79l-6.51 37.51a13.58 13.58 0 0 0 -.08 5.34 5.69 5.69 0 0 0 1.93 3.24 8.16 8.16 0 0 0 3.74 1.59 28 28 0 0 0 5.21.43h10.28a31.18 31.18 0 0 0 5.44-.43 11.58 11.58 0 0 0 4.29-1.59 9.44 9.44 0 0 0 3.09-3.24 15.83 15.83 0 0 0 1.82-5.34l6.52-37.51z"/><path d="m372.65 9.26a5.74 5.74 0 0 0 -2-3.09 8.2 8.2 0 0 0 -3.65-1.5 28.09 28.09 0 0 0 -4.91-.39h-9a30.12 30.12 0 0 0 -5 .39 11.8 11.8 0 0 0 -4.17 1.51 9.55 9.55 0 0 0 -3.13 3.13 14 14 0 0 0 -1.79 5.19l-1.46 8.42a13.26 13.26 0 0 0 -.11 5.37 5.9 5.9 0 0 0 1.92 3.24 8.07 8.07 0 0 0 3.7 1.61 27.35 27.35 0 0 0 5.22.44h8.48l-1.52 8.8h-8.7l.89-5.06-13.48 1.77-.54 3.22a13.84 13.84 0 0 0 -.12 5.33 5.67 5.67 0 0 0 1.83 3.24 7.65 7.65 0 0 0 3.62 1.6 28.18 28.18 0 0 0 5.16.42h10.22a30 30 0 0 0 5.24-.42 11.55 11.55 0 0 0 4.2-1.6 9.7 9.7 0 0 0 3.09-3.26 15.9 15.9 0 0 0 1.83-5.34l1.56-9a11.72 11.72 0 0 0 0-5.2 5.72 5.72 0 0 0 -2.16-3.08 8.81 8.81 0 0 0 -3.82-1.5 31.06 31.06 0 0 0 -5.16-.39h-8.49l1.43-8.28h7.78l-.75 4.45 13.24-1.67.55-3.15a11.75 11.75 0 0 0 0-5.2z"/>
+  </g>
+</svg>
+</a>
+
+<input type="checkbox" id="hamburger" class="nav-checkbox"/>
+<label class="nav-mobile-button" for="hamburger"><span></span> Menu</label>
+
+<nav class="nav">
+
+  <label class="nav-mobile-button nav-mobile-button--close" for="hamburger"><span></span> close</label>
+
+  <ul class="nav__list ">
+    <li>
+      <a class="nav__list-link" href="/handbook/introduction">Handbook</a>
+
+      <ul class="nav__sublist "><li>
+      <a class="nav__sublist-link" href="/handbook/origin">Preface: The Origin of Stimulus
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/introduction">1: Introduction
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/hello-stimulus">2: Hello, Stimulus
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/building-something-real">3: Building Something Real
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/designing-for-resilience">4: Designing For Resilience
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/managing-state">5: Managing State
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/working-with-external-resources">6: Working With External Resources
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/handbook/installing">7: Installing Stimulus in Your Application
+      </a>
+    </li></ul>
+
+    </li>
+    <li>
+      <a class="nav__list-link active" href="/reference/controllers">Reference</a>
+
+      <ul class="nav__sublist  active"><li>
+      <a class="nav__sublist-link" href="/reference/controllers">Controllers
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/lifecycle-callbacks">Lifecycle Callbacks
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/actions">Actions
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/targets">Targets
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/css-classes">CSS Classes
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/using_typescript/">Using Typescript
+      </a>
+    </li><li>
+      <a class="nav__sublist-link active" href="/reference/values">Values
+      </a>
+    </li></ul>
+
+    </li>
+    <li>
+      <a class="nav__list-link" href="https://discuss.hotwired.dev" title="Have a question? Connect with other developers on the Stimulus Discourse community forum.">Community</a>
+    </li>
+    <li>
+      <a class="nav__list-link" href="https://github.com/hotwired/stimulus" title="Head over to GitHub for code, bug reports, and pull requests.">Source Code</a>
+    </li>
+  </ul>
+
+</nav>
+
+  </header>
+
+  <section id="content" class="docs__content grid__custom-item">
+
+    <h1>Values</h1>
+<p>You can read and write <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">HTML data attributes</a> on controller elements as typed <em>values</em> using special controller properties.</p>
+<meta data-controller="callout" data-callout-text-value="data-loader-url-value=&quot;/messages&quot;">
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>loader<span class="token punctuation">"</span></span><br>     <span class="token attr-name">data-loader-url-value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/messages<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<meta data-controller="callout" data-callout-text-value="static values = { url: String }">
+<meta data-controller="callout" data-callout-text-value="this.urlValue">
+<pre class="language-js"><code class="language-js"><span class="token comment">// controllers/loader_controller.js</span><br><span class="token keyword">import</span> <span class="token punctuation">{</span> Controller <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span><br><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span><br>    url<span class="token operator">:</span> String<br>  <span class="token punctuation">}</span><br><br>  <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>urlValue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token comment">/* … */</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h2 id="definitions"><a class="anchor" href="#definitions">﹟</a> Definitions</h2>
+<p>Define values in a controller using the <code>static values</code> object. Put each value’s <em>name</em> on the left and its <em>type</em> on the right.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span><br>    url<span class="token operator">:</span> String<span class="token punctuation">,</span><br>    interval<span class="token operator">:</span> Number<span class="token punctuation">,</span><br>    params<span class="token operator">:</span> Object<br>  <span class="token punctuation">}</span><br><br>  <span class="token comment">// …</span><br><span class="token punctuation">}</span></code></pre>
+<h2 id="types"><a class="anchor" href="#types">﹟</a> Types</h2>
+<p>A value’s type is one of <code>Array</code>, <code>Boolean</code>, <code>Number</code>, <code>Object</code>, or <code>String</code>. The type determines how the value is transcoded between JavaScript and HTML.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Encoded as…</th>
+<th>Decoded as…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array</td>
+<td><code>JSON.stringify(array)</code></td>
+<td><code>JSON.parse(value)</code></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td><code>boolean.toString()</code></td>
+<td><code>!(value == &quot;0&quot; || value == &quot;false&quot;)</code></td>
+</tr>
+<tr>
+<td>Number</td>
+<td><code>number.toString()</code></td>
+<td><code>Number(value)</code></td>
+</tr>
+<tr>
+<td>Object</td>
+<td><code>JSON.stringify(object)</code></td>
+<td><code>JSON.parse(value)</code></td>
+</tr>
+<tr>
+<td>String</td>
+<td>Itself</td>
+<td>Itself</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties-and-attributes"><a class="anchor" href="#properties-and-attributes">﹟</a> Properties and Attributes</h2>
+<p>Stimulus automatically generates getter, setter, and existential properties for each value defined in a controller. These properties are linked to data attributes on the controller’s element:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Property name</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Getter</td>
+<td><code>this.[name]Value</code></td>
+<td>Reads <code>data-[identifier]-[name]-value</code></td>
+</tr>
+<tr>
+<td>Setter</td>
+<td><code>this.[name]Value=</code></td>
+<td>Writes <code>data-[identifier]-[name]-value</code></td>
+</tr>
+<tr>
+<td>Existential</td>
+<td><code>this.has[Name]Value</code></td>
+<td>Tests for <code>data-[identifier]-[name]-value</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getters"><a class="anchor" href="#getters">﹟</a> Getters</h3>
+<p>The getter for a value decodes the associated data attribute into an instance of the value’s type.</p>
+<p>If the data attribute is missing from the controller’s element, the getter returns a <em>default value</em>, depending on the value’s type:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>Number</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Object</td>
+<td><code>{}</code></td>
+</tr>
+<tr>
+<td>String</td>
+<td><code>&quot;&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="setters"><a class="anchor" href="#setters">﹟</a> Setters</h3>
+<p>The setter for a value sets the associated data attribute on the controller’s element.</p>
+<p>To remove the data attribute from the controller’s element, assign <code>undefined</code> to the value.</p>
+<h3 id="existential-properties"><a class="anchor" href="#existential-properties">﹟</a> Existential Properties</h3>
+<p>The existential property for a value evaluates to <code>true</code> when the associated data attribute is present on the controller’s element and <code>false</code> when it is absent.</p>
+<h2 id="change-callbacks"><a class="anchor" href="#change-callbacks">﹟</a> Change Callbacks</h2>
+<p>Value <em>change callbacks</em> let you respond whenever a value’s data attribute changes.</p>
+<p>Define a method <code>[name]ValueChanged</code> in the controller, where <code>[name]</code> is the name of the value you want to observe for changes. The method receives its decoded value as the first argument and the decoded previous value as the second argument.</p>
+<p>Stimulus invokes each change callback after the controller is initialized and again any time its associated data attribute changes. This includes changes as a result of assignment to the value’s setter.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span> url<span class="token operator">:</span> String <span class="token punctuation">}</span><br><br>  <span class="token function">urlValueChanged</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>urlValue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token comment">/* … */</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="previous-values"><a class="anchor" href="#previous-values">﹟</a> Previous Values</h3>
+<p>You can access the previous value of a <code>[name]ValueChanged</code> callback by defining the callback method with two arguments in your controller.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span> url<span class="token operator">:</span> String <span class="token punctuation">}</span><br><br>  <span class="token function">urlValueChanged</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> previousValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token comment">/* … */</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>The two arguments can be named as you like. You could also use <code>urlValueChanged(current, old)</code>.</p>
+<h2 id="default-values"><a class="anchor" href="#default-values">﹟</a> Default Values</h2>
+<p>Values that have not been specified on the controller element can be set by defaults specified in the controller definition:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span><br>    url<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">'/bill'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    interval<span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> Number<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    clicked<span class="token operator">:</span> Boolean<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>When a default is used, the expanded form of <code>{ type, default }</code> is used. This form can be mixed with the regular form that does not use a default.</p>
+<h2 id="naming-conventions"><a class="anchor" href="#naming-conventions">﹟</a> Naming Conventions</h2>
+<p>Write value names as camelCase in JavaScript and kebab-case in HTML. For example, a value named <code>contentType</code> in the <code>loader</code> controller will have the associated data attribute <code>data-loader-content-type-value</code>.</p>
+</section>
+
+  <footer class="docs__footer grid__item grid__item--start-4 grid__item--span-8">
+
+    <p class="foot-logos">
+  <a href="https://basecamp.com/" target="_blank" rel="noopener">
+    <img width="253" height="56" src="/assets/logo-basecamp.svg" alt="Basecamp">
+  </a>
+  <a href="https://hey.com/" target="_blank" rel="noopener">
+    <img width="122" height="56" src="/assets/logo-hey.svg" alt="HEY">
+  </a>
+</p>
+<p class="foot-text">
+  <span>Brought to you by the team at <a href="https://basecamp.com/" target="_blank" rel="noopener">Basecamp</a> & <a href="https://hey.com/" target="_blank" rel="noopener">HEY</a>.</span>
+</p>
+
+
+  </footer>
+
+</main>
+
+
+  </body>
+
+</html>
