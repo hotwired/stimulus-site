@@ -269,6 +269,49 @@
 <td><code>:prevent</code></td>
 <td>calls <code>.preventDefault()</code> on the event before invoking the method</td>
 </tr>
+<tr>
+<td><code>:self</code></td>
+<td>only invokes the method if the event was fired by the element itself</td>
+</tr>
+</tbody>
+</table>
+<p>You can register your own action options with the <code>Application.registerActionOption</code> method.</p>
+<p>For example, consider that a <code>&lt;details&gt;</code> element will dispatch a <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/toggle_event">toggle</a>
+event whenever it’s toggled. A custom <code>:open</code> action option would help
+to route events whenever the element is toggled <em>open</em>:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Application <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span><br><br><span class="token keyword">const</span> application <span class="token operator">=</span> Application<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br><br>application<span class="token punctuation">.</span><span class="token function">registerActionOption</span><span class="token punctuation">(</span><span class="token string">"open"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> event <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>type <span class="token operator">==</span> <span class="token string">"toggle"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>open <span class="token operator">==</span> <span class="token boolean">true</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> <span class="token boolean">true</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>Similarly, a custom <code>:!open</code> action option could route events whenever the
+element is toggled <em>closed</em>. Declaring the action descriptor option with a <code>!</code>
+prefix will yield a <code>value</code> argument set to <code>false</code> in the callback:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Application <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span><br><br><span class="token keyword">const</span> application <span class="token operator">=</span> Application<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br><br>application<span class="token punctuation">.</span><span class="token function">registerActionOption</span><span class="token punctuation">(</span><span class="token string">"open"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> event<span class="token punctuation">,</span> value <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>type <span class="token operator">==</span> <span class="token string">"toggle"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>open <span class="token operator">==</span> value<br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    <span class="token keyword">return</span> <span class="token boolean">true</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>In order to prevent the event from being routed to the controller action, the
+<code>registerActionOption</code> callback function must return <code>false</code>. Otherwise, to
+route the event to the controller action, return <code>true</code>.</p>
+<p>The callback accepts a single object argument with the following keys:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String: The option’s name (<code>&quot;open&quot;</code> in the example above)</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Boolean: The value of the option (<code>:open</code> would yield <code>true</code>, <code>:!open</code> would yield <code>false</code>)</td>
+</tr>
+<tr>
+<td>event</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/web/api/event">Event</a>: The event instance</td>
+</tr>
+<tr>
+<td>element</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/element">Element</a>: The element where the action descriptor is declared</td>
+</tr>
 </tbody>
 </table>
 <h2 id="event-objects"><a class="anchor" href="#event-objects">﹟</a> Event Objects</h2>
