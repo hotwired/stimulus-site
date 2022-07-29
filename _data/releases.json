@@ -39,6 +39,18 @@
     "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v3.1.0",
     "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v3.1.0",
     "body": "## What's Changed\r\n\r\n* Adds new Action Options, namely `:stop` and `:prevent` by @radiantshaw in https://github.com/hotwired/stimulus/pull/535\r\n* Adds new Action Option `:self` by @radiantshaw in https://github.com/hotwired/stimulus/pull/546\r\n* Allow action params for global events by @rik in https://github.com/hotwired/stimulus/pull/495\r\n* move shouldLoad check from register to load function by @adrienpoly in https://github.com/hotwired/stimulus/pull/493\r\n* Boolean decoding is not case-sensitive by @vastray in https://github.com/hotwired/stimulus/pull/472\r\n* Fire Value Change Callbacks consistently by @seanpdoyle in https://github.com/hotwired/stimulus/pull/499\r\n* Allow refining the type of Controller elements by @rik in https://github.com/hotwired/stimulus/pull/529\r\n* Fix `stimulus` glue package for cdn use by @marcoroth in https://github.com/hotwired/stimulus/pull/468\r\n\r\n**Full Changelog**: https://github.com/hotwired/stimulus/compare/v3.0.1...v3.1.0",
+    "reactions": {
+      "url": "https://api.github.com/repos/hotwired/stimulus/releases/72271234/reactions",
+      "total_count": 70,
+      "+1": 14,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 30,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 22,
+      "eyes": 4
+    },
     "mentions_count": 6
   },
   {
