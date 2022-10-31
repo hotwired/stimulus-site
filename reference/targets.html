@@ -214,7 +214,9 @@ removed within the controller’s element.</p>
 the scenes are paused. This means that if a callback add or removes a target
 with a matching name, the corresponding callback <em>will not</em> be invoked again.</p>
 <h2 id="naming-conventions"><a class="anchor" href="#naming-conventions">﹟</a> Naming Conventions</h2>
-<p>Always use camelCase to specify target names, since they map directly to properties on your controller.</p>
+<p>Always use camelCase to specify target names, since they map directly to properties on your controller:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-search-target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>camelCase<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-search-target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>do-not-do-this<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> targets <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"camelCase"</span> <span class="token punctuation">]</span>  <br><span class="token punctuation">}</span></code></pre>
 <p><a class="button" href="/reference/css-classes">Next: CSS Classes</a></p></section>
 
   <footer class="docs__footer grid__item grid__item--start-4 grid__item--span-8">
