@@ -1,5 +1,47 @@
 [
   {
+    "url": "https://api.github.com/repos/hotwired/stimulus/releases/81553447",
+    "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/81553447/assets",
+    "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/81553447/assets{?name,label}",
+    "html_url": "https://github.com/hotwired/stimulus/releases/tag/v3.1.1",
+    "id": 81553447,
+    "author": {
+      "login": "dhh",
+      "id": 2741,
+      "node_id": "MDQ6VXNlcjI3NDE=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2741?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dhh",
+      "html_url": "https://github.com/dhh",
+      "followers_url": "https://api.github.com/users/dhh/followers",
+      "following_url": "https://api.github.com/users/dhh/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dhh/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dhh/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dhh/subscriptions",
+      "organizations_url": "https://api.github.com/users/dhh/orgs",
+      "repos_url": "https://api.github.com/users/dhh/repos",
+      "events_url": "https://api.github.com/users/dhh/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dhh/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "node_id": "RE_kwDOBJJD884E3Ggn",
+    "tag_name": "v3.1.1",
+    "target_commitish": "main",
+    "name": "v3.1.1",
+    "draft": false,
+    "prerelease": false,
+    "created_at": "2022-10-31T13:35:13Z",
+    "published_at": "2022-10-31T13:43:35Z",
+    "assets": [
+
+    ],
+    "tarball_url": "https://api.github.com/repos/hotwired/stimulus/tarball/v3.1.1",
+    "zipball_url": "https://api.github.com/repos/hotwired/stimulus/zipball/v3.1.1",
+    "body": "## What's Changed\r\n\r\n* Clear dangling EventListeners and Detached Nodes when a controller is removed from the DOM by @intrip in https://github.com/hotwired/stimulus/pull/592\r\n* Support custom Action Options by @seanpdoyle in https://github.com/hotwired/stimulus/pull/567\r\n* Fix `exports` field for `stimulus` package and Webpack 5 by @glaszig in https://github.com/hotwired/stimulus/pull/569\r\n* Make Action Parameters attributes case-insensitive by @marcoroth in https://github.com/hotwired/stimulus/pull/571\r\n* Retain backtrace for TypeErrors in value change callback by @elliotcm in https://github.com/hotwired/stimulus/pull/584\r\n\r\n**Full Changelog**: https://github.com/hotwired/stimulus/compare/v3.1.0...v3.1.1",
+    "mentions_count": 5
+  },
+  {
     "url": "https://api.github.com/repos/hotwired/stimulus/releases/72271234",
     "assets_url": "https://api.github.com/repos/hotwired/stimulus/releases/72271234/assets",
     "upload_url": "https://uploads.github.com/repos/hotwired/stimulus/releases/72271234/assets{?name,label}",
@@ -41,14 +83,14 @@
     "body": "## What's Changed\r\n\r\n* Adds new Action Options, namely `:stop` and `:prevent` by @radiantshaw in https://github.com/hotwired/stimulus/pull/535\r\n* Adds new Action Option `:self` by @radiantshaw in https://github.com/hotwired/stimulus/pull/546\r\n* Allow action params for global events by @rik in https://github.com/hotwired/stimulus/pull/495\r\n* move shouldLoad check from register to load function by @adrienpoly in https://github.com/hotwired/stimulus/pull/493\r\n* Boolean decoding is not case-sensitive by @vastray in https://github.com/hotwired/stimulus/pull/472\r\n* Fire Value Change Callbacks consistently by @seanpdoyle in https://github.com/hotwired/stimulus/pull/499\r\n* Allow refining the type of Controller elements by @rik in https://github.com/hotwired/stimulus/pull/529\r\n* Fix `stimulus` glue package for cdn use by @marcoroth in https://github.com/hotwired/stimulus/pull/468\r\n\r\n**Full Changelog**: https://github.com/hotwired/stimulus/compare/v3.0.1...v3.1.0",
     "reactions": {
       "url": "https://api.github.com/repos/hotwired/stimulus/releases/72271234/reactions",
-      "total_count": 70,
-      "+1": 14,
+      "total_count": 74,
+      "+1": 15,
       "-1": 0,
       "laugh": 0,
-      "hooray": 30,
+      "hooray": 32,
       "confused": 0,
       "heart": 0,
-      "rocket": 22,
+      "rocket": 23,
       "eyes": 4
     },
     "mentions_count": 6
