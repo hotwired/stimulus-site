@@ -124,13 +124,16 @@
       <a class="nav__sublist-link" href="/reference/targets">Targets
       </a>
     </li><li>
-      <a class="nav__sublist-link" href="/reference/css-classes">CSS Classes
-      </a>
-    </li><li>
-      <a class="nav__sublist-link" href="/reference/using_typescript/">Using Typescript
+      <a class="nav__sublist-link" href="/reference/outlets">Outlets
       </a>
     </li><li>
       <a class="nav__sublist-link" href="/reference/values">Values
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/css-classes">CSS Classes
+      </a>
+    </li><li>
+      <a class="nav__sublist-link" href="/reference/using-typescript">Using Typescript
       </a>
     </li></ul>
 
@@ -215,9 +218,104 @@
 </tr>
 </tbody>
 </table>
+<h2 id="keyboardevent-filter"><a class="anchor" href="#keyboardevent-filter">﹟</a> KeyboardEvent Filter</h2>
+<p>There may be cases where <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a> Actions should only call the Controller method when certain keystrokes are used.</p>
+<p>You can install an event listener that responds only to the <code>Escape</code> key by adding <code>.esc</code> to the event name of the action descriptor, as in the following example.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>modal<span class="token punctuation">"</span></span><br>     <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keydown.esc->modal#close<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>This will only work if the event being fired is a keyboard event.</p>
+<p>The correspondence between these filter and keys is shown below.</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Key Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enter</td>
+<td>Enter</td>
+</tr>
+<tr>
+<td>tab</td>
+<td>Tab</td>
+</tr>
+<tr>
+<td>esc</td>
+<td>Escape</td>
+</tr>
+<tr>
+<td>space</td>
+<td>&quot; &quot;</td>
+</tr>
+<tr>
+<td>up</td>
+<td>ArrowUp</td>
+</tr>
+<tr>
+<td>down</td>
+<td>ArrowDown</td>
+</tr>
+<tr>
+<td>left</td>
+<td>ArrowLeft</td>
+</tr>
+<tr>
+<td>right</td>
+<td>ArrowRight</td>
+</tr>
+<tr>
+<td>home</td>
+<td>Home</td>
+</tr>
+<tr>
+<td>end</td>
+<td>End</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>[a-z]</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>[0-9]</td>
+</tr>
+</tbody>
+</table>
+<p>If you need to support other keys, you can customize the modifiers using a custom schema.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Application<span class="token punctuation">,</span> defaultSchema <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span><br><br><span class="token keyword">const</span> customSchema <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token operator">...</span>defaultSchema<span class="token punctuation">,</span><br>  keyMappings<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>defaultSchema<span class="token punctuation">.</span>keyMappings<span class="token punctuation">,</span> at<span class="token operator">:</span> <span class="token string">"@"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">const</span> app <span class="token operator">=</span> Application<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">,</span> customSchema<span class="token punctuation">)</span></code></pre>
+<p>If you want to subscribe to a compound filter using a modifier key, you can write it like <code>ctrl+a</code>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keydown.ctrl+a->listbox#selectAll<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>The list of supported modifier keys is shown below.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alt</code></td>
+<td><code>option</code> on MacOS</td>
+</tr>
+<tr>
+<td><code>ctrl</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td>Command key on MacOS</td>
+</tr>
+<tr>
+<td><code>shift</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="global-events"><a class="anchor" href="#global-events">﹟</a> Global Events</h3>
 <p>Sometimes a controller needs to listen for events dispatched on the global <code>window</code> or <code>document</code> objects.</p>
-<p>You can append <code>@window</code> or <code>@document</code> to the event name in an action descriptor to install the event listener on <code>window</code> or <code>document</code>, respectively, as in the following example:</p>
+<p>You can append <code>@window</code> or <code>@document</code> to the event name (along with any filter modifer) in an action descriptor to install the event listener on <code>window</code> or <code>document</code>, respectively, as in the following example:</p>
 <meta data-controller="callout" data-callout-text-value="resize@window">
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gallery<span class="token punctuation">"</span></span><br>     <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>resize@window->gallery#layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="options"><a class="anchor" href="#options">﹟</a> Options</h3>
