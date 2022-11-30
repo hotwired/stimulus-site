@@ -41,14 +41,14 @@
     "body": "## What's Changed\r\n\r\n* Add modifier to filter keyboard events by @NakajimaTakuya in https://github.com/hotwired/stimulus/pull/442\r\n* Outlets API by @marcoroth in https://github.com/hotwired/stimulus/pull/576\r\n* Add ability to set `afterLoad` static methods on Controllers by @lb- in https://github.com/hotwired/stimulus/pull/579\r\n* Ensure that the Application.start static method uses overridden class by @lb- in https://github.com/hotwired/stimulus/pull/603\r\n\r\n**Full Changelog**: https://github.com/hotwired/stimulus/compare/v3.1.1...v3.2.0",
     "reactions": {
       "url": "https://api.github.com/repos/hotwired/stimulus/releases/84344010/reactions",
-      "total_count": 2,
-      "+1": 0,
+      "total_count": 41,
+      "+1": 12,
       "-1": 0,
       "laugh": 0,
-      "hooray": 0,
+      "hooray": 12,
       "confused": 0,
       "heart": 0,
-      "rocket": 2,
+      "rocket": 17,
       "eyes": 0
     },
     "mentions_count": 3
