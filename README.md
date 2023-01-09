@@ -15,4 +15,4 @@ To run the site locally:
 
 ## Copyright
 
-The logo, design, and other aesthetic parts of this website is copyright Basecamp, all rights reserved. Feel free to be inspired by the structure, but do not copy the specific design, anymore than you'd copy basecamp.com or hey.com.
+The logo, design, and other aesthetic parts of this website is copyright 37signals, all rights reserved. Feel free to be inspired by the structure, but do not copy the specific design, anymore than you'd copy basecamp.com or hey.com.
