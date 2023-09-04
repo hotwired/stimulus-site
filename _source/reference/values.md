@@ -10,10 +10,11 @@ You can read and write [HTML data attributes](https://developer.mozilla.org/en-U
 <meta data-controller="callout" data-callout-text-value="data-loader-url-value=&quot;/messages&quot;">
 
 ```html
-<div data-controller="loader"
-     data-loader-url-value="/messages">
+<div data-controller="loader" data-loader-url-value="/messages">
 </div>
 ```
+
+As per the given HTML snippet, remember to place the data attributes for values on the same element as the `data-controller` attribute.
 
 <meta data-controller="callout" data-callout-text-value="static values = { url: String }">
 <meta data-controller="callout" data-callout-text-value="this.urlValue">
@@ -53,13 +54,13 @@ export default class extends Controller {
 
 A value's type is one of `Array`, `Boolean`, `Number`, `Object`, or `String`. The type determines how the value is transcoded between JavaScript and HTML.
 
-Type | Encoded as… | Decoded as…
----- | ----------- | -----------
-Array | `JSON.stringify(array)` | `JSON.parse(value)`
-Boolean | `boolean.toString()` | `!(value == "0" \|\| value == "false")`
-Number | `number.toString()` | `Number(value)`
-Object | `JSON.stringify(object)` | `JSON.parse(value)`
-String | Itself | Itself
+| Type    | Encoded as…              | Decoded as…                             |
+| ------- | ------------------------ | --------------------------------------- |
+| Array   | `JSON.stringify(array)`  | `JSON.parse(value)`                     |
+| Boolean | `boolean.toString()`     | `!(value == "0" \|\| value == "false")` |
+| Number  | `number.toString()`      | `Number(value.replace(/_/g, ""))`       |
+| Object  | `JSON.stringify(object)` | `JSON.parse(value)`                     |
+| String  | Itself                   | Itself                                  |
 
 ## Properties and Attributes
 

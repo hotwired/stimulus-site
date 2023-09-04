@@ -82,20 +82,22 @@ This will only work if the event being fired is a keyboard event.
 
 The correspondence between these filter and keys is shown below.
 
-Filter | Key Name
--------- | --------
-enter    | Enter
-tab      | Tab
-esc      | Escape
-space    | " "
-up       | ArrowUp
-down     | ArrowDown
-left     | ArrowLeft
-right    | ArrowRight
-home     | Home
-end      | End
-[a-z]    | [a-z]
-[0-9]    | [0-9]
+Filter    | Key Name
+--------  | --------
+enter     | Enter
+tab       | Tab
+esc       | Escape
+space     | " "
+up        | ArrowUp
+down      | ArrowDown
+left      | ArrowLeft
+right     | ArrowRight
+home      | Home
+end       | End
+page_up   | PageUp
+page_down | PageDown
+[a-z]     | [a-z]
+[0-9]     | [0-9]
 
 If you need to support other keys, you can customize the modifiers using a custom schema.
 
@@ -129,7 +131,7 @@ The list of supported modifier keys is shown below.
 
 Sometimes a controller needs to listen for events dispatched on the global `window` or `document` objects.
 
-You can append `@window` or `@document` to the event name (along with any filter modifer) in an action descriptor to install the event listener on `window` or `document`, respectively, as in the following example:
+You can append `@window` or `@document` to the event name (along with any filter modifier) in an action descriptor to install the event listener on `window` or `document`, respectively, as in the following example:
 
 <meta data-controller="callout" data-callout-text-value="resize@window">
 
@@ -213,12 +215,13 @@ route the event to the controller action, return `true`.
 
 The callback accepts a single object argument with the following keys:
 
-Name    | Description
---------|------------
-name    | String: The option's name (`"open"` in the example above)
-value   | Boolean: The value of the option (`:open` would yield `true`, `:!open` would yield `false`)
-event   | [Event][]: The event instance
-element | [Element]: The element where the action descriptor is declared
+| Name       | Description                                                                                           |
+| ---------- | ----------------------------------------------------------------------------------------------------- |
+| name       | String: The option's name (`"open"` in the example above)                                             |
+| value      | Boolean: The value of the option (`:open` would yield `true`, `:!open` would yield `false`)           |
+| event      | [Event][]: The event instance, including with the `params` action parameters on the submitter element |
+| element    | [Element]: The element where the action descriptor is declared                                        |
+| controller | The `Controller` instance which would receive the method call                                         |
 
 [toggle]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/toggle_event
 [Event]: https://developer.mozilla.org/en-US/docs/web/api/event
