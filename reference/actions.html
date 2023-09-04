@@ -273,6 +273,14 @@
 <td>End</td>
 </tr>
 <tr>
+<td>page_up</td>
+<td>PageUp</td>
+</tr>
+<tr>
+<td>page_down</td>
+<td>PageDown</td>
+</tr>
+<tr>
 <td>[a-z]</td>
 <td>[a-z]</td>
 </tr>
@@ -315,7 +323,7 @@
 </table>
 <h3 id="global-events"><a class="anchor" href="#global-events">﹟</a> Global Events</h3>
 <p>Sometimes a controller needs to listen for events dispatched on the global <code>window</code> or <code>document</code> objects.</p>
-<p>You can append <code>@window</code> or <code>@document</code> to the event name (along with any filter modifer) in an action descriptor to install the event listener on <code>window</code> or <code>document</code>, respectively, as in the following example:</p>
+<p>You can append <code>@window</code> or <code>@document</code> to the event name (along with any filter modifier) in an action descriptor to install the event listener on <code>window</code> or <code>document</code>, respectively, as in the following example:</p>
 <meta data-controller="callout" data-callout-text-value="resize@window">
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gallery<span class="token punctuation">"</span></span><br>     <span class="token attr-name">data-action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>resize@window->gallery#layout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="options"><a class="anchor" href="#options">﹟</a> Options</h3>
@@ -404,11 +412,15 @@ route the event to the controller action, return <code>true</code>.</p>
 </tr>
 <tr>
 <td>event</td>
-<td><a href="https://developer.mozilla.org/en-US/docs/web/api/event">Event</a>: The event instance</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/web/api/event">Event</a>: The event instance, including with the <code>params</code> action parameters on the submitter element</td>
 </tr>
 <tr>
 <td>element</td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/element">Element</a>: The element where the action descriptor is declared</td>
+</tr>
+<tr>
+<td>controller</td>
+<td>The <code>Controller</code> instance which would receive the method call</td>
 </tr>
 </tbody>
 </table>
