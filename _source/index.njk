@@ -13,6 +13,10 @@ layout: default
   </h1>
 </div>
 
+<p class="landing-version">
+  <span>Current version: <a href="{{ release.url }}">{{ release.tag_name }}</a> &mdash; released {{ release.created_at | fullDate }}</span>
+</p>
+
 <div class="landing-hero grid__item grid__item--span-12">
 
   <div class="landing-hero__step landing-hero__step--pointer">
@@ -37,10 +41,6 @@ layout: default
   <button class="landing-hello__button" data-action="click->hello#greet">Greet</button>
   <span class="landing-hello__output" data-hello-target="output"></span>
 </div>
-
-<p class="landing-version">
-  <span>Current version: <a href="{{ release.url }}">{{ release.tag_name }}</a> &mdash; released {{ release.created_at | fullDate }}</span>
-</p>
 
 <p class="landing-summary"><string>Stimulus</strong> is a JavaScript framework with modest ambitions. It doesn’t seek to take over your entire front-end—in fact, it’s not concerned with rendering HTML at all. Instead, it’s designed to augment your HTML with just enough behavior to make it shine. Stimulus pairs beautifully with <a href="https://turbo.hotwired.dev">Turbo</a> to provide a complete solution for fast, compelling applications with a minimal amount of effort.</p>
 
