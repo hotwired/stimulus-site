@@ -8,12 +8,13 @@ sync() {
     rm -rf "$sourcedir"
     mkdir -p "$sourcedir"
     cd "$destdir"
-    curl --silent "https://api.github.com/repos/hotwired/stimulus/contents/$sourcedir" \
-      | jq ".[] | .download_url" \
-      | xargs -n 1 -P 4 curl --silent -O
+    curl --silent "https://api.github.com/repos/hotwired/stimulus/contents/$sourcedir" |
+      jq ".[] | .download_url" |
+      xargs -n 1 -P 4 curl --silent -O
 
     # src="../../assets/…" → src="/assets/…"
-    find . -type f -name "*.md" | xargs -n 1 sed -i '' -E -e  's/[\.\/]+\/assets/\/assets/g'
+    find . -type f -name "*.md"
+    find . -type f -name "*.md" | xargs -n 1 sed -i -E -e 's/[\.\/]+\/assets/\/assets/g'
   )
 }
 
