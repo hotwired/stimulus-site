@@ -40,7 +40,8 @@
 </nav>
 
 
-    <div class="nav__github-corner">
+    
+<div class="nav__github-corner">
   <svg width="60" height="60" viewBox="0 0 250 250" version="1.1" xmlns="github-corner"
 	style="fill:#000000; color:#FFFFFF;"
 	aria-hidden="true">
@@ -158,8 +159,14 @@
     <h1>Lifecycle Callbacks</h1>
 <p>Special methods called <em>lifecycle callbacks</em> allow you to respond whenever a controller or certain targets connects to and disconnects from the document.</p>
 <meta data-controller="callout" data-callout-text-value="connect()">
-<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Controller <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span><br><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token comment">// …</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h2 id="methods"><a class="anchor" href="#methods">﹟</a> Methods</h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Controller <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span>
+  <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// …</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="methods" tabindex="-1"><a class="anchor" href="#methods">﹟</a> Methods</h2>
 <p>You may define any of the following methods in your controller:</p>
 <table>
 <thead>
@@ -191,21 +198,21 @@
 </tr>
 </tbody>
 </table>
-<h2 id="connection"><a class="anchor" href="#connection">﹟</a> Connection</h2>
+<h2 id="connection" tabindex="-1"><a class="anchor" href="#connection">﹟</a> Connection</h2>
 <p>A controller is <em>connected</em> to the document when both of the following conditions are true:</p>
 <ul>
 <li>its element is present in the document (i.e., a descendant of <code>document.documentElement</code>, the <code>&lt;html&gt;</code> element)</li>
 <li>its identifier is present in the element’s <code>data-controller</code> attribute</li>
 </ul>
 <p>When a controller becomes connected, Stimulus calls its <code>connect()</code> method.</p>
-<h3 id="targets"><a class="anchor" href="#targets">﹟</a> Targets</h3>
+<h3 id="targets" tabindex="-1"><a class="anchor" href="#targets">﹟</a> Targets</h3>
 <p>A target is <em>connected</em> to the document when both of the following conditions are true:</p>
 <ul>
 <li>its element is present in the document as a descendant of its corresponding controller’s element</li>
 <li>its identifier is present in the element’s <code>data-{identifier}-target</code> attribute</li>
 </ul>
 <p>When a target becomes connected, Stimulus calls its controller’s <code>[name]TargetConnected()</code> method, passing the target element as a parameter. The <code>[name]TargetConnected()</code> lifecycle callbacks will fire <em>before</em> the controller’s <code>connect()</code> callback.</p>
-<h2 id="disconnection"><a class="anchor" href="#disconnection">﹟</a> Disconnection</h2>
+<h2 id="disconnection" tabindex="-1"><a class="anchor" href="#disconnection">﹟</a> Disconnection</h2>
 <p>A connected controller will later become <em>disconnected</em> when either of the preceding conditions becomes false, such as under any of the following scenarios:</p>
 <ul>
 <li>the element is explicitly removed from the document with <code>Node#removeChild()</code> or <code>ChildNode#remove()</code></li>
@@ -215,7 +222,7 @@
 <li>the document installs a new <code>&lt;body&gt;</code> element, such as during a Turbo page change</li>
 </ul>
 <p>When a controller becomes disconnected, Stimulus calls its <code>disconnect()</code> method.</p>
-<h3 id="targets-1"><a class="anchor" href="#targets-1">﹟</a> Targets</h3>
+<h3 id="targets-1" tabindex="-1"><a class="anchor" href="#targets-1">﹟</a> Targets</h3>
 <p>A connected target will later become <em>disconnected</em> when either of the preceding conditions becomes false, such as under any of the following scenarios:</p>
 <ul>
 <li>the element is explicitly removed from the document with <code>Node#removeChild()</code> or <code>ChildNode#remove()</code></li>
@@ -225,15 +232,15 @@
 <li>the document installs a new <code>&lt;body&gt;</code> element, such as during a Turbo page change</li>
 </ul>
 <p>When a target becomes disconnected, Stimulus calls its controller’s <code>[name]TargetDisconnected()</code> method, passing the target element as a parameter. The <code>[name]TargetDisconnected()</code> lifecycle callbacks will fire <em>before</em> the controller’s <code>disconnect()</code> callback.</p>
-<h2 id="reconnection"><a class="anchor" href="#reconnection">﹟</a> Reconnection</h2>
+<h2 id="reconnection" tabindex="-1"><a class="anchor" href="#reconnection">﹟</a> Reconnection</h2>
 <p>A disconnected controller may become connected again at a later time.</p>
 <p>When this happens, such as after removing the controller’s element from the document and then re-attaching it, Stimulus will reuse the element’s previous controller instance, calling its <code>connect()</code> method multiple times.</p>
 <p>Similarly, a disconnected target may be connected again at a later time. Stimulus will invoke its controller’s <code>[name]TargetConnected()</code> method multiple times.</p>
-<h2 id="order-and-timing"><a class="anchor" href="#order-and-timing">﹟</a> Order and Timing</h2>
+<h2 id="order-and-timing" tabindex="-1"><a class="anchor" href="#order-and-timing">﹟</a> Order and Timing</h2>
 <p>Stimulus watches the page for changes asynchronously using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">DOM <code>MutationObserver</code> API</a>.</p>
 <p>This means that Stimulus calls your controller’s lifecycle methods asynchronously after changes are made to the document, in the next <a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/">microtask</a> following each change.</p>
 <p>Lifecycle methods still run in the order they occur, so two calls to a controller’s <code>connect()</code> method will always be separated by one call to <code>disconnect()</code>. Similarly, two calls to a controller’s <code>[name]TargetConnected()</code> for a given target will always be separated by one call to <code>[name]TargetDisconnected()</code> for that same target.</p>
-<p><a class="button" href="/reference/actions">Next: Actions</a></p></section>
+<p><a class="button" href="/reference/outlets">Next: Outlets</a></p></section>
 
   <footer class="docs__footer grid__item grid__item--start-4 grid__item--span-8">
 

@@ -40,7 +40,8 @@
 </nav>
 
 
-    <div class="nav__github-corner">
+    
+<div class="nav__github-corner">
   <svg width="60" height="60" viewBox="0 0 250 250" version="1.1" xmlns="github-corner"
 	style="fill:#000000; color:#FFFFFF;"
 	aria-hidden="true">
@@ -158,15 +159,35 @@
     <h1>Values</h1>
 <p>You can read and write <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">HTML data attributes</a> on controller elements as typed <em>values</em> using special controller properties.</p>
 <meta data-controller="callout" data-callout-text-value="data-loader-url-value=&quot;/messages&quot;">
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>loader<span class="token punctuation">"</span></span> <span class="token attr-name">data-loader-url-value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/messages<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-controller</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>loader<span class="token punctuation">"</span></span> <span class="token attr-name">data-loader-url-value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/messages<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <p>As per the given HTML snippet, remember to place the data attributes for values on the same element as the <code>data-controller</code> attribute.</p>
 <meta data-controller="callout" data-callout-text-value="static values = { url: String }">
 <meta data-controller="callout" data-callout-text-value="this.urlValue">
-<pre class="language-js"><code class="language-js"><span class="token comment">// controllers/loader_controller.js</span><br><span class="token keyword">import</span> <span class="token punctuation">{</span> Controller <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span><br><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">url</span><span class="token operator">:</span> String<br>  <span class="token punctuation">}</span><br><br>  <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>urlValue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token comment">/* … */</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h2 id="definitions"><a class="anchor" href="#definitions">﹟</a> Definitions</h2>
+<pre class="language-js"><code class="language-js"><span class="token comment">// controllers/loader_controller.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Controller <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hotwired/stimulus"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> String
+  <span class="token punctuation">}</span>
+
+  <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>urlValue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token comment">/* … */</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="definitions" tabindex="-1"><a class="anchor" href="#definitions">﹟</a> Definitions</h2>
 <p>Define values in a controller using the <code>static values</code> object. Put each value’s <em>name</em> on the left and its <em>type</em> on the right.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">url</span><span class="token operator">:</span> String<span class="token punctuation">,</span><br>    <span class="token literal-property property">interval</span><span class="token operator">:</span> Number<span class="token punctuation">,</span><br>    <span class="token literal-property property">params</span><span class="token operator">:</span> Object<br>  <span class="token punctuation">}</span><br><br>  <span class="token comment">// …</span><br><span class="token punctuation">}</span></code></pre>
-<h2 id="types"><a class="anchor" href="#types">﹟</a> Types</h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> String<span class="token punctuation">,</span>
+    <span class="token literal-property property">interval</span><span class="token operator">:</span> Number<span class="token punctuation">,</span>
+    <span class="token literal-property property">params</span><span class="token operator">:</span> Object
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// …</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="types" tabindex="-1"><a class="anchor" href="#types">﹟</a> Types</h2>
 <p>A value’s type is one of <code>Array</code>, <code>Boolean</code>, <code>Number</code>, <code>Object</code>, or <code>String</code>. The type determines how the value is transcoded between JavaScript and HTML.</p>
 <table>
 <thead>
@@ -204,7 +225,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="properties-and-attributes"><a class="anchor" href="#properties-and-attributes">﹟</a> Properties and Attributes</h2>
+<h2 id="properties-and-attributes" tabindex="-1"><a class="anchor" href="#properties-and-attributes">﹟</a> Properties and Attributes</h2>
 <p>Stimulus automatically generates getter, setter, and existential properties for each value defined in a controller. These properties are linked to data attributes on the controller’s element:</p>
 <table>
 <thead>
@@ -232,7 +253,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="getters"><a class="anchor" href="#getters">﹟</a> Getters</h3>
+<h3 id="getters" tabindex="-1"><a class="anchor" href="#getters">﹟</a> Getters</h3>
 <p>The getter for a value decodes the associated data attribute into an instance of the value’s type.</p>
 <p>If the data attribute is missing from the controller’s element, the getter returns a <em>default value</em>, depending on the value’s type:</p>
 <table>
@@ -265,27 +286,45 @@
 </tr>
 </tbody>
 </table>
-<h3 id="setters"><a class="anchor" href="#setters">﹟</a> Setters</h3>
+<h3 id="setters" tabindex="-1"><a class="anchor" href="#setters">﹟</a> Setters</h3>
 <p>The setter for a value sets the associated data attribute on the controller’s element.</p>
 <p>To remove the data attribute from the controller’s element, assign <code>undefined</code> to the value.</p>
-<h3 id="existential-properties"><a class="anchor" href="#existential-properties">﹟</a> Existential Properties</h3>
+<h3 id="existential-properties" tabindex="-1"><a class="anchor" href="#existential-properties">﹟</a> Existential Properties</h3>
 <p>The existential property for a value evaluates to <code>true</code> when the associated data attribute is present on the controller’s element and <code>false</code> when it is absent.</p>
-<h2 id="change-callbacks"><a class="anchor" href="#change-callbacks">﹟</a> Change Callbacks</h2>
+<h2 id="change-callbacks" tabindex="-1"><a class="anchor" href="#change-callbacks">﹟</a> Change Callbacks</h2>
 <p>Value <em>change callbacks</em> let you respond whenever a value’s data attribute changes.</p>
 <p>Define a method <code>[name]ValueChanged</code> in the controller, where <code>[name]</code> is the name of the value you want to observe for changes. The method receives its decoded value as the first argument and the decoded previous value as the second argument.</p>
 <p>Stimulus invokes each change callback after the controller is initialized and again any time its associated data attribute changes. This includes changes as a result of assignment to the value’s setter.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">url</span><span class="token operator">:</span> String <span class="token punctuation">}</span><br><br>  <span class="token function">urlValueChanged</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>urlValue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token comment">/* … */</span><span class="token punctuation">)</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<h3 id="previous-values"><a class="anchor" href="#previous-values">﹟</a> Previous Values</h3>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">url</span><span class="token operator">:</span> String <span class="token punctuation">}</span>
+
+  <span class="token function">urlValueChanged</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>urlValue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token comment">/* … */</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="previous-values" tabindex="-1"><a class="anchor" href="#previous-values">﹟</a> Previous Values</h3>
 <p>You can access the previous value of a <code>[name]ValueChanged</code> callback by defining the callback method with two arguments in your controller.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">url</span><span class="token operator">:</span> String <span class="token punctuation">}</span><br><br>  <span class="token function">urlValueChanged</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> previousValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token comment">/* … */</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">url</span><span class="token operator">:</span> String <span class="token punctuation">}</span>
+
+  <span class="token function">urlValueChanged</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> previousValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* … */</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>The two arguments can be named as you like. You could also use <code>urlValueChanged(current, old)</code>.</p>
-<h2 id="default-values"><a class="anchor" href="#default-values">﹟</a> Default Values</h2>
+<h2 id="default-values" tabindex="-1"><a class="anchor" href="#default-values">﹟</a> Default Values</h2>
 <p>Values that have not been specified on the controller element can be set by defaults specified in the controller definition:</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span><br>  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">'/bill'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">interval</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> Number<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">clicked</span><span class="token operator">:</span> Boolean<br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Controller <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> values <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">'/bill'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">interval</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> Number<span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">clicked</span><span class="token operator">:</span> Boolean
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>When a default is used, the expanded form of <code>{ type, default }</code> is used. This form can be mixed with the regular form that does not use a default.</p>
-<h2 id="naming-conventions"><a class="anchor" href="#naming-conventions">﹟</a> Naming Conventions</h2>
+<h2 id="naming-conventions" tabindex="-1"><a class="anchor" href="#naming-conventions">﹟</a> Naming Conventions</h2>
 <p>Write value names as camelCase in JavaScript and kebab-case in HTML. For example, a value named <code>contentType</code> in the <code>loader</code> controller will have the associated data attribute <code>data-loader-content-type-value</code>.</p>
-<p><a class="button" href="/reference/css-classes">Next: CSS Classes</a></p></section>
+</section>
 
   <footer class="docs__footer grid__item grid__item--start-4 grid__item--span-8">
 
